@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import '../styles/global.css'
+import '../styles/global.css';
+import GatsbyLogo from '../images/svg/logo/Gatsby.svg';
+import ReactLogo from '../images/svg/logo/React.svg';
+import JQueryLogo from '../images/svg/logo/JQuery.svg';
+import NetConstructLogo from '../images/svg/logo/NetConstruct.svg';
+import BradfordCouncilLogo from '../images/svg/logo/BradfordCouncil.svg';
+import EstioLogo from '../images/svg/logo/Estio.svg';
 
 const pageStyles = {
   height: '100%',
@@ -106,6 +112,11 @@ const Highlight = {
   }
 }
 
+const logo = {
+  padding : '0 10px 0 0',
+  transform : 'translateY(6px)',
+}
+
 //BradfordCouncil
 const bradfordCouncilHighlight = {
   'background-size': '200% 100%',
@@ -202,14 +213,17 @@ const IndexPage = () => {
         </span>*/}
       </h1>
       <h2>
+        <img style={logo} src={NetConstructLogo} alt="NetConstruct Logo" width="auto" height="30px"/>
         {Hover("Net Construct", netConstructHighlight)}          
         <span style={headingAccentStyles}> - 2021</span> 
       </h2>    
       <h2>
+        <img style={logo} src={BradfordCouncilLogo} alt="React Logo" width="auto" height="30px"/>
         {Hover("Bradford Council", bradfordCouncilHighlight)}  
         <span style={headingAccentStyles}> - 2019</span> 
       </h2> 
-      <h2>
+      <h2> 
+        <img style={logo} src={EstioLogo} alt="Estio Logo" width="auto" height="30px"/>
         {Hover("Estio Training", estioTrainingHighlight)}  
         <span style={headingAccentStyles}> - 2019</span> 
       </h2>
@@ -219,6 +233,13 @@ const IndexPage = () => {
           <span style={headingAccentStyles}> - 2018 to {(new Date().getFullYear())}</span> 
         </span>
       </h2>
+      
+      <h3>This site was built using:</h3>
+      <img title="Gatsby" style={logo} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="20px"/>
+      <img title="React" style={logo} src={ReactLogo} alt="React Logo" width="auto" height="20px"/>
+      <img title="Jquery" style={logo} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
+      
+      
       {/*<p style={paragraphStyles}>
         This site is made in Gatsby <code style={codeStyles}>src/pages/index.js</code> to see this page
         update in real-time.{" "}

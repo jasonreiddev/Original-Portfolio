@@ -1,0 +1,8 @@
+ <!--Not offical logo, made by Jason Reid-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <ellipse cx="160" cy="160" rx="160" ry="160" stroke="none" fill="#3bb599"/>
+  <ellipse cx="160" cy="160" rx="140" ry="140" stroke="none" fill="#ffffff"/>
+  <ellipse cx="160" cy="160" rx="130" ry="130" stroke="none" fill="#3bb599"/>
+  <text fill="#ffffff" fill-opacity="1" font-size="130px" font-weight="bold" font-family="Montserrat,sans-serif">
+  <tspan alignment-baseline="middle" text-anchor="middle" x="160" y="180">NC</tspan></text>
+</svg>
