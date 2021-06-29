@@ -7,6 +7,9 @@ import NetConstructLogo from '../images/svg/logo/NetConstruct.svg';
 import BradfordCouncilLogo from '../images/svg/logo/BradfordCouncil.svg';
 import EstioLogo from '../images/svg/logo/Estio.svg';
 
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 const pageStyles = {
   height: '100%',
   display: 'flex',
@@ -149,8 +152,6 @@ const netConstructHighlight = {
 }
 
 //var NetConstructLogo = require('../images/icon.png');
-
-// data
 const links = [
   {
     text: "Tutorial",
@@ -200,6 +201,12 @@ const links = [
 // markup
 const IndexPage = () => {
   return (
+    <>
+    <Layout>
+    <SEO title="Home" />
+    ...
+    <a href="/blog/">Visit the Blog Page</a>
+  </Layout>
     <div style={pageStyles}>
       <header style={header}></header>
       <main style={main}>
@@ -237,7 +244,7 @@ const IndexPage = () => {
       <h3>This site was built using:</h3>
       <img title="Gatsby" style={logo} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="20px"/>
       <img title="React" style={logo} src={ReactLogo} alt="React Logo" width="auto" height="20px"/>
-      <img title="Jquery" style={logo} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
+      <img title="JQuery" style={logo} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
       
       
       {/*<p style={paragraphStyles}>
@@ -279,6 +286,7 @@ const IndexPage = () => {
       </main>
       <footer section style={footer}></footer>
     </div>
+    </>
   )
 }
 
@@ -300,5 +308,6 @@ function Hover(content, style){
       {content}</span>    
   )
 }
+
 
 export default IndexPage
