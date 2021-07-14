@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Portfolio",
-    titleTemplate: "-Jason Reid",
+    titleTemplate: " - Jason Reid",
     description:
       "Jason Reids Portfolio Site.",
     url: "https://jasonreidd.gatsbyjs.io", // No trailing slash allowed!

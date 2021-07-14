@@ -21,7 +21,9 @@ const SEO = ({ title, description, image, article }) => {
     url: `${siteUrl}${pathname}`,
   }
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet title={seo.title} titleTemplate={title + titleTemplate}>
+      <html lang="en" />
+      <meta name="robots" content="index"/>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
@@ -51,8 +53,8 @@ SEO.propTypes = {
   article: PropTypes.bool,
 }
 SEO.defaultProps = {
-  title: null,
-  description: null,
+  title: "Jason Reid - Portfolio",
+  description: "Jason Reid's web development portfolio.",
   image: null,
   article: false,
 }
