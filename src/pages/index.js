@@ -1,6 +1,6 @@
 //https://coolors.co/a997df-303036-84a98c-ffd4ca-aa78a6
 
-import React, { Suspense, useState } from 'react';
+import React, {useState} from 'react';
 import { createGlobalStyle } from "styled-components"
 import '../styles/global.css';
 import GatsbyLogo from '../images/svg/logo/Gatsby.svg';
@@ -98,7 +98,7 @@ const renderLoader = () => <p>Loading</p>;
 
 const IndexPage = () => {
   return (
-    <Suspense fallback={renderLoader()}>
+    <React.Fragment>
       <GlobalStyle/>
     <Layout>
     <SEO title="Home" />
@@ -143,7 +143,7 @@ const IndexPage = () => {
       </main>
       <footer section style={footerStyles}></footer>
     </div>
-    </Suspense>
+    </React.Fragment>
   )
 }
 
