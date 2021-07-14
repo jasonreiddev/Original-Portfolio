@@ -1,6 +1,6 @@
 //https://coolors.co/a997df-303036-84a98c-ffd4ca-aa78a6
 
-import React, {useState} from 'react';
+import React, { Suspense, useState } from 'react';
 import { createGlobalStyle } from "styled-components"
 import '../styles/global.css';
 import GatsbyLogo from '../images/svg/logo/Gatsby.svg';
@@ -33,14 +33,14 @@ const pageStyles = {
   color: "var(--siteWhite)",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
-const header = {
+const headerStyles = {
   height: '75px'
 }
-const main = {
+const mainStyles = {
   padding: 32,
   flexGrow: 1
 }
-const footer = {
+const footerStyles = {
   height: '25px'
 }
 const headingStyles = {
@@ -52,106 +52,98 @@ const headingAccentStyles = {
   color: "var(--siteMediumAccent)",
 }
 
-const breakLine = {
-  'border-top' : '1px solid var(--siteLightAccent)',
-  'padding-top': '21px',
+const breakLineStyles = {
+  'borderTop' : '1px solid var(--siteLightAccent)',
+  'paddingTop': '21px',
   display : 'inline-block'
 }
 
-const Highlight = {
-  'background-size': '200% 100%',
-  'background-image': 'linear-gradient(to right, transparent  50%, #663399 50%)',
-  'transition' : 'background-position 1s, color 0.5s',
-  hover: {
-    'background-position': '-100% 0',
-  }
-}
-
-const logo = {
+const logoStyles = {
   padding : '0 10px 0 0',
   transform : 'translateY(6px)',
 }
 
-//BradfordCouncil
-const bradfordCouncilHighlight = {
-  'background-size': '200% 100%',
-  'background-image': 'linear-gradient(to right, transparent  50%, #293d82 50%)',
+const baseHighlightStyles = {
   'transition' : 'background-position 1s, color 0.5s',
+  'backgroundSize': '200% 100%',
   hover: {
-    'background-position': '-100% 0',
+    'backgroundPosition': '-100% 0',
   }
+}
+
+const defaultHighlightStyles = {
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, #293d82 50%)',
+}
+
+//BradfordCouncil
+const bradfordCouncilHighlightStyles = {
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, #293d82 50%)',
 }
 
 //Estio Training
-const estioTrainingHighlight = {
-  'background-size': '200% 100%',
-  'background-image': 'linear-gradient(to right, transparent  50%, #e54700 50%)',
-  'transition' : 'background-position 0.5s, color 0.25s',
-  hover: {
-    'background-position': '-100% 0',
-  }
+const estioTrainingHighlightStyles = {
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, #e54700 50%)',
 }
 
 // Net Construct
-const netConstructHighlight = {
-  'background-size': '200% 100%',
-  'background-image': 'linear-gradient(to right, transparent  50%, #3bb599 50%)',
-  'transition' : 'background-position 1s, color 0.5s',
+const netConstructHighlightStyles = {
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, #3bb599 50%)',
   hover: {
-    'background-position': '-100% 0',
     'color':'#ffffff'
   }
 }
 
 // markup
+const renderLoader = () => <p>Loading</p>;
+
 const IndexPage = () => {
   return (
-    <React.Fragment>
-      <GlobalStyle theme="purple" />
+    <Suspense fallback={renderLoader()}>
+      <GlobalStyle/>
     <Layout>
     <SEO title="Home" />
     ...
     <a href="/blog/">Visit the Blog Page</a>
   </Layout>
     <div style={pageStyles}>
-      <header style={header}></header>
-      <main style={main}>
+      <header style={headerStyles}></header>
+      <main style={mainStyles}>
       <h1 style={headingStyles}>
         Jason Reid
         <br />
         <span style={headingAccentStyles}>— Development Portfolio</span>
       </h1>
       <h2>
-        <img style={logo} src={NetConstructLogo} alt="NetConstruct Logo" width="auto" height="30px"/>
-        {Hover("Net Construct", netConstructHighlight)}          
+        <img style={logoStyles} src={NetConstructLogo} alt="NetConstruct Logo" width="auto" height="30px"/>
+        {Hover("Net Construct", netConstructHighlightStyles)}          
         <span style={headingAccentStyles}> - 2021</span> 
       </h2>    
       <h2>
-        <img style={logo} src={BradfordCouncilLogo} alt="React Logo" width="auto" height="30px"/>
-        {Hover("Bradford Council", bradfordCouncilHighlight)}  
+        <img style={logoStyles} src={BradfordCouncilLogo} alt="React Logo" width="auto" height="30px"/>
+        {Hover("Bradford Council", bradfordCouncilHighlightStyles)}  
         <span style={headingAccentStyles}> - 2019</span> 
       </h2> 
       <h2> 
-        <img style={logo} src={EstioLogo} alt="Estio Logo" width="auto" height="30px"/>
-        {Hover("Estio Training", estioTrainingHighlight)}  
+        <img style={logoStyles} src={EstioLogo} alt="Estio Logo" width="auto" height="30px"/>
+        {Hover("Estio Training", estioTrainingHighlightStyles)}  
         <span style={headingAccentStyles}> - 2019</span> 
       </h2>
       <h2>
-        <span style={breakLine}>
-          {Hover("Personal Projects", Highlight)}  
+        <span style={breakLineStyles}>
+          {Hover("Personal Projects", defaultHighlightStyles)}  
           <span style={headingAccentStyles}> - 2018 to {(new Date().getFullYear())}</span> 
         </span>
       </h2>
       
       <h3>This site was built using:</h3>
-      <img title="Gatsby" style={logo} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="20px"/>
-      <img title="React" style={logo} src={ReactLogo} alt="React Logo" width="auto" height="20px"/>
-      <img title="JQuery" style={logo} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
+      <img title="Gatsby" style={logoStyles} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="20px"/>
+      <img title="React" style={logoStyles} src={ReactLogo} alt="React Logo" width="auto" height="20px"/>
+      <img title="JQuery" style={logoStyles} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
       
       </main>
-      <footer section style={footer}></footer>
+      <footer section style={footerStyles}></footer>
     </div>
-    </React.Fragment>
+    </Suspense>
   )
 }
 
@@ -167,7 +159,9 @@ function Hover(content, style){
       setHover(false);
     }}
     style={{
+      ...baseHighlightStyles,
       ...style,
+      ...(hover ? baseHighlightStyles.hover : null),
       ...(hover ? style.hover : null)
     }}>
       {content}</span>    
