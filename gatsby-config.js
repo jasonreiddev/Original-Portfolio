@@ -4,10 +4,10 @@ require("dotenv").config({
   
 module.exports = {
   siteMetadata: {
-    title: "Portfolio",
-    titleTemplate: " - Jason Reid",
+    title: "Home",
+    titleTemplate: "JR Portfolio",
     description:
-      "Jason Reids Portfolio Site.",
+      "Jason Reid's Development Portfolio.",
     url: "https://jasonreidd.gatsbyjs.io", // No trailing slash allowed!
     image: "/images/BradfordCouncilLogo.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@JasonReidd",
@@ -24,8 +24,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-              name: `JasonReid Portfolio`,
-              short_name: `Jason Reid`,
+              name: `Jason Reid's Development Portfolio.`,
+              short_name: `JR Portfolio`,
               start_url: `/`,
               background_color: `#FFF`,
               theme_color: `#FAE042`,

@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "Portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfolio",
+  "description": "Jason Reid's Development Portfolio.",
   "author": "Jason Reid",
   "keywords": [
     "gatsby"

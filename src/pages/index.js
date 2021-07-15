@@ -109,9 +109,9 @@ const IndexPage = () => {
       <header style={headerStyles}></header>
       <main style={mainStyles}>
       <h1 style={headingStyles}>
-        Jason Reid
+        Jason Reid's
         <br />
-        <span style={headingAccentStyles}>— Development Portfolio</span>
+        <span style={headingAccentStyles}>Development Portfolio</span>
       </h1>
       <h2>
         <img style={logoStyles} src={NetConstructLogo} alt="NetConstruct Logo" width="auto" height="30px"/>
