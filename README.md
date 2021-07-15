@@ -1,38 +1,67 @@
+<!--
+For better readability, use markdown preview.
+VS Code:  ctrl-shift-v 
+Atom:     ctrl-shift-m
+-->
+
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://jasonreidd.netlify.app">
+    <img alt="Netlify Site" src="src/images/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Portfolio
 </h1>
+<div align="center">
+  <a href="https://github.com/JasonReidd/Portfolio/stargazers">
+    <img src="https://img.shields.io/github/stars/JasonReidd/Portfolio" alt="Stars">
+  </a>
+  <a href="https://github.com/JasonReidd/Portfolio/issues">
+    <img src="https://img.shields.io/github/issues/JasonReidd/Portfolio" alt="Issues">
+  </a>
+  <a href="https://github.com/JasonReidd/Portfolio/network/members">
+    <img src="https://img.shields.io/github/forks/JasonReidd/Portfolio" alt="Forks">
+  </a>
+  </div>
+<br>
 
-## 🚀 Quick start
+1. **Setup.**
 
-1.  **Run.**
+    Create a new file in the root directory called
+    '<code>.env.development</code>'
+    with the required variables from 
+    '<code>.env.example</code>'.
 
-    Navigate into your new site’s directory and start it up.
+    <sub>
+    It may also be worthwhile creating an identical file called '<code>.env.production</code>'
+     for running 
+     '<code>yarn build</code>'
+     - creates a version of your site with production-ready optimizations.
+    </sub>
+    <hr/>
 
-    npm run develop
-    Your site is now running at http://localhost:8000!
-    Edit `src/pages/index.js` to see your site update in real-time!
+2.  **Run.**
 
-2.  **Learn more**
+    Start the project with:
+    '<code>npm run develop</code>'.
+    
+    The site will run at http://localhost:8000.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    View the GraphiQL at http://localhost:8000/___graphql .
+    <hr/>
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+3.  **Deploy.**
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    Changes to [Master](https://github.com/JasonReidd/Portfolio) will automatically be deployed to the following:
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Gatsby Cloud](https://jasonreidd.gtsb.io/)
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Netlify](https://jasonreidd.netlify.app/)
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+<br/>
 
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+<div align="center">
+  <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJasonReidd%2FPortfolio">
+    <img src="https://img.shields.io/twitter/url?label=Share%20via%20Twitter&logoColor=black&url=https%3A%2F%2Fgithub.com%2FJasonReidd%2FPortfolio" alt="Twitter">
+  </a>
+</div>
