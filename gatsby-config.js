@@ -33,13 +33,19 @@ module.exports = {
               icon: `src/images/icon.png`,
               icons: [
                 {
-                  src: `/favicons/android-chrome-192x192.png`,
-                  sizes: `192x192`,
+                  src: `/src/images/maskable_icon.png`,
+                  sizes: `512x512`,
+                  type: `image/png`,
+                  purpose: `any maskable`,
+                },
+                {
+                  src: `/src/images/favicons/android-chrome-192x192.png`,
+                  sizes: `512x512`,
                   type: `image/png`,
                 },
                 {
-                  src: `/favicons/android-chrome-512x512.png`,
-                  sizes: `512x512`,
+                  src: `/src/images/favicons/android-chrome-512x512.png`,
+                  sizes: `192x192`,
                   type: `image/png`,
                 },
               ],
