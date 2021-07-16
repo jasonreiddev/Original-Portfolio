@@ -30,13 +30,13 @@ Atom:     ctrl-shift-m
     Create a new file in the root directory called
     '<code>.env.development</code>'
     with the required variables from 
-    '<code>.env.example</code>', deployment enviroment variables are handeled on [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars).
+    '<code>.env.example</code>', you can get the values from the [enviroment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) on [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
 
     <sup>
     It may also be worthwhile creating an identical file called '<code>.env.production</code>'
      for running 
      '<code>yarn build</code>'
-     - creates a version of your site with production-ready optimizations.
+     - which creates a version of your site with production-ready optimizations.
     </sup>
 
     Install packages with
@@ -55,11 +55,11 @@ Atom:     ctrl-shift-m
 
 3.  **Deploy.**
 
-    Changes to [Master](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
+    Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
-    - [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [Builds](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys)
+    - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
 
-    - [Netlify](https://jasonreidd.netlify.app/) - [Overview](https://app.netlify.com/sites/jasonreidd/overview)
+    - Live: [Netlify](https://jasonreidd.netlify.app/) - [deploys](https://app.netlify.com/sites/jasonreidd/deploys) require manual publishing
     <hr/>
 
 2. **Configure.**
