@@ -1,9 +1,10 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
-  "private": true,
   "description": "Jason Reid's Development Portfolio.",
   "author": "Jason Reid",
+  "private": true,
+  "license": "UNLICENCED",
   "keywords": [
     "gatsby"
   ],
@@ -12,7 +13,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"
   },
   "dependencies": {
     "contentful": "^8.4.2",
@@ -32,6 +34,13 @@
     "typescript": "^4.3.4"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.5.0"
+    "@svgr/webpack": "^5.5.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0"
   }
 }

@@ -107,7 +107,7 @@ const IndexPage = () => {
       <header style={headerStyles}></header>
       <main style={mainStyles}>
       <h1 style={headingStyles}>
-        Jason Reid's
+        <span>Jason Reid&apos;s</span>
         <br />
         <span style={headingAccentStyles}>Development Portfolio</span>
       </h1>
