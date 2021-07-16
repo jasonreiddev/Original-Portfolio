@@ -1,17 +1,16 @@
-//https://coolors.co/a997df-303036-84a98c-ffd4ca-aa78a6
-
 import React, {useState} from 'react';
 import { createGlobalStyle } from "styled-components"
-import '../styles/global.css';
+
 import GatsbyLogo from '../images/svg/logo/Gatsby.svg';
 import ReactLogo from '../images/svg/logo/React.svg';
 import JQueryLogo from '../images/svg/logo/JQuery.svg';
 import NetConstructLogo from '../images/svg/logo/NetConstruct.svg';
 import BradfordCouncilLogo from '../images/svg/logo/BradfordCouncil.svg';
-import EstioLogo from '../images/svg/logo/Estio.svg';
+import EstioTrainingLogo from '../images/svg/logo/Estio.svg';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import '../styles/global.css';
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -23,8 +22,12 @@ const GlobalStyle = createGlobalStyle`
   --siteDarkAccent: #AA78A6;
   --sitePositiveAccent: #84A98C;
   --siteNegativeAccent: #B6465F;
-}
-`
+
+  --orgBradfordCouncil: #293d82;
+  --orgEstioTraining: #e54700;
+  --orgNetConstruct: #3bb599;
+}`
+
 const pageStyles = {
   height: '100%',
   display: 'flex',
@@ -33,21 +36,26 @@ const pageStyles = {
   color: "var(--siteWhite)",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
+
 const headerStyles = {
   height: '75px'
 }
+
 const mainStyles = {
   padding: 32,
   flexGrow: 1
 }
+
 const footerStyles = {
   height: '25px'
 }
+
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
   maxWidth: 320,
 }
+
 const headingAccentStyles = {
   color: "var(--siteMediumAccent)",
 }
@@ -72,29 +80,20 @@ const baseHighlightStyles = {
 }
 
 const defaultHighlightStyles = {
-  'backgroundImage': 'linear-gradient(to right, transparent  50%, #293d82 50%)',
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--siteDarkAccent) 50%)',
 }
 
-//BradfordCouncil
 const bradfordCouncilHighlightStyles = {
-  'backgroundImage': 'linear-gradient(to right, transparent  50%, #293d82 50%)',
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--orgBradfordCouncil) 50%)',
 }
 
-//Estio Training
 const estioTrainingHighlightStyles = {
-  'backgroundImage': 'linear-gradient(to right, transparent  50%, #e54700 50%)',
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--orgEstioTraining) 50%)',
 }
 
-// Net Construct
 const netConstructHighlightStyles = {
-  'backgroundImage': 'linear-gradient(to right, transparent  50%, #3bb599 50%)',
-  hover: {
-    'color':'#ffffff'
-  }
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--orgNetConstruct) 50%)',
 }
-
-// markup
-const renderLoader = () => <p>Loading</p>;
 
 const IndexPage = () => {
   return (
@@ -102,48 +101,39 @@ const IndexPage = () => {
       <GlobalStyle/>
     <Layout>
     <SEO title="Home" />
-    ...
     <a href="/blog/">Visit the Blog Page</a>
   </Layout>
     <div style={pageStyles}>
       <header style={headerStyles}></header>
       <main style={mainStyles}>
       <h1 style={headingStyles}>
-        Jason Reid's
+        <span>Jason Reid&apos;s</span>
         <br />
         <span style={headingAccentStyles}>Development Portfolio</span>
       </h1>
-      <h2>
-        <img style={logoStyles} src={NetConstructLogo} alt="NetConstruct Logo" width="auto" height="30px"/>
-        {Hover("Net Construct", netConstructHighlightStyles)}          
-        <span style={headingAccentStyles}> - 2021</span> 
-      </h2>    
-      <h2>
-        <img style={logoStyles} src={BradfordCouncilLogo} alt="React Logo" width="auto" height="30px"/>
-        {Hover("Bradford Council", bradfordCouncilHighlightStyles)}  
-        <span style={headingAccentStyles}> - 2019</span> 
-      </h2> 
-      <h2> 
-        <img style={logoStyles} src={EstioLogo} alt="Estio Logo" width="auto" height="30px"/>
-        {Hover("Estio Training", estioTrainingHighlightStyles)}  
-        <span style={headingAccentStyles}> - 2019</span> 
-      </h2>
-      <h2>
-        <span style={breakLineStyles}>
-          {Hover("Personal Projects", defaultHighlightStyles)}  
-          <span style={headingAccentStyles}> - 2018 to {(new Date().getFullYear())}</span> 
-        </span>
-      </h2>
-      
+      {Organisation(null,"Personal Projects", defaultHighlightStyles, "2018 to "+(new Date().getFullYear()))}
+      <span style={breakLineStyles}/>
+      {Organisation(NetConstructLogo,"Net Construct", netConstructHighlightStyles, "2021")}
+      {Organisation(BradfordCouncilLogo,"Bradford Council", bradfordCouncilHighlightStyles, "2019")}
+      {Organisation(EstioTrainingLogo,"Estio Training", estioTrainingHighlightStyles, "2019")}
       <h3>This site was built using:</h3>
       <img title="Gatsby" style={logoStyles} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="20px"/>
       <img title="React" style={logoStyles} src={ReactLogo} alt="React Logo" width="auto" height="20px"/>
-      <img title="JQuery" style={logoStyles} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
-      
+      <img title="JQuery" style={logoStyles} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/> 
       </main>
       <footer section style={footerStyles}></footer>
     </div>
     </React.Fragment>
+  )
+}
+
+function Organisation(logo, name, styles, date){
+  return(
+  <h2>
+    {logo && <img style={logoStyles} src={logo} alt={name} width="auto" height="30px"/>}
+    {Hover(name, styles)}  
+    <span style={headingAccentStyles}> - {date}</span> 
+  </h2> 
   )
 }
 
@@ -167,6 +157,5 @@ function Hover(content, style){
       {content}</span>    
   )
 }
-
 
 export default IndexPage

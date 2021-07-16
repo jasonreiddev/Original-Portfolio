@@ -4,3 +4,5 @@ public
 .env.development
 .env.production
 notes
+yarn-error.log
+yarn.lock
