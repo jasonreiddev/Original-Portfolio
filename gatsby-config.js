@@ -22,6 +22,16 @@ module.exports = {
           },
         },
         {
+          resolve:`gatsby-source-cloudinary`,
+          options: {
+            cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+            apiKey: process.env.CLOUDINARY_API_KEY,
+            apiSecret: process.env.CLOUDINARY_API_SECRET,
+            resourceType: `image`,
+            prefix: `portfolio/`
+          }
+        },
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
               name: `Jason Reid's Development Portfolio.`,

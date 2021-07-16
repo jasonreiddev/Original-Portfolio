@@ -30,19 +30,22 @@ Atom:     ctrl-shift-m
     Create a new file in the root directory called
     '<code>.env.development</code>'
     with the required variables from 
-    '<code>.env.example</code>'.
+    '<code>.env.example</code>', deployment enviroment variables are handeled on [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars).
 
-    <sub>
+    <sup>
     It may also be worthwhile creating an identical file called '<code>.env.production</code>'
      for running 
      '<code>yarn build</code>'
      - creates a version of your site with production-ready optimizations.
-    </sub>
+    </sup>
+
+    Install packages with
+    '<code>npm i</code>'.
     <hr/>
 
 2.  **Run.**
 
-    Start the project with:
+    Start the project with
     '<code>npm run develop</code>'.
     
     The site will run at http://localhost:8000.
@@ -52,12 +55,20 @@ Atom:     ctrl-shift-m
 
 3.  **Deploy.**
 
-    Changes to [Master](https://github.com/JasonReidd/Portfolio) will automatically be deployed to the following:
+    Changes to [Master](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
-    - [Gatsby Cloud](https://jasonreidd.gtsb.io/)
+    - [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [Builds](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys)
 
-    - [Netlify](https://jasonreidd.netlify.app/)
+    - [Netlify](https://jasonreidd.netlify.app/) - [Overview](https://app.netlify.com/sites/jasonreidd/overview)
+    <hr/>
 
+2. **Configure.**
+
+    Add packages with '<code>npm install --save</code>' followed by the package name.
+
+    Add media via [Cloudinary](https://cloudinary.com/)
+    
+    Add content via [Contentful](https://app.contentful.com/spaces/0dlrb1xtuolg/entries)
 <br/>
 
 <div align="center">
