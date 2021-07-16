@@ -1,6 +1,7 @@
 import React from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
-
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Images = () => {
     const data = useStaticQuery(graphql`
@@ -18,7 +19,9 @@ const Images = () => {
     const clImages = data.allCloudinaryMedia.edges;
 
     return (
-        <div>
+      <Layout>
+      <SEO title="Logo" />
+      <div>
           <div>
             {clImages.map((image, index) => (
                   <div key={`${index}-cl`}>
@@ -28,6 +31,8 @@ const Images = () => {
             }
           </div>
         </div>
+    </Layout>
+        
       )
   };
 

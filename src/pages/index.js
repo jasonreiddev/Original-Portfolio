@@ -101,7 +101,6 @@ const IndexPage = () => {
       <GlobalStyle/>
     <Layout>
     <SEO title="Home" />
-    <a href="/blog/">Visit the Blog Page</a>
   </Layout>
     <div style={pageStyles}>
       <header style={headerStyles}></header>
