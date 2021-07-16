@@ -52,11 +52,11 @@ Atom:     ctrl-shift-m
 
 3.  **Deploy.**
 
-    Changes to [Master](https://github.com/JasonReidd/Portfolio) will automatically be deployed to the following:
+    Changes to [Master](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
-    - [Gatsby Cloud](https://jasonreidd.gtsb.io/)
+    - [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [Builds](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys)
 
-    - [Netlify](https://jasonreidd.netlify.app/)
+    - [Netlify](https://jasonreidd.netlify.app/) - [Overview](https://app.netlify.com/sites/jasonreidd/overview)
 
 <br/>
 
