@@ -57,7 +57,7 @@ module.exports = {
               short_name: `JR Portfolio`,
               start_url: `/`,
               background_color: `#FFF`,
-              theme_color: `#FAE042`,
+              theme_color: `#1B1B1D`,
               display: `standalone`,
               icon: `src/images/icon.png`,
               icons: [

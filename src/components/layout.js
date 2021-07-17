@@ -26,6 +26,8 @@ const pageStyles = {
   flexDirection: "column",
   color: "var(--siteWhite)",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  overflow: "hidden",
+  maxWidth: "100VW",
 }
 
 const mainStyles = {
