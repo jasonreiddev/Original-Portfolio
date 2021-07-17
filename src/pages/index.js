@@ -8,7 +8,6 @@ import BradfordCouncilLogo from '../images/svg/logo/BradfordCouncil.svg';
 import EstioTrainingLogo from '../images/svg/logo/Estio.svg';
 
 import Layout from "../components/layout"
-import '../styles/global.css';
 
 const breakLineStyles = {
   'borderTop' : '1px solid var(--siteLightAccent)',

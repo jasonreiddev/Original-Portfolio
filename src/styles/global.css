@@ -11,8 +11,14 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 body {
     margin: 0px;
+    background: var(--siteBlack);
 }
 
 div[role="group"][tabindex] {
     height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--siteMediumAccent);
 }
