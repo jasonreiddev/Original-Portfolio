@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components"
 import Header from "../components/header"
 import { StaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
+import '../styles/global.css';
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -18,13 +19,6 @@ const GlobalStyle = createGlobalStyle`
   --orgBradfordCouncil: #293d82;
   --orgEstioTraining: #e54700;
   --orgNetConstruct: #3bb599;
-
-  background-color: var(--siteBlack);
-}
-
-a {
-  text-decoration: none;
-  color: var(--siteMediumAccent);
 }`
 
 const pageStyles = {

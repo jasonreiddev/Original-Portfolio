@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const ColorBoxContainerStyles = {
     display: "flex",
     flexFlow: "row wrap",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
 }
 const ColorBoxTextContainerStyles = {
   background: "white",

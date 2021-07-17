@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 export const query = graphql`
   query($slug: String!) {
@@ -14,6 +15,9 @@ export const query = graphql`
           ...GatsbyContentfulFluid
         }
       }
+      body {
+        raw
+      }
     }
   }
 `
@@ -24,10 +28,6 @@ const BlogPost = props => {
       <Link to="/blog/">Visit the Blog Page</Link>
       <div className="content">
         <h1>{props.data.contentfulBlogPost.title}</h1>
-        <span className="meta">
-          Posted on {props.data.contentfulBlogPost.publishedDate}
-        </span>
-
         {props.data.contentfulBlogPost.featuredImage && (
           <GatsbyImage
             className="featured"
@@ -35,6 +35,11 @@ const BlogPost = props => {
             alt={props.data.contentfulBlogPost.title}
           />
         )}
+        {renderRichText(props.data.contentfulBlogPost.body)}
+        <hr/>
+        <span className="meta">
+          Posted on {props.data.contentfulBlogPost.publishedDate}
+        </span>
       </div>
     </Layout>
   )
