@@ -21,4 +21,6 @@ div[role="group"][tabindex] {
 a {
     text-decoration: none;
     color: var(--siteMediumAccent);
+    font-size: 14pt;
+    font-weight: bold;
 }
