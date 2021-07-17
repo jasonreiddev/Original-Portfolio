@@ -7,12 +7,12 @@ import '../styles/global.css';
 
 const GlobalStyle = createGlobalStyle`
 :root {
-  --siteBlack: #303036;
+  --siteBlack: #1B1B1D;
   --siteWhite: #EEE6F0;
   --siteLightWhite: #FFFFFF;
   --siteLightAccent: #FFD4CA;
   --siteMediumAccent: #A997DF;
-  --siteDarkAccent: #AA78A6;
+  --siteDarkAccent: #8B548C;
   --sitePositiveAccent: #84A98C;
   --siteNegativeAccent: #B6465F;
 
