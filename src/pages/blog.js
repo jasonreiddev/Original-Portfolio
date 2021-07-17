@@ -3,7 +3,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 const Blog = () => {
   const data = useStaticQuery(
@@ -33,8 +32,7 @@ const Blog = () => {
     `
   )
   return (
-    <Layout>
-      <SEO title="Blog" />
+    <Layout title="Blog">
       <ul className="posts">
         {data.allContentfulBlogPost.edges.map(edge => {
           return (

@@ -1,16 +1,78 @@
 import React from "react"
-export default function Layout({ children }) {
-  return (
-    <>
-    <header>
-        <a href="/">Portfolio</a>&nbsp;&nbsp;&nbsp;
-        <a href="/blog">Visit the Blog Page</a>&nbsp;&nbsp;&nbsp;
-        <a href="/logo">Look at my Logo</a>
-    </header>
-    <div style={{ margin: `0 auto`, maxWidth: 650, padding: `0 1rem` }}>
-      {children}
-    </div>
+import { createGlobalStyle } from "styled-components"
+import Header from "../components/header"
+import { StaticQuery, graphql } from "gatsby"
+import SEO from "../components/seo"
 
-    </>
-  )
+const GlobalStyle = createGlobalStyle`
+:root {
+  --siteBlack: #303036;
+  --siteWhite: #EEE6F0;
+  --siteLightWhite: #FFFFFF;
+  --siteLightAccent: #FFD4CA;
+  --siteMediumAccent: #A997DF;
+  --siteDarkAccent: #AA78A6;
+  --sitePositiveAccent: #84A98C;
+  --siteNegativeAccent: #B6465F;
+
+  --orgBradfordCouncil: #293d82;
+  --orgEstioTraining: #e54700;
+  --orgNetConstruct: #3bb599;
+
+  background-color: var(--siteBlack);
 }
+
+a {
+  text-decoration: none;
+  color: var(--siteMediumAccent);
+}`
+
+const pageStyles = {
+  display: 'flex',
+  flexDirection: "column",
+  color: "var(--siteWhite)",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+}
+
+const mainStyles = {
+  padding: 32,
+  flexGrow: 1
+}
+
+const footerStyles = {
+  height: '25px'
+}
+
+const Layout = ({ children, title, subTitle }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            menuLinks {
+              name
+              nameOverrideNav
+              link
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <React.Fragment>
+        <GlobalStyle/>
+        <SEO title={title} subTitle={subTitle}/>
+        <div style={pageStyles}>     
+        <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
+          <main style={mainStyles}>
+          {children}
+        </main>
+        <footer section style={footerStyles}></footer>
+      </div>
+      </React.Fragment>
+    )}
+  />
+)
+
+export default Layout
