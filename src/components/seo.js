@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-const SEO = ({ title, description, image, article }) => {
+const SEO = ({ title, subTitle, description, image, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
   const {
@@ -21,7 +21,10 @@ const SEO = ({ title, description, image, article }) => {
     url: `${siteUrl}${pathname}`,
   }
   return (
-      <Helmet title={seo.title} titleTemplate={title ? title +" | "+ titleTemplate: titleTemplate}>
+      <Helmet title={seo.title} titleTemplate={
+        (title ? title +" | "+ titleTemplate: titleTemplate) +
+        (subTitle ? " - "+subTitle : "")
+      }>
       <html lang="en" />
       <meta name="robots" content="index"/>
       <meta name="description" content={seo.description} />

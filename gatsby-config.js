@@ -11,6 +11,25 @@ module.exports = {
     url: "https://jasonreidd.gatsbyjs.io", // No trailing slash allowed!
     image: "/images/BradfordCouncilLogo.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@JasonReidd",
+    menuLinks:[
+    {
+        name:'',
+        nameOverrideNav: 'Home',
+        link:'/',
+    },
+    {
+       name:'Logo',
+       link:'/logo',
+    },
+    {
+       name:'Blog',
+       link:'/blog'
+    },
+    {
+      name:'Theme',
+      link:'/theme'
+   },
+  ]
   },
   plugins: [
       `gatsby-transformer-remark`,
