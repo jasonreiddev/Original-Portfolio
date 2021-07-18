@@ -1,12 +1,12 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React from 'react';
+import {useStaticQuery, graphql, Link} from 'gatsby';
 
-import { GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
+import {GatsbyImage} from 'gatsby-plugin-image';
+import Layout from '../components/layout';
 
 const Blog = () => {
   const data = useStaticQuery(
-    graphql`
+      graphql`
       query {
         allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
           edges {
@@ -29,12 +29,12 @@ const Blog = () => {
           }
         }
       }
-    `
-  )
+    `,
+  );
   return (
     <Layout title="Blog">
       <ul className="posts">
-        {data.allContentfulBlogPost.edges.map(edge => {
+        {data.allContentfulBlogPost.edges.map((edge) => {
           return (
             <li className="post" key={edge.node.id}>
               <h2>
@@ -57,11 +57,11 @@ const Blog = () => {
                 <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
               </div>
             </li>
-          )
+          );
         })}
       </ul>
     </Layout>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;
