@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 import PropTypes from 'prop-types';
 
 const Header = ({menuLinks, title}) => (
-  <header style={{background: 'var(--siteDarkAccent)'}}>
+  <header style={{background: 'var(--sitePrimaryAccent)'}}>
     <div
       style={{
         padding: '1rem 2rem',
@@ -14,14 +14,14 @@ const Header = ({menuLinks, title}) => (
         <Link
           to="/"
           style={{
-            color: 'white',
+            color: 'var(--siteBoldSecondary)',
             textDecoration: 'none',
           }}
         >
-          <h1 style={{color: 'var(--siteWhite)', margin: '0'}}>
+          <h1 style={{color: 'var(--siteSecondary)', margin: '0'}}>
             <span>Jason Reid&apos;s</span>
             <br />
-            <span style={{color: 'var(--siteBlack)'}}>Development Portfolio</span>
+            <span style={{color: 'var(--siteMain)'}}>Development Portfolio</span>
           </h1>
         </Link>
       </h1>
@@ -41,7 +41,9 @@ const Header = ({menuLinks, title}) => (
                   padding: `1rem`,
                 }}
               >
-                <Link style={{color: link.name == title ? `white` : `black`}} to={link.link}>
+                <Link
+                  style={{color: link.name == title ? `var(--siteBoldSecondary)` : `var(--siteMain)`}}
+                  to={link.link}>
                   {
                     (link.nameOverrideNav ? link.nameOverrideNav: link.name)
                   }

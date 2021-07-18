@@ -1,18 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {createGlobalStyle} from 'styled-components';
 import Header from '../components/header';
 import {StaticQuery, graphql} from 'gatsby';
 import SEO from '../components/seo';
+import {Helmet} from 'react-helmet';
+import ThemeContext from '../context/ThemeContext';
 import '../styles/global.css';
 
 const GlobalStyle = createGlobalStyle`
-:root {
-  --siteBlack: #1B1B1D;
-  --siteWhite: #EEE6F0;
-  --siteLightWhite: #FFFFFF;
-  --siteLightAccent: #FFD4CA;
-  --siteMediumAccent: #A997DF;
-  --siteDarkAccent: #8B548C;
+.theme-dark {
+  --siteMain: #1B1B1D;
+  --siteSecondary: #EEE6F0;
+  --siteBoldSecondary: #FFFFFF;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #A997DF;
+  --siteTertiaryAccent: #FFD4CA;
+}
+.theme-light{
+  --siteMain: #EEE6F0;
+  --siteSecondary: #1B1B1D;
+  --siteBoldSecondary: #000000;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #5749a5;
+  --siteTertiaryAccent: #A997DF;
+}
+.theme-dark,
+.theme-light
+ {
   --sitePositiveAccent: #84A98C;
   --siteNegativeAccent: #B6465F;
 
@@ -24,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 const pageStyles = {
   display: 'flex',
   flexDirection: 'column',
-  color: 'var(--siteWhite)',
+  color: 'var(--siteSecondary)',
   fontFamily: '-apple-system, Roboto, sans-serif, serif',
   overflow: 'hidden',
   maxWidth: '100VW',
@@ -39,9 +53,12 @@ const footerStyles = {
   height: '25px',
 };
 
-const Layout = ({children, title, subTitle}) => (
-  <StaticQuery
-    query={graphql`
+const Layout = ({children, title, subTitle}) => {
+  const [theme, setTheme] = useState('theme-dark');
+  const value = {theme, setTheme};
+  return (
+    <StaticQuery
+      query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -55,20 +72,26 @@ const Layout = ({children, title, subTitle}) => (
         }
       }
     `}
-    render={(data) => (
-      <React.Fragment>
-        <GlobalStyle/>
-        <SEO title={title} subTitle={subTitle}/>
-        <div style={pageStyles}>
-          <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
-          <main style={mainStyles}>
-            {children}
-          </main>
-          <footer section style={footerStyles}></footer>
-        </div>
-      </React.Fragment>
-    )}
-  />
-);
+      render={(data) => (
+        <React.Fragment>
+          <ThemeContext.Provider value={value}>
+            <Helmet>
+              <body className={theme} />
+            </Helmet>
+            <GlobalStyle/>
+            <SEO title={title} subTitle={subTitle}/>
+            <div style={pageStyles} >
+              <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
+              <main style={mainStyles}>
+                {children}
+              </main>
+              <footer section style={footerStyles}></footer>
+            </div>
+          </ThemeContext.Provider>
+        </React.Fragment>
+      )}
+    />
+  );
+};
 
 export default Layout;

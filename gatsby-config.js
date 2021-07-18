@@ -32,7 +32,6 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -56,7 +55,7 @@ module.exports = {
         name: `Jason Reid's Development Portfolio.`,
         short_name: `JR Portfolio`,
         start_url: `/`,
-        background_color: `#FFF`,
+        background_color: `#1B1B1D`,
         theme_color: `#1B1B1D`,
         display: `standalone`,
         icon: `src/images/icon.png`,
@@ -80,7 +79,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-prettier-eslint',
       options: {
@@ -103,6 +101,8 @@ module.exports = {
         },
       },
     },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-offline`,
   ],
 };
 

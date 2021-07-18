@@ -10,7 +10,7 @@ import EstioTrainingLogo from '../images/svg/logo/Estio.svg';
 import Layout from '../components/layout';
 
 const breakLineStyles = {
-  'borderTop': '1px solid var(--siteLightAccent)',
+  'borderTop': '1px solid var(--siteTertiaryAccent)',
   'paddingTop': '21px',
   'display': 'inline-block',
 };
@@ -29,7 +29,7 @@ const baseHighlightStyles = {
 };
 
 const defaultHighlightStyles = {
-  'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--siteDarkAccent) 50%)',
+  'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--sitePrimaryAccent) 50%)',
 };
 
 const bradfordCouncilHighlightStyles = {
