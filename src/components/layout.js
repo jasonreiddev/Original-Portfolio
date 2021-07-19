@@ -74,7 +74,6 @@ const Layout = ({children, title, subTitle}) => {
         <ThemeContext.Consumer>
           {(theme) => (
             <React.Fragment>
-              {console.log(theme)}
               <Helmet>
                 <body className={theme.dark ? 'theme-dark': 'theme-light'} />*
               </Helmet>

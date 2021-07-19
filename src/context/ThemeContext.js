@@ -22,9 +22,10 @@ class ThemeProvider extends React.Component {
   componentDidMount() {
     // Getting dark mode value from localStorage!
     const lsDark = JSON.parse(localStorage.getItem('dark'));
+    console.log(lsDark);
     if (lsDark) {
       this.setState({dark: lsDark});
-    } else if (supportsDarkMode()) {
+    } else if (supportsDarkMode() && lsDark == undefined) {
       this.setState({dark: true});
     }
   }
