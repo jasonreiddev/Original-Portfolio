@@ -11,7 +11,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 body {
     margin: 0px;
-    background: var(--siteBlack);
+    background: var(--siteMain);
 }
 
 div[role="group"][tabindex] {
@@ -20,7 +20,25 @@ div[role="group"][tabindex] {
 
 a {
     text-decoration: none;
-    color: var(--siteMediumAccent);
+    color: var(--siteSecondaryAccent);
     font-size: 14pt;
     font-weight: bold;
 }
+
+html *{
+    max-width: 100%;
+}
+
+/*Scrollbar*/
+body::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--siteSecondary);
+    outline: 1px solid var(--siteBoldSecondary);
+  }

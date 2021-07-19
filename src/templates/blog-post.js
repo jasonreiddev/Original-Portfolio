@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import React from 'react';
+import {graphql, Link} from 'gatsby';
 
-import Layout from "../components/layout"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
+import Layout from '../components/layout';
+import {GatsbyImage} from 'gatsby-plugin-image';
+import {renderRichText} from 'gatsby-source-contentful/rich-text';
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,9 +20,9 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-const BlogPost = props => {
+const BlogPost = (props) => {
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title}>
       <Link to="/blog/">Visit the Blog Page</Link>
@@ -42,7 +42,7 @@ const BlogPost = props => {
         </span>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;

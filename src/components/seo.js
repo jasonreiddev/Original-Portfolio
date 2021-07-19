@@ -1,11 +1,11 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
-const SEO = ({ title, subTitle, description, image, article }) => {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Helmet} from 'react-helmet';
+import {useLocation} from '@reach/router';
+import {useStaticQuery, graphql} from 'gatsby';
+const SEO = ({title, subTitle, description, image, article}) => {
+  const {pathname} = useLocation();
+  const {site} = useStaticQuery(query);
   const {
     defaultTitle,
     titleTemplate,
@@ -13,18 +13,18 @@ const SEO = ({ title, subTitle, description, image, article }) => {
     siteUrl,
     defaultImage,
     twitterUsername,
-  } = site.siteMetadata
+  } = site.siteMetadata;
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
-  }
+  };
   return (
-      <Helmet title={seo.title} titleTemplate={
-        (title ? title +" | "+ titleTemplate: titleTemplate) +
-        (subTitle ? " - "+subTitle : "")
-      }>
+    <Helmet title={seo.title} titleTemplate={
+      (title ? title +' | '+ titleTemplate: titleTemplate) +
+        (subTitle ? ' - '+subTitle : '')
+    }>
       <html lang="en" />
       <meta name="robots" content="index"/>
       <meta name="description" content={seo.description} />
@@ -46,21 +46,21 @@ const SEO = ({ title, subTitle, description, image, article }) => {
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
-  )
-}
-export default SEO
+  );
+};
+export default SEO;
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
   article: PropTypes.bool,
-}
+};
 SEO.defaultProps = {
-  title: "JR Portfolio",
-  description: "Jason Reid's Development Portfolio.",
+  title: 'JR Portfolio',
+  description: 'Jason Reid\'s Development Portfolio.',
   image: null,
   article: false,
-}
+};
 const query = graphql`
   query SEO {
     site {
@@ -74,4 +74,4 @@ const query = graphql`
       }
     }
   }
-`
+`;
