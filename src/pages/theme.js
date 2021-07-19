@@ -8,7 +8,7 @@ const ColorBoxContainerStyles = {
   justifyContent: 'space-evenly',
 };
 const ColorBoxTextContainerStyles = {
-  'background': 'var(--siteSecondary)',
+  'background': 'var(--siteMain)',
 };
 const ThemeSwitchContainerStyles = {
   display: 'flex',
@@ -16,6 +16,7 @@ const ThemeSwitchContainerStyles = {
   justifyContent: 'space-evenly',
 };
 const ThemeSwitchButtonStyles = {
+  cursor: 'pointer',
   background: 'var(--sitePrimaryAccent)',
   height: '50px',
   width: 'calc(2em + 300px)',
@@ -43,7 +44,10 @@ const Images = () => {
         <ThemeContext.Consumer>
           {(theme) => (
             <button style={ThemeSwitchButtonStyles} onClick={theme.toggleDark}>
-              {theme.dark ? <span>Turn on the lights ☀</span> : <span>Turn out the lights ☾</span>}
+              {theme.dark ? <span>Turn on the lights </span> : <span>Turn out the lights </span>}
+              <span style={{color: 'var(--siteMain)'}}>
+                {theme.dark ? <span>☾</span> : <span>☀</span>}
+              </span>
             </button>
           )}
         </ThemeContext.Consumer>

@@ -42,7 +42,7 @@ const Header = ({menuLinks, title}) => (
                 }}
               >
                 <Link
-                  style={{color: link.name == title ? `var(--siteBoldSecondary)` : `var(--siteMain)`}}
+                  style={{color: link.name == title ? `var(--siteMain)` : `var(--siteSecondary)`}}
                   to={link.link}>
                   {
                     (link.nameOverrideNav ? link.nameOverrideNav: link.name)
