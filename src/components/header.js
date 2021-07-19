@@ -14,7 +14,7 @@ const Header = ({menuLinks, title}) => (
         <Link
           to="/"
           style={{
-            color: 'var(--siteBoldSecondary)',
+            color: 'var(--siteSecondary)',
             textDecoration: 'none',
           }}
         >

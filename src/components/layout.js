@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {createGlobalStyle} from 'styled-components';
 import Header from '../components/header';
 import {StaticQuery, graphql} from 'gatsby';
 import SEO from '../components/seo';
 import {Helmet} from 'react-helmet';
-import ThemeContext from '../context/ThemeContext';
 import '../styles/global.css';
+import ThemeContext from '../context/ThemeContext';
 
 const GlobalStyle = createGlobalStyle`
 .theme-dark {
@@ -54,8 +54,6 @@ const footerStyles = {
 };
 
 const Layout = ({children, title, subTitle}) => {
-  const [theme, setTheme] = useState('theme-dark');
-  const value = {theme, setTheme};
   return (
     <StaticQuery
       query={graphql`
@@ -73,25 +71,27 @@ const Layout = ({children, title, subTitle}) => {
       }
     `}
       render={(data) => (
-        <React.Fragment>
-          <ThemeContext.Provider value={value}>
-            <Helmet>
-              <body className={theme} />
-            </Helmet>
-            <GlobalStyle/>
-            <SEO title={title} subTitle={subTitle}/>
-            <div style={pageStyles} >
-              <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
-              <main style={mainStyles}>
-                {children}
-              </main>
-              <footer section style={footerStyles}></footer>
-            </div>
-          </ThemeContext.Provider>
-        </React.Fragment>
-      )}
-    />
-  );
+        <ThemeContext.Consumer>
+          {(theme) => (
+            <React.Fragment>
+              {console.log(theme)}
+              <Helmet>
+                <body className={theme.dark ? 'theme-dark': 'theme-light'} />*
+              </Helmet>
+              <GlobalStyle/>
+              <SEO title={title} subTitle={subTitle}/>
+              <div style={pageStyles} >
+                <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
+                <main style={mainStyles}>
+                  {children}
+                </main>
+                <footer section style={footerStyles}></footer>
+              </div>
+            </React.Fragment>)}
+        </ThemeContext.Consumer>)}>
+
+    </StaticQuery>);
 };
+
 
 export default Layout;
