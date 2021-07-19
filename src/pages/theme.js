@@ -18,8 +18,8 @@ const ThemeSwitchContainerStyles = {
 const ThemeSwitchButtonStyles = {
   cursor: 'pointer',
   background: 'var(--sitePrimaryAccent)',
-  height: '50px',
-  width: 'calc(2em + 300px)',
+  height: '3rem',
+  width: 'calc(2em + 18.75rem)',
   border: '1px solid var(--siteBoldSecondary)',
   color: '1px solid var(--siteSecondary)',
   margin: '0.5em',
@@ -61,8 +61,8 @@ function colorBox(color) {
     <>
       <div style={{
         'backgroundColor': 'var(--siteSecondary)',
-        'height': '150px',
-        'width': '150px',
+        'height': '9rem',
+        'width': '9rem',
         'border': '1px solid ',
         'margin': '0.5em',
       }}>
@@ -71,7 +71,7 @@ function colorBox(color) {
         </div>
         <div style={{
           'backgroundColor': 'var(--site'+color.replace(/\s/g, '')+')',
-          'height': 'calc(100% - 18px)'}}>
+          'height': 'calc(100% - 1.2rem)'}}>
         </div>
       </div>
     </>

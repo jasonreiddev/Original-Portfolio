@@ -50,7 +50,7 @@ const mainStyles = {
 };
 
 const footerStyles = {
-  height: '25px',
+  height: '1.5rem',
 };
 
 const Layout = ({children, title, subTitle}) => {
