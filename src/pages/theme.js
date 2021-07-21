@@ -46,21 +46,19 @@ const Images = () => {
             <>
               <button style={ThemeSwitchButtonStyles}
                 onClick={theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}>
-                {theme.theme == 'dark' ? <span>Turn on the lights </span> :
-                theme.theme == 'light' ? <span>Turn out the lights </span> :
-                <span style={{color: 'var(--siteSecondary)'}}>Turn off custom theme </span>
+                {theme.theme == 'dark' ?
+                <><span>Turn on the lights </span><span style={{color: 'var(--siteMain)'}}>☾</span></> :
+                theme.theme == 'light' ?
+                <><span>Turn off the lights </span><span style={{color: 'var(--siteMain)'}}>☀</span></>:
+                <><span>Turn off custom theme </span>✧</>
                 }
-                <span style={{color: 'var(--siteMain)'}}>
-                  {theme.theme == 'dark' ? <span>☾</span> :
-                  theme.theme == 'light' ? <span>☀</span> :
-                  <span>✧</span>}
-                </span>
               </button>
-              <button style={ThemeSwitchButtonStyles} onClick={theme.useCustom}>
-                <span style={{color: theme.theme == 'custom' ? 'var(--siteMain)' : 'var(--siteSecondary)'}}>
-                  <span>Use custom theme ✧</span>
-                  {theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}
-                </span>
+              <button style={ThemeSwitchButtonStyles}
+                onClick={theme.useCustom}>
+                {theme.theme == 'custom' ?
+                <span style={{color: 'var(--siteMain)'}}>Using custom theme ✧ </span>:
+                <span>Use custom theme ✧</span>
+                }
               </button>
             </>
           )}
