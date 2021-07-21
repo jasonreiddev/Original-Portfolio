@@ -53,7 +53,7 @@ const Header = ({menuLinks, title}) => (
             ))}
             <li style={{
               listStyleType: `none`,
-              padding: `0.75rem`,
+              padding: `1rem`,
             }}>
               <ThemeContext.Consumer>
                 {(theme) => (
