@@ -11,13 +11,14 @@ import Layout from '../components/layout';
 
 const breakLineStyles = {
   'borderTop': '1px solid var(--siteTertiaryAccent)',
-  'paddingTop': '21px',
+  'paddingTop': '1.3rem',
   'display': 'inline-block',
 };
 
 const logoStyles = {
-  padding: '0 10px 0 0',
-  transform: 'translateY(6px)',
+  padding: '0 0.5rem 0 0',
+  transform: 'translateY(0.3rem)',
+  height: '1.8rem',
 };
 
 const baseHighlightStyles = {
@@ -54,9 +55,9 @@ const IndexPage = () => {
         {organisation(BradfordCouncilLogo, 'Bradford Council', bradfordCouncilHighlightStyles, '2019')}
         {organisation(EstioTrainingLogo, 'Estio Training', estioTrainingHighlightStyles, '2019')}
         <h3>This site was built using:</h3>
-        <img title="Gatsby" style={logoStyles} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="20px"/>
-        <img title="React" style={logoStyles} src={ReactLogo} alt="React Logo" width="auto" height="20px"/>
-        <img title="JQuery" style={logoStyles} src={JQueryLogo} alt="Jquery Logo" width="auto" height="20px"/>
+        <img title="Gatsby" style={logoStyles} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="1.25rem"/>
+        <img title="React" style={logoStyles} src={ReactLogo} alt="React Logo" width="auto" height="1.25rem"/>
+        <img title="JQuery" style={logoStyles} src={JQueryLogo} alt="Jquery Logo" width="auto" height="1.25rem"/>
       </Layout>
     </>
   );
@@ -65,7 +66,7 @@ const IndexPage = () => {
 function organisation(logo, name, styles, date) {
   return (
     <h2>
-      {logo && <img style={logoStyles} src={logo} alt={name} width="auto" height="30px"/>}
+      {logo && <img style={logoStyles} src={logo} alt={name} width="auto" height="auto"/>}
       {hover(name, styles)}
       <span> - {date}</span>
     </h2>

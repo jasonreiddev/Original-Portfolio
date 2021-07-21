@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import PropTypes from 'prop-types';
+import ThemeContext from '../context/ThemeContext';
 
 const Header = ({menuLinks, title}) => (
   <header style={{background: 'var(--sitePrimaryAccent)'}}>
@@ -50,6 +51,23 @@ const Header = ({menuLinks, title}) => (
                 </Link>
               </li>
             ))}
+            <li style={{
+              listStyleType: `none`,
+              padding: `1rem`,
+            }}>
+              <ThemeContext.Consumer>
+                {(theme) => (
+                  <a style={{color: 'var(--siteMain)', cursor: 'pointer'}}
+                    onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
+                    {
+                      theme.theme == 'dark' ? <span>☾</span> :
+                      theme.theme == 'light' ? <span>☀</span> :
+                      <span>✧</span>
+                    }
+                  </a>
+                )}
+              </ThemeContext.Consumer>
+            </li>
           </ul>
         </nav>
       </div>

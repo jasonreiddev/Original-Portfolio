@@ -18,8 +18,8 @@ const ThemeSwitchContainerStyles = {
 const ThemeSwitchButtonStyles = {
   cursor: 'pointer',
   background: 'var(--sitePrimaryAccent)',
-  height: '50px',
-  width: 'calc(2em + 300px)',
+  height: '3rem',
+  width: 'calc(2em + 18.75rem)',
   border: '1px solid var(--siteBoldSecondary)',
   color: '1px solid var(--siteSecondary)',
   margin: '0.5em',
@@ -43,12 +43,24 @@ const Images = () => {
       <div style={ThemeSwitchContainerStyles}>
         <ThemeContext.Consumer>
           {(theme) => (
-            <button style={ThemeSwitchButtonStyles} onClick={theme.toggleDark}>
-              {theme.dark ? <span>Turn on the lights </span> : <span>Turn out the lights </span>}
-              <span style={{color: 'var(--siteMain)'}}>
-                {theme.dark ? <span>☾</span> : <span>☀</span>}
-              </span>
-            </button>
+            <>
+              <button style={ThemeSwitchButtonStyles}
+                onClick={theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}>
+                {theme.theme == 'dark' ?
+                <><span>Turn on the lights </span><span style={{color: 'var(--siteMain)'}}>☾</span></> :
+                theme.theme == 'light' ?
+                <><span>Turn off the lights </span><span style={{color: 'var(--siteMain)'}}>☀</span></>:
+                <><span>Turn off custom theme </span>✧</>
+                }
+              </button>
+              <button style={ThemeSwitchButtonStyles}
+                onClick={theme.useCustom}>
+                {theme.theme == 'custom' ?
+                <span style={{color: 'var(--siteMain)'}}>Using custom theme ✧ </span>:
+                <span>Use custom theme ✧</span>
+                }
+              </button>
+            </>
           )}
         </ThemeContext.Consumer>
       </div>
@@ -60,18 +72,14 @@ function colorBox(color) {
   return (
     <>
       <div style={{
-        'backgroundColor': 'var(--siteSecondary)',
-        'height': '150px',
-        'width': '150px',
+        'height': '9rem',
+        'width': '9rem',
         'border': '1px solid ',
         'margin': '0.5em',
+        'backgroundColor': 'var(--site'+color.replace(/\s/g, '')+')',
       }}>
         <div style={ColorBoxTextContainerStyles} align="center">
           <span style={{'color': 'var(--siteSecondary'}}>{color}</span>
-        </div>
-        <div style={{
-          'backgroundColor': 'var(--site'+color.replace(/\s/g, '')+')',
-          'height': 'calc(100% - 18px)'}}>
         </div>
       </div>
     </>

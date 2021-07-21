@@ -3,7 +3,7 @@
     margin: 0;
   }
   .post {
-    padding-bottom: 40px;
+    padding-bottom: 2.5rem;
   }
   .post h2,
   .content h1 {
@@ -13,26 +13,26 @@
     color: #555;
   }
   .meta {
-    font-size: 13px;
+    font-size: 0.8rem;
     text-align: center;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     display: block;
   }
   .excerpt {
-    margin: 30px 0 15px;
+    margin: 1.8rem 0 9rem;
     font-weight: 300;
     letter-spacing: 0.02em;
   }
   .button {
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 300;
     text-align: center;
-    padding: 20px 0;
+    padding: 1.25rem 0;
   }
   .button a {
     color: #555;
-    padding: 8px 12px;
+    padding: 0.6rem 0.75rem;
     text-decoration: none;
     border: 1px solid #555;
   }
