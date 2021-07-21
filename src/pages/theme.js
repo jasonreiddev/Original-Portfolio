@@ -43,12 +43,26 @@ const Images = () => {
       <div style={ThemeSwitchContainerStyles}>
         <ThemeContext.Consumer>
           {(theme) => (
-            <button style={ThemeSwitchButtonStyles} onClick={theme.toggleDark}>
-              {theme.dark ? <span>Turn on the lights </span> : <span>Turn out the lights </span>}
-              <span style={{color: 'var(--siteMain)'}}>
-                {theme.dark ? <span>☾</span> : <span>☀</span>}
-              </span>
-            </button>
+            <>
+              <button style={ThemeSwitchButtonStyles}
+                onClick={theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}>
+                {theme.theme == 'dark' ? <span>Turn on the lights </span> :
+                theme.theme == 'light' ? <span>Turn out the lights </span> :
+                <span style={{color: 'var(--siteSecondary)'}}>Turn off custom theme </span>
+                }
+                <span style={{color: 'var(--siteMain)'}}>
+                  {theme.theme == 'dark' ? <span>☾</span> :
+                  theme.theme == 'light' ? <span>☀</span> :
+                  <span>✧</span>}
+                </span>
+              </button>
+              <button style={ThemeSwitchButtonStyles} onClick={theme.useCustom}>
+                <span style={{color: theme.theme == 'custom' ? 'var(--siteMain)' : 'var(--siteSecondary)'}}>
+                  <span>Use custom theme ✧</span>
+                  {theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}
+                </span>
+              </button>
+            </>
           )}
         </ThemeContext.Consumer>
       </div>

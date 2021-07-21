@@ -8,6 +8,15 @@ import '../styles/global.css';
 import ThemeContext from '../context/ThemeContext';
 
 const GlobalStyle = createGlobalStyle`
+:root
+ {
+  --sitePositiveAccent: #84A98C;
+  --siteNegativeAccent: #B6465F;
+
+  --orgBradfordCouncil: #293d82;
+  --orgEstioTraining: #e54700;
+  --orgNetConstruct: #3bb599;
+}
 .theme-dark {
   --siteMain: #1B1B1D;
   --siteSecondary: #EEE6F0;
@@ -24,16 +33,16 @@ const GlobalStyle = createGlobalStyle`
   --siteSecondaryAccent: #5749a5;
   --siteTertiaryAccent: #A997DF;
 }
-.theme-dark,
-.theme-light
- {
-  --sitePositiveAccent: #84A98C;
-  --siteNegativeAccent: #B6465F;
-
-  --orgBradfordCouncil: #293d82;
-  --orgEstioTraining: #e54700;
-  --orgNetConstruct: #3bb599;
-}`;
+.theme-custom{
+  --siteMain: #FFFFFF;
+  --siteSecondary: #000000;
+  --siteBoldSecondary: #000000;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #0000ff;
+  --siteTertiaryAccent: #A997DF;
+  --sitePositiveAccent: #00ff00;
+  --siteNegativeAccent: #ff0000;
+};`;
 
 const pageStyles = {
   display: 'flex',
@@ -75,7 +84,7 @@ const Layout = ({children, title, subTitle}) => {
           {(theme) => (
             <React.Fragment>
               <Helmet>
-                <body className={theme.dark ? 'theme-dark': 'theme-light'} />*
+                <body className={'theme-'+ theme.theme}/>*
               </Helmet>
               <GlobalStyle/>
               <SEO title={title} subTitle={subTitle}/>

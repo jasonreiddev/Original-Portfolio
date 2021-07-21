@@ -58,9 +58,11 @@ const Header = ({menuLinks, title}) => (
               <ThemeContext.Consumer>
                 {(theme) => (
                   <a style={{color: 'var(--siteMain)', cursor: 'pointer'}}
-                    onClick={theme.toggleDark}>
+                    onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
                     {
-                      theme.dark ? <span>☾</span> : <span>☀</span>
+                      theme.theme == 'dark' ? <span>☾</span> :
+                      theme.theme == 'light' ? <span>☀</span> :
+                      <span>✧</span>
                     }
                   </a>
                 )}
