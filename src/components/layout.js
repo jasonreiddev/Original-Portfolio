@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import {Helmet} from 'react-helmet';
 import '../styles/global.css';
 import ThemeContext from '../context/ThemeContext';
+import 'normalize.css';
 
 const GlobalStyle = createGlobalStyle`
 :root

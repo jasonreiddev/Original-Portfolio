@@ -72,18 +72,14 @@ function colorBox(color) {
   return (
     <>
       <div style={{
-        'backgroundColor': 'var(--siteSecondary)',
         'height': '9rem',
         'width': '9rem',
         'border': '1px solid ',
         'margin': '0.5em',
+        'backgroundColor': 'var(--site'+color.replace(/\s/g, '')+')',
       }}>
         <div style={ColorBoxTextContainerStyles} align="center">
           <span style={{'color': 'var(--siteSecondary'}}>{color}</span>
-        </div>
-        <div style={{
-          'backgroundColor': 'var(--site'+color.replace(/\s/g, '')+')',
-          'height': 'calc(100% - 1.2rem)'}}>
         </div>
       </div>
     </>
