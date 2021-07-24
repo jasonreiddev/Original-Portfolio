@@ -1,50 +1,57 @@
 /* eslint no-invalid-this: "off" */
 import {navigate} from 'gatsby';
 import React from 'react';
-const defaultTheme = 'light';
+
+// updated from prefrence on mount
+let defaultOrPreferedTheme = 'dark';
+
 const defaultState = {
+  setThemeAndCookie: () => {},
   toggleTheme: () => {},
   useCustom: () => {},
   resetTheme: () => {},
   goToThemePage: () => {},
 };
+
 const ThemeContext = React.createContext(defaultState);
-// Getting dark mode information from OS
-const supportsDarkMode = () =>
-  window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 class ThemeProvider extends React.Component {
   state = {
-    theme: defaultTheme,
+    theme: defaultOrPreferedTheme,
   }
-  toggleTheme = () => {
-    const theme = (this.state.theme == 'light' ? 'dark' : 'light');
+  setThemeAndCookie = (theme) => {
     localStorage.setItem('theme', theme);
     this.setState({theme: theme});
   }
+
+  toggleTheme = () => {
+    const theme = (this.state.theme == 'light' ? 'dark' : 'light');
+    this.setThemeAndCookie(theme);
+  }
   useCustom = () => {
-    localStorage.setItem('theme', 'custom');
-    this.setState({theme: 'custom'});
+    this.setThemeAndCookie('custom');
   }
   resetTheme = () => {
-    if (supportsDarkMode()) {
-      this.setState({theme: 'dark'});
-    } else {
-      this.setState({theme: 'light'});
-    }
+    this.setThemeAndCookie(defaultOrPreferedTheme);
   }
   goToThemePage = () => {
     navigate('/theme');
   }
 
   componentDidMount() {
-    // On mount check darkmode or apply local
-    const theme = JSON.parse(localStorage.getItem('dark'));
-    if (supportsDarkMode() && theme == undefined) {
-      this.setState({theme: 'dark'});
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      defaultOrPreferedTheme = 'dark';
+    }
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      defaultOrPreferedTheme= 'light';
+    }
+    const theme = localStorage.getItem('theme');
+    if (theme == undefined) {
+      this.setThemeAndCookie(defaultOrPreferedTheme);
     } else {
-      this.setState({theme: defaultTheme});
+      this.setState({theme: theme});
     }
   }
+
   render() {
     const {children} = this.props;
     const {theme} = this.state;
