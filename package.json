@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "Jason Reid's Development Portfolio.",
   "author": "Jason Reid",
@@ -17,6 +17,7 @@
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "contentful": "^8.4.2",
     "gatsby": "^3.4.1",
     "gatsby-plugin-image": "^1.8.0",
@@ -33,6 +34,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "sharp": "^0.26.0",
     "styled-components": "^5.3.0",
     "typescript": "^4.3.4"
   },
