@@ -29,6 +29,10 @@ module.exports = {
         name: 'Theme',
         link: '/theme',
       },
+      {
+        name: 'Tempo',
+        link: '/tempo-strings',
+      },
     ],
   },
   plugins: [

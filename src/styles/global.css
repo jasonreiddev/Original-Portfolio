@@ -42,3 +42,7 @@ body::-webkit-scrollbar {
     background-color: var(--siteSecondary);
     outline: 1px solid var(--siteBoldSecondary);
   }
+
+  .Checklist li:not(.selected) {
+    color: red;
+  }
