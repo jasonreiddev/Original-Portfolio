@@ -1,3 +1,4 @@
+LOCALNOTES
 gatsby/node_modules/
 gatsby/.cache/
 gatsby/public
@@ -8,4 +9,3 @@ gatsby/yarn.lock
 gatsby/.eslintcache
 sanity/node_modules
 sanity/yarn.lock
-notes
