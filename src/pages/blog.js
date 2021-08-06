@@ -33,7 +33,7 @@ const Blog = () => {
   );
   return (
     <Layout title="Blog">
-      <ul className="posts">
+      <ul className="posts" style={{margin: '0', padding: '0', listStyleType: 'none'}}>
         {data.allContentfulBlogPost.edges.map((edge) => {
           return (
             <li className="post" key={edge.node.id}>

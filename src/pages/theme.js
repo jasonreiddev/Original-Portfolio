@@ -1,6 +1,16 @@
 import React from 'react';
 import Layout from '../components/layout';
 import ThemeContext from '../context/ThemeContext';
+import Sun from '../images/svg/icon/Sun.svg';
+import Moon from '../images/svg/icon/Moon.svg';
+import Pallet from '../images/svg/icon/Pallet.svg';
+
+const iconStyles = {
+  padding: '0 0.5rem 0 0',
+  transform: 'translateY(0.5rem)',
+  height: '1.8rem',
+  color: 'var(--siteMain)',
+};
 
 const ColorBoxContainerStyles = {
   display: 'flex',
@@ -47,17 +57,22 @@ const Images = () => {
               <button style={ThemeSwitchButtonStyles}
                 onClick={theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}>
                 {theme.theme == 'dark' ?
-                <><span>Turn on the lights </span><span style={{color: 'var(--siteMain)'}}>☾</span></> :
+                <><span>Turn on the lights </span>
+                  <img src={Moon} style={iconStyles} alt={'Moon'} width="auto" height="auto"/></> :
                 theme.theme == 'light' ?
-                <><span>Turn off the lights </span><span style={{color: 'var(--siteMain)'}}>☀</span></>:
-                <><span>Turn off custom theme </span>✧</>
+                <><span>Turn off the lights </span>
+                  <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/></>:
+                <><span>Turn off custom theme </span>
+                  <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/></>
                 }
               </button>
               <button style={ThemeSwitchButtonStyles}
                 onClick={theme.useCustom}>
                 {theme.theme == 'custom' ?
-                <span style={{color: 'var(--siteMain)'}}>Using custom theme ✧ </span>:
-                <span>Use custom theme ✧</span>
+                <span style={{color: 'var(--siteMain)'}}>Using custom theme
+                  <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/> </span>:
+                <span>Use custom theme
+                  <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/></span>
                 }
               </button>
             </>

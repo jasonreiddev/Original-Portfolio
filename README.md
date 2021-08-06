@@ -69,6 +69,10 @@ Atom:     ctrl-shift-m
     Add media via [Cloudinary](https://cloudinary.com/)
     
     Add content via [Contentful](https://app.contentful.com/spaces/0dlrb1xtuolg/entries)
+
+    Sanity Commands. 
+    sanity init 
+    sanity graphql deploy production
 <br/>
 
 <div align="center">

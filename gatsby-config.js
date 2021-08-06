@@ -9,7 +9,7 @@ module.exports = {
     description:
       'Jason Reid\'s Development Portfolio.',
     url: 'https://jasonreidd.netlify.app/',
-    image: '/images/BradfordCouncilLogo.png',
+    image: '/images/icon.png',
     twitterUsername: '@JasonReidd',
     menuLinks: [
       {
@@ -26,16 +26,25 @@ module.exports = {
         link: '/blog',
       },
       {
-        name: 'Theme',
-        link: '/theme',
+        name: 'Employment',
+        link: '/employment',
       },
       {
-        name: 'Tempo',
-        link: '/tempo-strings',
+        name: 'Theme',
+        link: '/theme',
       },
     ],
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'a3mxaqcs',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -105,6 +114,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-styled-components',
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
   ],

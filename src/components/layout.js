@@ -1,105 +1,71 @@
 import React from 'react';
-import {createGlobalStyle} from 'styled-components';
-import Header from '../components/header';
 import {StaticQuery, graphql} from 'gatsby';
-import SEO from '../components/seo';
 import {Helmet} from 'react-helmet';
-import '../styles/global.css';
-import ThemeContext from '../context/ThemeContext';
+import styled from 'styled-components';
 import 'normalize.css';
+import ThemeContext from '../context/ThemeContext';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
+import SEO from '../components/seo';
+import Header from '../components/header';
 
-const GlobalStyle = createGlobalStyle`
-:root
- {
-  --sitePositiveAccent: #84A98C;
-  --siteNegativeAccent: #B6465F;
+const SiteBorderStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 100VW;
+`;
 
-  --orgBradfordCouncil: #293d82;
-  --orgEstioTraining: #e54700;
-  --orgNetConstruct: #3bb599;
-}
-.theme-dark {
-  --siteMain: #1B1B1D;
-  --siteSecondary: #EEE6F0;
-  --siteBoldSecondary: #FFFFFF;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #A997DF;
-  --siteTertiaryAccent: #FFD4CA;
-}
-.theme-light{
-  --siteMain: #EEE6F0;
-  --siteSecondary: #1B1B1D;
-  --siteBoldSecondary: #000000;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #5749a5;
-  --siteTertiaryAccent: #A997DF;
-}
-.theme-custom{
-  --siteMain: #FFFFFF;
-  --siteSecondary: #000000;
-  --siteBoldSecondary: #000000;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #0000ff;
-  --siteTertiaryAccent: #A997DF;
-  --sitePositiveAccent: #00ff00;
-  --siteNegativeAccent: #ff0000;
-};`;
+const MainStyles = styled.main`
+  padding: 1rem;
+  flexGrow: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+`;
 
-const pageStyles = {
-  display: 'flex',
-  flexDirection: 'column',
-  color: 'var(--siteSecondary)',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-  overflow: 'hidden',
-  maxWidth: '100VW',
-};
-
-const mainStyles = {
-  padding: 32,
-  flexGrow: 1,
-};
-
-const footerStyles = {
-  height: '1.5rem',
-};
+const FooterStyles = styled.footer`
+  height: 1.5rem;
+`;
 
 const Layout = ({children, title, subTitle}) => {
   return (
-    <StaticQuery
-      query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            menuLinks {
-              name
-              nameOverrideNav
-              link
+    <>
+      <GlobalStyles />
+      <Typography />
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+                menuLinks {
+                  name
+                  nameOverrideNav
+                  link
+                }
+              }
             }
           }
-        }
-      }
-    `}
-      render={(data) => (
-        <ThemeContext.Consumer>
-          {(theme) => (
-            <React.Fragment>
-              <Helmet>
-                <body className={'theme-'+ theme.theme}/>*
-              </Helmet>
-              <GlobalStyle/>
-              <SEO title={title} subTitle={subTitle}/>
-              <div style={pageStyles} >
+        `}
+        render={(data) => (
+          <ThemeContext.Consumer>
+            {(theme) => (
+              <SiteBorderStyles>
+                <Helmet>
+                  <body className={'theme-'+ theme.theme}/>
+                </Helmet>
+                <SEO title={title} subTitle={subTitle}/>
                 <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
-                <main style={mainStyles}>
+                <MainStyles>
                   {children}
-                </main>
-                <footer section style={footerStyles}></footer>
-              </div>
-            </React.Fragment>)}
-        </ThemeContext.Consumer>)}>
-
-    </StaticQuery>);
+                </MainStyles>
+                <FooterStyles/>
+              </SiteBorderStyles>)
+            }
+          </ThemeContext.Consumer>)
+        }/>
+    </>);
 };
 
 
