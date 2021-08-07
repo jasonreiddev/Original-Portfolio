@@ -1,23 +1,18 @@
 import {createGlobalStyle} from 'styled-components';
 
-import font from '../assets/fonts/frenchfries.woff';
-
 const Typography = createGlobalStyle`
 body{
-  @font-face {
-    font-family: FrenchFries;
-    src: url(${font});
-  }
-
-    font-family: FrenchFries, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     color: var(--siteSecondary);
 
   p, li {
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; 
+  }
+  li {
+    padding-bottom: 1em;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-weight: normal;
+    font-weight: bold;
     margin: 0;
   }
   a {
