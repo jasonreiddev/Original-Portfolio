@@ -6,48 +6,17 @@
   "private": true,
   "license": "UNLICENCED",
   "keywords": [
-    "gatsby"
+    "gatsby", "sanity"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "babel-eslint": "^10.1.0",
-    "contentful": "^8.4.2",
-    "gatsby": "^3.4.1",
-    "gatsby-plugin-image": "^1.8.0",
-    "gatsby-plugin-manifest": "^3.9.0",
-    "gatsby-plugin-offline": "^4.9.0",
-    "gatsby-plugin-prettier-eslint": "^1.0.6",
-    "gatsby-plugin-sharp": "^3.8.0",
-    "gatsby-source-contentful": "^5.8.0",
-    "gatsby-transformer-remark": "^4.5.0",
-    "graphql": "^15.5.1",
-    "normalize.css": "^8.0.1",
-    "postcss": "^8.3.5",
-    "prettier": "^2.3.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "sharp": "^0.26.0",
-    "styled-components": "^5.3.0",
-    "typescript": "^4.3.4"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonReidd/Portfolio.git"
   },
-  "devDependencies": {
-    "@svgr/webpack": "^5.5.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.3",
-    "@typescript-eslint/parser": "^4.28.3",
-    "eslint": "^7.30.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "gatsby-source-cloudinary": "^0.1.14"
-  }
+  "bugs": {
+    "url": "https://github.com/JasonReidd/Portfolio/issues"
+  },
+  "homepage": "https://github.com/JasonReidd/Portfolio#readme"
 }

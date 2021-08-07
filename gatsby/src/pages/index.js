@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
-import GatsbyLogo from '../images/svg/logo/Gatsby.svg';
-import ReactLogo from '../images/svg/logo/React.svg';
-import JQueryLogo from '../images/svg/logo/JQuery.svg';
-import NetConstructLogo from '../images/svg/logo/NetConstruct.svg';
-import BradfordCouncilLogo from '../images/svg/logo/BradfordCouncil.svg';
-import EstioTrainingLogo from '../images/svg/logo/Estio.svg';
+import GatsbyLogo from '../images/svg/logo/technology/Gatsby.svg';
+import ReactLogo from '../images/svg/logo/technology/React.svg';
+import JQueryLogo from '../images/svg/logo/technology/JQuery.svg';
+import NetConstructLogo from '../images/svg/logo/organisation/NetConstruct.svg';
+import BradfordCouncilLogo from '../images/svg/logo/organisation/BradfordCouncil.svg';
+import EstioTrainingLogo from '../images/svg/logo/organisation/Estio.svg';
 
 import Layout from '../components/layout';
 
@@ -54,6 +54,7 @@ const IndexPage = () => {
         {organisation(NetConstructLogo, 'Net Construct', netConstructHighlightStyles, '2021')}
         {organisation(BradfordCouncilLogo, 'Bradford Council', bradfordCouncilHighlightStyles, '2019')}
         {organisation(EstioTrainingLogo, 'Estio Training', estioTrainingHighlightStyles, '2019')}
+        <span style={breakLineStyles}/>
         <h3>This site was built using:</h3>
         <img title="Gatsby" style={logoStyles} src={GatsbyLogo} alt="Gatsby Logo" width="auto" height="1.25rem"/>
         <img title="React" style={logoStyles} src={ReactLogo} alt="React Logo" width="auto" height="1.25rem"/>

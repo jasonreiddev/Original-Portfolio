@@ -45,8 +45,11 @@ Atom:     ctrl-shift-m
 
 2.  **Run.**
 
-    Start the project with
-    '<code>npm run develop</code>'.
+    In the Sanity folder run the back-end with:
+     '<code>sanity graphql deploy production</code>'.
+
+    In the Gatsby folder run the front-end with:
+     '<code>npm run develop</code>'.
     
     The site will run at http://localhost:8000.
 
@@ -66,9 +69,12 @@ Atom:     ctrl-shift-m
 
     Add packages with '<code>npm install --save</code>' followed by the package name.
 
-    Add media via [Cloudinary](https://cloudinary.com/)
+    Add media via [Cloudinary](https://cloudinary.com/console/c-5efd2802d1af5a180a41cae9a4a86a/media_library/folders/391c080a206c2cca6c6dd6aaea482748)
     
     Add content via [Contentful](https://app.contentful.com/spaces/0dlrb1xtuolg/entries)
+
+    Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
+
 <br/>
 
 <div align="center">

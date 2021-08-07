@@ -1,11 +1,29 @@
 import React from 'react';
 import {Link} from 'gatsby';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ThemeContext from '../context/ThemeContext';
+import Sun from '../images/svg/icon/Sun.svg';
+import Moon from '../images/svg/icon/Moon.svg';
+import Pallet from '../images/svg/icon/Pallet.svg';
+
+const iconStyles = {
+  padding: '0 0.5rem 0 0',
+  transform: 'translateY(-0.2rem)',
+  height: '1.8rem',
+};
+
+const ContainerStyles = styled.div`
+  padding: 1rem;
+  flexGrow: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+`;
 
 const Header = ({menuLinks, title}) => (
   <header style={{background: 'var(--sitePrimaryAccent)'}}>
-    <div
+    <ContainerStyles
       style={{
         padding: '1rem 2rem',
         alignItems: 'center',
@@ -60,9 +78,11 @@ const Header = ({menuLinks, title}) => (
                   <a style={{color: 'var(--siteMain)', cursor: 'pointer'}}
                     onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
                     {
-                      theme.theme == 'dark' ? <span>☾</span> :
-                      theme.theme == 'light' ? <span>☀</span> :
-                      <span>✧</span>
+                      theme.theme == 'dark' ?
+                      <img src={Moon} style={iconStyles} alt={'Moon'} width="auto" height="auto"/> :
+                      theme.theme == 'light' ?
+                      <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/> :
+                      <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/>
                     }
                   </a>
                 )}
@@ -71,7 +91,7 @@ const Header = ({menuLinks, title}) => (
           </ul>
         </nav>
       </div>
-    </div>
+    </ContainerStyles>
   </header>
 );
 Header.propTypes = {
