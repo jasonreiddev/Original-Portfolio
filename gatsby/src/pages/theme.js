@@ -62,16 +62,16 @@ const Images = () => {
                 theme.theme == 'light' ?
                 <><span>Turn off the lights </span>
                   <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/></>:
-                <><span>Turn off custom theme </span>
+                <><span>Turn off high contrast mode </span>
                   <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/></>
                 }
               </button>
               <button style={ThemeSwitchButtonStyles}
                 onClick={theme.useCustom}>
                 {theme.theme == 'custom' ?
-                <span style={{color: 'var(--siteMain)'}}>Using custom theme
+                <span style={{color: 'var(--siteMain)'}}>Using high contrast mode
                   <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/> </span>:
-                <span>Use custom theme
+                <span>Use high contrast mode
                   <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/></span>
                 }
               </button>
@@ -87,6 +87,7 @@ function colorBox(color) {
   return (
     <>
       <div style={{
+        'font-size': '15px',
         'height': '9rem',
         'width': '9rem',
         'border': '1px solid ',
