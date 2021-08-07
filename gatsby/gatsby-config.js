@@ -117,6 +117,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-gatsby-cloud`,
   ],
 };
 
