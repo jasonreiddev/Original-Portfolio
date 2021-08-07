@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "portfolio-gatsby",
   "version": "1.0.0",
-  "description": "Jason Reid's Development Portfolio.",
+  "description": "Jason Reid's Development Portfolio Gatsby Site.",
   "author": "Jason Reid",
   "private": true,
   "license": "UNLICENCED",

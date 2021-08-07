@@ -1,4 +1,5 @@
 LOCALNOTES
+node_modules/
 gatsby/node_modules/
 gatsby/.cache/
 gatsby/public

@@ -1,18 +1,17 @@
 {
-  "name": "portfolio-backend",
-  "private": true,
+  "name": "portfolio-sanity",
   "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "Wes Bos <wesbos@gmail.com>",
-  "license": "UNLICENSED",
+  "description": "Jason Reid's Development Portfolio Sanity CMS.",
+  "author": "Jason Reid",
+  "private": true,
+  "license": "UNLICENCED",
+  "keywords": [
+    "sanity"
+  ],
   "scripts": {
     "lint": "eslint .",
     "start": "sanity start"
   },
-  "keywords": [
-    "sanity"
-  ],
   "eslintConfig": {
     "extends": [
       "wesbos"
