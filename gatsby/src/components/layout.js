@@ -17,7 +17,6 @@ const SiteBorderStyles = styled.div`
 `;
 
 const MainStyles = styled.main`
-  padding: 1rem;
   flexGrow: 1;
   width: 100%;
   max-width: 1000px;
