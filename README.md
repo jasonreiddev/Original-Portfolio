@@ -27,39 +27,43 @@ Atom:     ctrl-shift-m
 
 1. **Setup.**
 
-    Create a new file in the root directory called
-    '<code>.env.development</code>'
+    Create enviroment files in the /gatsby directory called
+    '<code>.env.production</code>' and '<code>.env.development</code>'
     with the required variables from 
-    '<code>.env.example</code>', you can get the values from the [enviroment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) on [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
-
-    <sup>
-    It may also be worthwhile creating an identical file called '<code>.env.production</code>'
-     for running 
-     '<code>yarn build</code>'
-     - which is used for production-ready optimizations.
-    </sup>
+    '<code>.env.example</code>' and the [enviroment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) values from [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
+    For the development enviroment SANITY_WATCHMODE can be set to true and other variables can be changed to use test enviroments. 
 
     Install packages with
-    '<code>yarn</code>'.
+    '<code>yarn</code>'
     <hr/>
 
 2.  **Run.**
 
     In the Sanity folder run the back-end with:
-     '<code>sanity graphql deploy production</code>'.
+     '<code>yarn sanity start</code>'
+
+      Content Studio can be found at http://localhost:3333
+
+    In the Sanity folder run the back-end with:
+     '<code>sanity graphql deploy production</code>'
 
     In the Gatsby folder run the front-end with:
-     '<code>yarn run develop</code>'.
+     '<code>yarn run develop</code>'
     
-    The site will run at http://localhost:8000.
+      The site will run at http://localhost:8000
 
-    View the GraphiQL at http://localhost:8000/___graphql .
+      View the GraphiQL at http://localhost:8000/___graphql 
     <hr/>
 
 3.  **Deploy.**
 
-    Before deploying please run '<code>yarn eslint</code>' in both /Sanity and /Gatsby,
-    In /Gatsby with node version 16.0.0^ run '<code>yarn run build</code>'.
+    Before deploying please ensure node version 16.0.0^ is being used
+
+    In /Gatsby and /Sanity run '<code>yarn eslint</code>' 
+
+    In /Gatsby run '<code>yarn run build</code>'
+
+    In /Sanity run '<code>yarn sanity deploy production</code>'
 
     Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
@@ -70,7 +74,7 @@ Atom:     ctrl-shift-m
 
 2. **Configure.**
 
-    Add packages with '<code>yarn install --save</code>' followed by the package name.
+    Add packages with '<code>yarn add [package name] --save</code>'
 
     Add media via [Cloudinary](https://cloudinary.com/console/c-5efd2802d1af5a180a41cae9a4a86a/media_library/folders/391c080a206c2cca6c6dd6aaea482748)
     
