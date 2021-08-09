@@ -1,5 +1,7 @@
 LOCALNOTES
-node_modules/
+yarn-error
+yarn.lock
+
 gatsby/node_modules/
 gatsby/.cache/
 gatsby/public
@@ -8,5 +10,8 @@ gatsby/.env.production
 gatsby/yarn-error.log
 gatsby/yarn.lock
 gatsby/.eslintcache
+
 sanity/node_modules
 sanity/yarn.lock
+sanity/yarn-error.log
+sanity/.eslintcache
