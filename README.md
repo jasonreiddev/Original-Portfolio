@@ -6,7 +6,7 @@ Atom:     ctrl-shift-m
 
 <p align="center">
   <a href="https://jasonreidd.netlify.app">
-    <img alt="Netlify Site" src="src/images/icon.png" width="60" />
+    <img alt="Netlify Site" src="gatsby/src/images/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -40,7 +40,7 @@ Atom:     ctrl-shift-m
     </sup>
 
     Install packages with
-    '<code>npm i</code>'.
+    '<code>yarn</code>'.
     <hr/>
 
 2.  **Run.**
@@ -49,7 +49,7 @@ Atom:     ctrl-shift-m
      '<code>sanity graphql deploy production</code>'.
 
     In the Gatsby folder run the front-end with:
-     '<code>npm run develop</code>'.
+     '<code>yarn run develop</code>'.
     
     The site will run at http://localhost:8000.
 
@@ -57,6 +57,9 @@ Atom:     ctrl-shift-m
     <hr/>
 
 3.  **Deploy.**
+
+    Before deploying please run '<code>yarn eslint</code>' in both /Sanity and /Gatsby,
+    In /Gatsby with node version 16.0.0^ run '<code>yarn run build</code>'.
 
     Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
@@ -67,7 +70,7 @@ Atom:     ctrl-shift-m
 
 2. **Configure.**
 
-    Add packages with '<code>npm install --save</code>' followed by the package name.
+    Add packages with '<code>yarn install --save</code>' followed by the package name.
 
     Add media via [Cloudinary](https://cloudinary.com/console/c-5efd2802d1af5a180a41cae9a4a86a/media_library/folders/391c080a206c2cca6c6dd6aaea482748)
     
