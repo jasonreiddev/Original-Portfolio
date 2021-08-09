@@ -36,7 +36,7 @@ Atom:     ctrl-shift-m
     It may also be worthwhile creating an identical file called '<code>.env.production</code>'
      for running 
      '<code>yarn build</code>'
-     - which creates a version of your site with production-ready optimizations.
+     - which is used for production-ready optimizations.
     </sup>
 
     Install packages with
