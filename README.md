@@ -40,7 +40,10 @@ Atom:     ctrl-shift-m
 2. **Run.**
 
    In the Sanity folder run the back-end with:
+
    '<code>yarn sanity start</code>'
+
+   '<code>yarn sanity graphql deploy production</code>'
 
    Content Studio can be found at http://localhost:3333
 

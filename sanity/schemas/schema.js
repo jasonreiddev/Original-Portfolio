@@ -6,11 +6,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 import organisation from './organisation'
 import position from './position'
+import project from './project'
 
 export default createSchema({
   // We name our schema
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([organisation, position]),
+  types: schemaTypes.concat([organisation, position, project]),
 });
