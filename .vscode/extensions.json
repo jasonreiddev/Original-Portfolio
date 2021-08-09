@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "wesbos.theme-cobalt2",
+    "github.github-vscode-theme",
     "formulahendry.auto-rename-tag",
     "graphql.vscode-graphql",
     "jpoissonnier.vscode-styled-components"

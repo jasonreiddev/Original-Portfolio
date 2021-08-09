@@ -40,8 +40,8 @@ module.exports = {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'a3mxaqcs',
-        dataset: 'production',
-        watchMode: true,
+        dataset: process.env.SANITY_PRODUCTION,
+        watchMode: process.env.SANITY_WATCHMODE,
         token: process.env.SANITY_TOKEN,
       },
     },
@@ -90,28 +90,6 @@ module.exports = {
             type: `image/png`,
           },
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-prettier-eslint',
-      options: {
-        prettier: {
-          patterns: [
-            '**/*.{css,scss,less}',
-            '**/*.{json,json5}',
-            '**/*.{graphql}',
-            '**/*.{md,mdx}',
-            '**/*.{html}',
-            '**/*.{yaml,yml}',
-          ],
-        },
-        eslint: {
-          patterns: '**/*.{js,jsx,ts,tsx}',
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
       },
     },
     'gatsby-plugin-styled-components',

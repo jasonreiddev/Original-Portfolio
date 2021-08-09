@@ -2,12 +2,6 @@ import React, {useState} from 'react';
 
 import Layout from '../components/layout';
 
-const breakLineStyles = {
-  'borderTop': '1px solid var(--siteTertiaryAccent)',
-  'paddingTop': '1.3rem',
-  'display': 'inline-block',
-};
-
 const logoStyles = {
   padding: '0 0.5rem 0 0',
   transform: 'translateY(0.3rem)',
