@@ -17,9 +17,8 @@ const SiteBorderStyles = styled.div`
 `;
 
 const MainStyles = styled.main`
-  padding: 1rem 0 1rem 0;
-  flexGrow: 1;
-  width: 100%;
+  padding: 1rem 2rem;
+  width: Calc(100% - 4rem);
   max-width: 1000px;
   margin: auto;
 `;

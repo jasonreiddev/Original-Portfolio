@@ -1,10 +1,10 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import Layout from '../components/layout';
+import Pagination from '../components/Pagination';
 
-export default function EmploymentPage({data}) {
+export default function EmploymentPage({data, pageContext}) {
   let positions = data.positions.nodes;
-  console.log(positions);
 
   positions.forEach((position) => {
     position.endDate = position.currentJob ? 'ongoing' : position.endDate;
@@ -16,23 +16,31 @@ export default function EmploymentPage({data}) {
 
   return (
     <Layout title="Employment">
+      <Pagination
+        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
+        totalCount={data.positions.totalCount}
+        currentPage={pageContext.currentPage || 1}
+        skip={pageContext.skip}
+        base="/employment"
+      />
       {positions.map((position, index) => (
         <div key={`${index}-cl`}>
-          {console.log(position.jobTitle)}
-          <h2>{position.jobTitle}</h2>
+          <h2>
+            <Link to={`/employment/${position.slug.current}/`}>{position.jobTitle}</Link>
+          </h2>
           <h3>{position.organisation.organisation}</h3>
           <p>{position.startDate}{position.endDate && <> - {position.endDate}</>}</p>
         </div>
       ))
       }
-      {console.log(positions)}
     </Layout>
   );
 }
 
 export const query = graphql`
-  query PositionQuery {
-    positions: allSanityPosition {
+  query($skip: Int = 0, $pageSize: Int = 8) {
+    positions: allSanityPosition(limit: $pageSize, skip: $skip) {
+        totalCount
         nodes {
           jobTitle
           currentJob

@@ -20,6 +20,16 @@ exports.createPages = async ({graphql, actions}) => {
           }
         }
       }
+      allSanityPosition {
+        totalCount
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
     }
   `);
   response.data.allContentfulBlogPost.edges.forEach((edge) => {
@@ -28,6 +38,42 @@ exports.createPages = async ({graphql, actions}) => {
       component: path.resolve('./src/templates/Blog-post.js'),
       context: {
         slug: edge.node.slug,
+      },
+    });
+  });
+  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+
+  const employmentPageCount = Math.ceil(response.data.allSanityPosition.totalCount / pageSize);
+  Array.from({length: employmentPageCount}).forEach((_, i) => {
+    createPage({
+      path: `/employment/${i + 1}`,
+      component: path.resolve('./src/pages/employment.js'),
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+      },
+    });
+  });
+  response.data.allSanityPosition.edges.forEach((edge) => {
+    createPage({
+      path: `/employment/${edge.node.slug.current}`,
+      component: path.resolve('./src/templates/Employment.js'),
+      context: {
+        slug: edge.node.slug.current,
+      },
+    });
+  });
+
+  const projectPageCount = Math.ceil(response.data.allSanityPosition.totalCount / pageSize);
+  Array.from({length: projectPageCount}).forEach((_, i) => {
+    createPage({
+      path: `/projects/${i + 1}`,
+      component: path.resolve('./src/pages/projects.js'),
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
       },
     });
   });

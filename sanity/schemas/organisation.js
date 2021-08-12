@@ -21,6 +21,16 @@ export default{
                 layout: 'checkbox',
             }
         },
+        {
+            name: 'slug',
+            title: 'slug',
+            type: 'slug',
+            description: 'Slug to navigate to this page',
+            options: {
+                source: 'organisation',
+                maxLength: 100,
+            },
+        },
     ],
     preview: {
         select: {

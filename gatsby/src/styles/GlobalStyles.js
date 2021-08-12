@@ -41,6 +41,10 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
 
+fieldset {
+  color: var(--siteSecondary);
+}
+
 body {
     margin: 0;
     background: var(--siteMain);

@@ -25,11 +25,11 @@ export default{
             description: 'URL to repository',
         },
         {
-            name: 'organisation',
-            title: 'Organisation',
+            name: 'position',
+            title: 'Position',
             type: 'reference',
-            to: [{type:'organisation'}],
-            description: 'What is the associated Organisation?',
+            to: [{type:'position'}],
+            description: 'What is the associated Position?',
         },
         {
             title: 'Last worked on',

@@ -2,7 +2,7 @@ import { MdWork as icon } from 'react-icons/md'
 import SalaryInput from '../components/SalaryInput'
 
 export default{
-    name: 'Position',
+    name: 'position',
     title: 'Position',
     type: 'document',
     icon,
@@ -48,7 +48,7 @@ export default{
             name: 'startDate',
             type: 'date',
             options: {
-              dateFormat: 'YYYY-MM-DD',
+              dateFormat: 'YYYY-MM',
               calendarTodayLabel: 'Today',
             }
         },
@@ -57,7 +57,7 @@ export default{
             name: 'endDate',
             type: 'date',
             options: {
-              dateFormat: 'YYYY-MM-DD',
+              dateFormat: 'YYYY-MM',
               calendarTodayLabel: 'Today',
             }
         },
