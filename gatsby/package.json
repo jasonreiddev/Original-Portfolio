@@ -10,10 +10,11 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "netlify dev",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "netlify": "netlify dev",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
     "gatsby-source-sanity": "^7.0.7",
     "gatsby-transformer-remark": "^4.5.0",
     "graphql": "^15.5.1",
+    "netlify-cli": "^6.2.4",
     "normalize.css": "^8.0.1",
     "postcss": "^8.3.5",
     "react": "^17.0.1",

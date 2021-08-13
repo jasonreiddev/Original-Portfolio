@@ -63,6 +63,11 @@ html *{
     max-width: 100%;
 }
 
+/*H0n3y P0t*/
+#buzzyFuzzyFriend {
+  display: none;
+}
+
 /*Scrollbar*/
 body::-webkit-scrollbar {
     width: 1em;

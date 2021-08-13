@@ -1,0 +1,15 @@
+{
+  "name": "send-email",
+  "version": "1.0.0",
+  "description": "Jason Reid's Development Portfolio Netlify Function Email.",
+  "author": "Jason Reid",
+  "private": true,
+  "license": "UNLICENCED",
+  "main": "sendEmail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nodemailer": "^6.6.3"
+  }
+}

@@ -27,11 +27,11 @@ Atom:     ctrl-shift-m
 
 1. **Setup.**
 
-   Create enviroment files in the /gatsby directory called
+   Create environment files in the /gatsby directory called
    '<code>.env.production</code>' and '<code>.env.development</code>'
    with the required variables from
-   '<code>.env.example</code>' and the [enviroment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) values from [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
-   For the development enviroment SANITY_WATCHMODE can be set to true and other variables can be changed to use test enviroments.
+   '<code>.env.example</code>' and the [environment  variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) values from [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
+   For the development environment SANITY_WATCHMODE can be set to true and other variables can be changed to use test environment. https://ethereal.email/messages can be used to create a temporary SMTP service  with the credentialed passed to the MAIL variales.
 
    Install packages with
    '<code>yarn</code>'
@@ -53,7 +53,7 @@ Atom:     ctrl-shift-m
    In the Gatsby folder run the front-end with:
    '<code>yarn run develop</code>'
 
-   The site will run at http://localhost:8000
+   The site will run at http://localhost:8888/ (with netlify-cli)
 
    View the GraphiQL at http://localhost:8000/\_\_\_graphql
    <hr/>
