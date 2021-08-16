@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const TempoStringsContext = React.createContext();
+const TempoStringsContext = React.createContext([]);
 
 export function TempoStringsProvider({children}) {
   const [selected, setSelected] = useState([]);
