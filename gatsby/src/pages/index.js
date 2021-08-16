@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import useLatestData from '../utils/useLatestData';
 
 import Layout from '../components/layout';
 
@@ -21,22 +22,29 @@ const defaultHighlightStyles = {
 };
 
 const IndexPage = () => {
+  const latestData = useLatestData();
   return (
     <>
       <Layout title="">
         <h1>{organisation(null, 'Welcome to my portfolio!', defaultHighlightStyles, null)}</h1>
         <p>
-        My name is Jason Reid and I am a software developer from Yorkshire.<br/>
-        I started my software development career in January of 2019 as an apprentice at Bradford council.<br/>
-        Mobile: 07468 12799 | Email: Jasonreidd@gmail.com
+          {!latestData.introText && <span>Loading...</span>}
+          {latestData.introText && !latestData.introText.length &&
+          // Fallback text
+           <span>My name is Jason Reid and I am a software developer from Yorkshire.
+           I started my software development career in January of 2019 as an apprentice at Bradford council.</span>
+          }
+          {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
         </p>
-        <p>You can also contact me via <a href="https://www.linkedin.com/in/jasonreiddev/">LinkedIn</a>.</p>
+        <p>The best place to contact me is via <a href="https://www.linkedin.com/in/jasonreiddev/">LinkedIn</a>.</p>
         <h3>This site was built using:</h3>
         <ul>
           <li>Gatsby</li>
-          <li>Contentful - Blog.</li>
-          <li>Cloudinary - Logo.</li>
-          <li>Sanity - Employment history.</li>
+          <li>Sanity</li>
+          <li>Contentful</li>
+          <li>Cloudinary</li>
+          <li>Netflify Functions</li>
+          <li>NodeJS, GraphQL, Yarn, Babel, ESLint </li>
         </ul>
         <p>For more information you can view the projects repository on <a href="https://github.com/JasonReidd/Portfolio">Github</a>.</p>
       </Layout>
