@@ -19,11 +19,11 @@ module.exports = {
       },
       {
         name: 'Projects',
-        link: '/projects',
+        link: '/projects/1',
       },
       {
         name: 'Employment',
-        link: '/employment',
+        link: '/employment/1',
       },
       {
         name: 'Blog',

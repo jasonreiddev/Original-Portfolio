@@ -8,13 +8,6 @@ export default function ProjectsPage({data, pageContext}) {
 
   return (
     <Layout title="Projects">
-      <Pagination
-        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
-        totalCount={data.projects.totalCount}
-        currentPage={pageContext.currentPage || 1}
-        skip={pageContext.skip}
-        base="/projects"
-      />
       <ul className="posts" style={{margin: '0', padding: '0', listStyleType: 'none'}}>
         {projects.map((project) => {
           return (
@@ -32,6 +25,13 @@ export default function ProjectsPage({data, pageContext}) {
           );
         })}
       </ul>
+      <Pagination
+        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
+        totalCount={data.projects.totalCount}
+        currentPage={pageContext.currentPage || 1}
+        skip={pageContext.skip}
+        base="/projects"
+      />
     </Layout>
   );
 };

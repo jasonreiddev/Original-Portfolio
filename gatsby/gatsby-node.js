@@ -5,6 +5,7 @@ exports.createPages = async ({graphql, actions}) => {
   const response = await graphql(`
     query {
       allContentfulBlogPost {
+        totalCount
         edges {
           node {
             slug
@@ -12,6 +13,7 @@ exports.createPages = async ({graphql, actions}) => {
         }
       }
       allSanityProject {
+        totalCount
         edges {
           node {
             slug {
@@ -65,7 +67,7 @@ exports.createPages = async ({graphql, actions}) => {
     });
   });
 
-  const projectPageCount = Math.ceil(response.data.allSanityPosition.totalCount / pageSize);
+  const projectPageCount = Math.ceil(response.data.allSanityProject.totalCount / pageSize);
   Array.from({length: projectPageCount}).forEach((_, i) => {
     createPage({
       path: `/projects/${i + 1}`,

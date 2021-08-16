@@ -16,13 +16,6 @@ export default function EmploymentPage({data, pageContext}) {
 
   return (
     <Layout title="Employment">
-      <Pagination
-        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
-        totalCount={data.positions.totalCount}
-        currentPage={pageContext.currentPage || 1}
-        skip={pageContext.skip}
-        base="/employment"
-      />
       {positions.map((position, index) => (
         <div key={`${index}-cl`}>
           <h2>
@@ -33,6 +26,13 @@ export default function EmploymentPage({data, pageContext}) {
         </div>
       ))
       }
+      <Pagination
+        pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
+        totalCount={data.positions.totalCount}
+        currentPage={pageContext.currentPage || 1}
+        skip={pageContext.skip}
+        base="/employment"
+      />
     </Layout>
   );
 }
