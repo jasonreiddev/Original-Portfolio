@@ -34,6 +34,22 @@ exports.createPages = async ({graphql, actions}) => {
       }
     }
   `);
+
+  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+
+
+  const blogPageCount = Math.ceil(response.data.allContentfulBlogPost.totalCount / pageSize);
+  Array.from({length: blogPageCount}).forEach((_, i) => {
+    createPage({
+      path: `/blog/${i + 1}`,
+      component: path.resolve('./src/pages/blog.js'),
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+      },
+    });
+  });
   response.data.allContentfulBlogPost.edges.forEach((edge) => {
     createPage({
       path: `/blog/${edge.node.slug}`,
@@ -43,7 +59,6 @@ exports.createPages = async ({graphql, actions}) => {
       },
     });
   });
-  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
 
   const employmentPageCount = Math.ceil(response.data.allSanityPosition.totalCount / pageSize);
   Array.from({length: employmentPageCount}).forEach((_, i) => {

@@ -4,15 +4,11 @@ import Layout from '../components/layout';
 import Pagination from '../components/Pagination';
 
 export default function EmploymentPage({data, pageContext}) {
-  let positions = data.positions.nodes;
+  const positions = data.positions.nodes;
 
   positions.forEach((position) => {
     position.endDate = position.currentJob ? 'ongoing' : position.endDate;
   });
-
-  positions = positions.sort(
-      (a, b) => Date.parse(b.startDate) - Date.parse(a.startDate),
-  );
 
   return (
     <Layout title="Employment">
@@ -29,7 +25,7 @@ export default function EmploymentPage({data, pageContext}) {
       <Pagination
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.positions.totalCount}
-        currentPage={pageContext.currentPage || 1}
+        currentPage={pageContext.currentPage || 'All'}
         skip={pageContext.skip}
         base="/employment"
       />
@@ -38,7 +34,7 @@ export default function EmploymentPage({data, pageContext}) {
 }
 
 export const query = graphql`
-  query($skip: Int = 0, $pageSize: Int = 8) {
+  query($skip: Int = 0, $pageSize: Int = 99999) {
     positions: allSanityPosition(limit: $pageSize, skip: $skip) {
         totalCount
         nodes {

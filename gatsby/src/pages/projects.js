@@ -28,7 +28,7 @@ export default function ProjectsPage({data, pageContext}) {
       <Pagination
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.projects.totalCount}
-        currentPage={pageContext.currentPage || 1}
+        currentPage={pageContext.currentPage || 'All'}
         skip={pageContext.skip}
         base="/projects"
       />
@@ -37,7 +37,7 @@ export default function ProjectsPage({data, pageContext}) {
 };
 
 export const query = graphql`
-   query($skip: Int = 0, $pageSize: Int = 8) {
+   query($skip: Int = 0, $pageSize: Int = 99999) {
         projects: allSanityProject(limit: $pageSize, skip: $skip, sort: { fields: lastWorkedOn, order: DESC }) {
           totalCount
           nodes {

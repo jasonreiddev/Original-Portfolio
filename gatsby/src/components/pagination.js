@@ -48,7 +48,7 @@ export default function Pagination({
   const hasPrevPage = prevPage >= 1;
   return (
     <>
-      {totalPages > 1 &&
+      {totalPages > 1 && currentPage != 'All' &&
         <PaginationStyles>
           <Link
             title="Prev Page"
@@ -72,6 +72,12 @@ export default function Pagination({
             to={`${base}/${nextPage}`}
           >
             <span className="word">Next</span> →
+          </Link>
+          <Link
+            title="View All"
+            to={`${base}`}
+          >
+            <span className="word">All</span>
           </Link>
         </PaginationStyles>
       }
