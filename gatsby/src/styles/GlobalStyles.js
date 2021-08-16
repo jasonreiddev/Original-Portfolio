@@ -41,6 +41,10 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
 
+fieldset {
+  color: var(--siteSecondary);
+}
+
 body {
     margin: 0;
     background: var(--siteMain);
@@ -57,6 +61,11 @@ a {
 
 html *{
     max-width: 100%;
+}
+
+/*H0n3y P0t*/
+#buzzyFuzzyFriend {
+  display: none;
 }
 
 /*Scrollbar*/

@@ -18,20 +18,16 @@ module.exports = {
         link: '/',
       },
       {
-        name: 'Logo',
-        link: '/logo',
-      },
-      {
-        name: 'Blog',
-        link: '/blog',
+        name: 'Projects',
+        link: '/projects/1',
       },
       {
         name: 'Employment',
-        link: '/employment',
+        link: '/employment/1',
       },
       {
-        name: 'Theme',
-        link: '/theme',
+        name: 'Blog',
+        link: '/blog/1',
       },
     ],
   },

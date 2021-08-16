@@ -1,6 +1,6 @@
 <!--
 For better readability, use markdown preview.
-VS Code:  ctrl-shift-v 
+VS Code:  ctrl-shift-v
 Atom:     ctrl-shift-m
 -->
 
@@ -27,60 +27,60 @@ Atom:     ctrl-shift-m
 
 1. **Setup.**
 
-    Create enviroment files in the /gatsby directory called
-    '<code>.env.production</code>' and '<code>.env.development</code>'
-    with the required variables from 
-    '<code>.env.example</code>' and the [enviroment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) values from [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
-    For the development enviroment SANITY_WATCHMODE can be set to true and other variables can be changed to use test enviroments. 
+   Create environment files in the /gatsby directory called
+   '<code>.env.production</code>' and '<code>.env.development</code>'
+   with the required variables from
+   '<code>.env.example</code>' and the [environment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) values from [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
+   For the development environment SANITY_WATCHMODE can be set to true and other variables can be changed to use test environment. https://ethereal.email/messages can be used to create a temporary SMTP service with the credentialed passed via the MAIL variables.
 
-    Install packages with
-    '<code>yarn</code>'
-    <hr/>
+   Install packages with
+   '<code>yarn</code>'
+   <hr/>
 
-2.  **Run.**
+2. **Run.**
 
-    In the Sanity folder run the back-end with:
-     '<code>yarn sanity start</code>'
+   In the Sanity folder run the back-end with:
 
-      Content Studio can be found at http://localhost:3333
+   '<code>yarn sanity start</code>'
 
-    In the Sanity folder run the back-end with:
-     '<code>sanity graphql deploy production</code>'
+   '<code>yarn sanity graphql deploy production</code>'
 
-    In the Gatsby folder run the front-end with:
-     '<code>yarn run develop</code>'
-    
-      The site will run at http://localhost:8000
+   Content Studio can be found at http://localhost:3333
 
-      View the GraphiQL at http://localhost:8000/___graphql 
-    <hr/>
+   In the Gatsby folder run the front-end with:
+   '<code>yarn run develop</code>'
 
-3.  **Deploy.**
+   The site will run at http://localhost:8888/ (with netlify-cli)
 
-    Before deploying please ensure node version 16.0.0^ is being used
+   View the GraphiQL at http://localhost:8000/\_\_\_graphql
+   <hr/>
 
-    In /Gatsby and /Sanity run '<code>yarn eslint</code>' 
+3. **Deploy.**
 
-    In /Gatsby run '<code>yarn run build</code>'
+   Before deploying please ensure node version 16.0.0^ is being used
 
-    In /Sanity run '<code>yarn sanity deploy production</code>'
+   In /Gatsby and /Sanity run '<code>yarn eslint</code>'
 
-    Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
+   In /Gatsby run '<code>yarn run build</code>'
 
-    - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
+   In /Sanity run '<code>yarn sanity deploy production</code>'
 
-    - Live: [Netlify](https://jasonreidd.netlify.app/) - [deploys](https://app.netlify.com/sites/jasonreidd/deploys) require manual publishing
-    <hr/>
+   Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
-2. **Configure.**
+   - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
 
-    Add packages with '<code>yarn add [package name] --save</code>'
+   - Live: [Netlify](https://jasonreidd.netlify.app/) - [deploys](https://app.netlify.com/sites/jasonreidd/deploys) require manual publishing
+   <hr/>
 
-    Add media via [Cloudinary](https://cloudinary.com/console/c-5efd2802d1af5a180a41cae9a4a86a/media_library/folders/391c080a206c2cca6c6dd6aaea482748)
-    
-    Add content via [Contentful](https://app.contentful.com/spaces/0dlrb1xtuolg/entries)
+4. **Configure.**
 
-    Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
+   Add packages with '<code>yarn add [package name] --save</code>'
+
+   Add media via [Cloudinary](https://cloudinary.com/console/c-5efd2802d1af5a180a41cae9a4a86a/media_library/folders/391c080a206c2cca6c6dd6aaea482748)
+
+   Add content via [Contentful](https://app.contentful.com/spaces/0dlrb1xtuolg/entries)
+
+   Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
 
 <br/>
 

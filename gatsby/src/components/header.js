@@ -14,9 +14,8 @@ const iconStyles = {
 };
 
 const ContainerStyles = styled.div`
-  padding: 1rem;
-  flexGrow: 1;
-  width: 100%;
+  padding: 1rem 2rem;
+  width: Calc(100% - 4rem);
   max-width: 1000px;
   margin: auto;
 `;

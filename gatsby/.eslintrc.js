@@ -41,6 +41,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'max-len': [2, 120, 4, {'ignoreUrls': true}],
     'require-jsdoc': 0,
+    'linebreak-style': 0, // Enable windows linebreaks
   },
   'overrides': [
     // Override some TypeScript rules just for .js files
