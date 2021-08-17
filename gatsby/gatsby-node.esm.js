@@ -49,10 +49,11 @@ exports.createPages = async ({graphql, actions}) => {
       },
     });
   });
+  const blogPostComponent=require.resolve('./src/templates/Blog-post.js');
   response.data.allContentfulBlogPost.edges.forEach((edge) => {
     createPage({
       path: `/blog/${edge.node.slug}`,
-      component: resolve('./src/templates/Blog-post.js'),
+      component: blogPostComponent,
       context: {
         slug: edge.node.slug,
       },
@@ -71,10 +72,11 @@ exports.createPages = async ({graphql, actions}) => {
       },
     });
   });
+  const employmentComponent=require.resolve('./src/templates/Employment.js');
   response.data.allSanityPosition.edges.forEach((edge) => {
     createPage({
       path: `/employment/${edge.node.slug.current}`,
-      component: resolve('./src/templates/Employment.js'),
+      component: employmentComponent,
       context: {
         slug: edge.node.slug.current,
       },
@@ -93,10 +95,11 @@ exports.createPages = async ({graphql, actions}) => {
       },
     });
   });
+  const projectComponent=require.resolve('./src/templates/Project.js');
   response.data.allSanityProject.edges.forEach((edge) => {
     createPage({
       path: `/projects/${edge.node.slug.current}`,
-      component: resolve('./src/templates/Project.js'),
+      component: projectComponent,
       context: {
         slug: edge.node.slug.current,
       },
