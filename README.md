@@ -52,7 +52,7 @@ Atom:     ctrl-shift-m
 
    The site will run at http://localhost:8888/ (with netlify-cli)
 
-   View the GraphiQL at http://localhost:8000/\_\_\_graphql
+   View the GraphiQL at http://localhost:8000/__graphql
    <hr/>
 
 3. **Deploy.**
