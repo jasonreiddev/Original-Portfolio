@@ -1,7 +1,7 @@
 import React from 'react';
 import useForm from '../utils/useForm';
 import useEmail from '../utils/useEmail';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import FormField from '../components/FormField';
 
 export default function EmailPage() {

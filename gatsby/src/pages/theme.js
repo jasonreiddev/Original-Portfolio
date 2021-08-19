@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import ThemeContext from '../context/ThemeContext';
 import Sun from '../images/svg/icon/Sun.svg';
 import Moon from '../images/svg/icon/Moon.svg';

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import useLatestData from '../utils/useLatestData';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 const logoStyles = {
   padding: '0 0.5rem 0 0',

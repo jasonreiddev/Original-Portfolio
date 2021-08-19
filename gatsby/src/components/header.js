@@ -20,83 +20,85 @@ const ContainerStyles = styled.div`
   margin: auto;
 `;
 
-const Header = ({menuLinks, title}) => (
-  <header style={{background: 'var(--sitePrimaryAccent)'}}>
-    <ContainerStyles
-      style={{
-        padding: '1rem 2rem',
-        alignItems: 'center',
-      }}
-    >
-      <h1 style={{margin: 0, flex: 1, fontSize: '1.5em'}}>
-        <Link
-          to="/"
-          style={{
-            color: 'var(--siteSecondary)',
-            textDecoration: 'none',
-          }}
-        >
-          <h1 style={{color: 'var(--siteSecondary)', margin: '0'}}>
-            <span>Jason Reid&apos;s</span>
-            <br />
-            <span style={{color: 'var(--siteMain)'}}>Development Portfolio</span>
-          </h1>
-        </Link>
-      </h1>
-      <div>
-        <nav>
-          <ul style={{
-            display: 'flex',
-            flex: 1,
-            padding: 0,
-            marginLeft: '-1rem',
-          }}>
-            {menuLinks.map((link) => (
-              <li
-                key={link.name}
-                style={{
-                  listStyleType: `none`,
-                  padding: `1rem`,
-                }}
-              >
-                <Link
-                  style={{color: link.name == title ? `var(--siteMain)` : `var(--siteSecondary)`}}
-                  to={link.link}>
-                  {
-                    (link.nameOverrideNav ? link.nameOverrideNav: link.name)
-                  }
-                </Link>
-              </li>
-            ))}
-            <li style={{
-              listStyleType: `none`,
-              padding: `1rem`,
-            }}>
-              <ThemeContext.Consumer>
-                {(theme) => (
-                  <a style={{color: 'var(--siteMain)', cursor: 'pointer'}}
-                    onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
-                    {
-                      theme.theme == 'dark' ?
-                      <img src={Moon} style={iconStyles} alt={'Moon'} width="auto" height="auto"/> :
-                      theme.theme == 'light' ?
-                      <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/> :
-                      <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/>
-                    }
-                  </a>
-                )}
-              </ThemeContext.Consumer>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </ContainerStyles>
-  </header>
-);
 Header.propTypes = {
   siteTitle: PropTypes.string,
 };
 Header.defaultProps = {
   siteTitle: ``,
 };
-export default Header;
+
+export default function Header({menuLinks, title}) {
+  return (
+    <header style={{background: 'var(--sitePrimaryAccent)'}}>
+      <ContainerStyles
+        style={{
+          padding: '1rem 2rem',
+          alignItems: 'center',
+        }}
+      >
+        <h1 style={{margin: 0, flex: 1, fontSize: '1.5em'}}>
+          <Link
+            to="/"
+            style={{
+              color: 'var(--siteSecondary)',
+              textDecoration: 'none',
+            }}
+          >
+            <h1 style={{color: 'var(--siteSecondary)', margin: '0'}}>
+              <span>Jason Reid&apos;s</span>
+              <br />
+              <span style={{color: 'var(--siteMain)'}}>Development Portfolio</span>
+            </h1>
+          </Link>
+        </h1>
+        <div>
+          <nav>
+            <ul style={{
+              display: 'flex',
+              flex: 1,
+              padding: 0,
+              marginLeft: '-1rem',
+            }}>
+              {menuLinks.map((link) => (
+                <li
+                  key={link.name}
+                  style={{
+                    listStyleType: `none`,
+                    padding: `1rem`,
+                  }}
+                >
+                  <Link
+                    style={{color: link.name == title ? `var(--siteMain)` : `var(--siteSecondary)`}}
+                    to={link.link}>
+                    {
+                      (link.nameOverrideNav ? link.nameOverrideNav: link.name)
+                    }
+                  </Link>
+                </li>
+              ))}
+              <li style={{
+                listStyleType: `none`,
+                padding: `1rem`,
+              }}>
+                <ThemeContext.Consumer>
+                  {(theme) => (
+                    <a style={{color: 'var(--siteMain)', cursor: 'pointer'}}
+                      onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
+                      {
+                      theme.theme == 'dark' ?
+                      <img src={Moon} style={iconStyles} alt={'Moon'} width="auto" height="auto"/> :
+                      theme.theme == 'light' ?
+                      <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/> :
+                      <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/>
+                      }
+                    </a>
+                  )}
+                </ThemeContext.Consumer>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </ContainerStyles>
+    </header>
+  );
+}

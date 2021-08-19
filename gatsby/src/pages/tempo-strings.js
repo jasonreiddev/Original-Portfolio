@@ -1,8 +1,8 @@
 import React from 'react';
 import {graphql} from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import useTempoStrings from '../utils/useTempoStrings';
-import SelectedTempoStrings from '../components/selectedTempoStrings';
+import SelectedTempoStrings from '../components/SelectedTempoStrings';
 
 export default function OrderPage({data}) {
   const tempoStrings = data.tempoStrings.edges[0].node;

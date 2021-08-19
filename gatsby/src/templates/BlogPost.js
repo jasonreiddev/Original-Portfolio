@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import {renderRichText} from 'gatsby-source-contentful/rich-text';
 
