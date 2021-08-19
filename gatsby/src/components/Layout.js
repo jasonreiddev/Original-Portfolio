@@ -6,8 +6,8 @@ import 'normalize.css';
 import ThemeContext from '../context/ThemeContext';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
-import SEO from '../components/seo';
-import Header from '../components/header';
+import SEO from './SEO';
+import Header from './Header';
 
 const SiteBorderStyles = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const FooterStyles = styled.footer`
   height: 1.5rem;
 `;
 
-const Layout = ({children, title, subTitle}) => {
+export default function Layout({children, title, subTitle}) {
   return (
     <>
       <GlobalStyles />
@@ -66,6 +66,3 @@ const Layout = ({children, title, subTitle}) => {
         }/>
     </>);
 };
-
-
-export default Layout;

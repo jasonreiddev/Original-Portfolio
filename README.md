@@ -52,14 +52,14 @@ Atom:     ctrl-shift-m
 
    The site will run at http://localhost:8888/ (with netlify-cli)
 
-   View the GraphiQL at http://localhost:8000/\_\_\_graphql
+   View the GraphiQL at http://localhost:8000/__graphql
    <hr/>
 
 3. **Deploy.**
 
    Before deploying please ensure node version 16.0.0^ is being used
 
-   In /Gatsby and /Sanity run '<code>yarn eslint</code>'
+   In /Gatsby and /Sanity run '<code>yarn run eslint</code>'
 
    In /Gatsby run '<code>yarn run build</code>'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Pagination from '../components/Pagination';
 
 export default function EmploymentPage({data, pageContext}) {

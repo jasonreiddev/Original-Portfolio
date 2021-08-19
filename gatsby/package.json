@@ -9,11 +9,10 @@
     "gatsby"
   ],
   "scripts": {
-    "//": "Using NODE_OPTIONS environmental variable -r esm and pckages 'esm' and 'cross-env package' to enable es modules in gatsby cross device",
-    "develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
+    "develop": "gatsby develop",
     "start": "netlify dev",
-    "build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
-    "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
     "clean": "gatsby clean",
     "netlify": "netlify dev",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"

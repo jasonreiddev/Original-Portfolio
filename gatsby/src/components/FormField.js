@@ -1,6 +1,6 @@
 import React from 'react';
 
-const formField = ({name, displayName, type, value, updateValue}) => {
+export default function FormField({name, displayName, type, value, updateValue}) {
   return (
     <label htmlFor={name}>
       {displayName}
@@ -14,4 +14,3 @@ const formField = ({name, displayName, type, value, updateValue}) => {
     </label>
   );
 };
-export default formField;
