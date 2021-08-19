@@ -4,7 +4,6 @@ import {Helmet} from 'react-helmet';
 import {useLocation} from '@reach/router';
 import {useStaticQuery, graphql} from 'gatsby';
 
-
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
