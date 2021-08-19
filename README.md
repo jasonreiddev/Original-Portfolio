@@ -59,7 +59,7 @@ Atom:     ctrl-shift-m
 
    Before deploying please ensure node version 16.0.0^ is being used
 
-   In /Gatsby and /Sanity run '<code>yarn eslint</code>'
+   In /Gatsby and /Sanity run '<code>yarn run eslint</code>'
 
    In /Gatsby run '<code>yarn run build</code>'
 
