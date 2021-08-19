@@ -6,7 +6,7 @@ import 'normalize.css';
 import ThemeContext from '../context/ThemeContext';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
-import SEO from './Seo';
+import SEO from './SEO';
 import Header from './Header';
 
 const SiteBorderStyles = styled.div`
