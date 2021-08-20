@@ -82,6 +82,16 @@ Atom:     ctrl-shift-m
 
    Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
 
+   Most content is pre complied when the site is build, exceptions to this rule are:
+   
+   - Sanity > Site Settings > Intro Text
+
+   - Sanity > Site Settings > Featured Items
+
+   - (Contentful blog posts are a w.i.p)
+
+   - Cloudinary Content
+
 <br/>
 
 <div align="center">
