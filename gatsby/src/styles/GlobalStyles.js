@@ -54,6 +54,10 @@ div[role="group"][tabindex] {
     height: 100%;
 }
 
+p {
+  white-space: pre-line;
+}
+
 a {
     text-decoration: none;
     font-weight: bold;
@@ -68,10 +72,15 @@ html *{
   display: none;
 }
 
+.scroll {
+  flex-grow: 1;
+}
+
 /*Scrollbar*/
 @media only screen and (max-width: 640px) {
   .mobile-scroll{
-    overflow-Y: auto;
+    overflow-Y: scroll;
+    min-height: 100vh;
   }
 }
 
@@ -79,8 +88,8 @@ html *{
   .scroll{
     overflow-Y: scroll;
     overflow-x: hidden;
+    }
   }
-}
 
 .mobile-scroll::-webkit-scrollbar,
 .scroll::-webkit-scrollbar {
