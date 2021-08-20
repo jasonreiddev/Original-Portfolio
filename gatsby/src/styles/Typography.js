@@ -11,15 +11,22 @@ body{
   li {
     padding-bottom: 1em;
   }
+  
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--sitePrimaryAccent);
+    color: var(--siteBoldSecondary);
+    text-decoration-thickness: 0.2em;
+  }
+
   h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
+    a {
+      color: var(--sitePrimaryAccent);
+      text-decoration: none;
+    }
   }
-  a {
-    color: var(--sitePrimaryAccent);
-    text-decoration-color: var(--sitePrimaryAccent);
-    /* Chrome renders this weird with this font, so we turn it off */
-    text-decoration-skip-ink: none;
-  }
+
   mark, .mark {
     background: var(--sitePrimaryAccent);
     padding: 0 2px 2px 2px;
