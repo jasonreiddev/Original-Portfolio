@@ -49,7 +49,10 @@ export default function Blog({data, pageContext}) {
 
 export const query = graphql`
   query($skip: Int = 0, $pageSize: Int = 99999) {
-    blogPosts: allContentfulBlogPost(limit: $pageSize, skip: $skip, sort: { fields: publishedDate, order: DESC }) {
+    blogPosts: allContentfulBlogPost(
+      limit: $pageSize, skip: $skip,
+      sort: { fields: publishedDate, order: DESC }
+      ) {
         edges {
           node {
             title

@@ -8,12 +8,6 @@ export default{
     icon,
     fields: [
         {
-            name: 'currentJob',
-            title: 'Current Job',
-            type: 'boolean',
-            description: 'Are you currently employed by this organisation?',
-        },
-        {
             name: 'jobTitle',
             title: 'Job Title',
             type: 'string',
@@ -27,6 +21,24 @@ export default{
             description: 'What is the Organisation Name?',
         },
         {
+            name: 'currentJob',
+            title: 'Current Job',
+            type: 'boolean',
+            description: 'Are you currently employed by this organisation?',
+            options: {
+                layout: 'checkbox',
+            }
+        },
+        {
+            name: 'hideOnEmployment',
+            title: 'Hide on Employment',
+            type: 'boolean',
+            description: 'Hide in the employmernt page of gatsby site',
+            options: {
+                layout: 'checkbox',
+            }
+        },
+        {
             name: 'slug',
             title: 'slug',
             type: 'slug',
@@ -37,15 +49,15 @@ export default{
             },
         },
         {
-            title: 'Salary',
             name: 'salary',
+            title: 'Salary',
             type: 'number',
             description: 'Salary (max during time employed)',
             inputComponent: SalaryInput,
         },
         {
-            title: 'Start Date',
             name: 'startDate',
+            title: 'Start Date',
             type: 'date',
             options: {
               dateFormat: 'YYYY-MM',
@@ -53,13 +65,19 @@ export default{
             }
         },
         {
-            title: 'End Date',
             name: 'endDate',
+            title: 'End Date',
             type: 'date',
             options: {
               dateFormat: 'YYYY-MM',
               calendarTodayLabel: 'Today',
             }
+        },
+        {
+            name: 'details',
+            title: 'Details',
+            type: 'text',
+            description: 'Details about the position',
         },
     ],
     preview: {

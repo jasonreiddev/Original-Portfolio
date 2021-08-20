@@ -22,12 +22,16 @@ export const query = graphql`
   }
 `;
 
-const BlogPost = (props) => {
+export default function BlogPost(props) {
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title}>
       <Link to="/blog/">Visit the Blog Page</Link>
       <div className="content">
         <h1>{props.data.contentfulBlogPost.title}</h1>
+        <span className="meta">
+          Posted on {props.data.contentfulBlogPost.publishedDate}
+        </span>
+        <hr/>
         {props.data.contentfulBlogPost.featuredImage && (
           <GatsbyImage
             className="featured"
@@ -36,13 +40,7 @@ const BlogPost = (props) => {
           />
         )}
         {renderRichText(props.data.contentfulBlogPost.body)}
-        <hr/>
-        <span className="meta">
-          Posted on {props.data.contentfulBlogPost.publishedDate}
-        </span>
       </div>
     </Layout>
   );
 };
-
-export default BlogPost;

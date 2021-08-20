@@ -7,7 +7,9 @@ const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
 async function createEmploymentPages({graphql, actions}) {
   const {data} = await graphql(`
     query {
-      employment: allSanityPosition {
+      employment: allSanityPosition(
+        filter: {hideOnEmployment: {eq: false}}
+      ) {
         totalCount
         edges {
           node {
