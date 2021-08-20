@@ -23,7 +23,7 @@ export default function ProjectPage(props) {
         <h1>{props.data.sanityProject.projectTitle}</h1>
         <span className="meta">
           {props.data.sanityProject.lastWorkedOn ?
-          <>lastWorkedOn: {props.data.sanityProject.lastWorkedOn}</> :
+          <>Last worked on: {props.data.sanityProject.lastWorkedOn}</> :
           <>Ongoing Project</>
           }
         </span>
