@@ -14,6 +14,7 @@ const SiteBorderStyles = styled.div`
   flex-direction: column;
   overflow: hidden;
   max-width: 100VW;
+  max-height: 100vh;
 `;
 
 const MainStyles = styled.main`
@@ -50,16 +51,18 @@ export default function Layout({children, title, subTitle}) {
         render={(data) => (
           <ThemeContext.Consumer>
             {(theme) => (
-              <SiteBorderStyles>
+              <SiteBorderStyles className={'mobile-scroll'}>
                 <Helmet>
                   <body className={'theme-'+ theme.theme}/>
                 </Helmet>
                 <SEO title={title} subTitle={subTitle}/>
                 <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
-                <MainStyles>
-                  {children}
-                </MainStyles>
-                <FooterStyles/>
+                <div className={'scroll'}>
+                  <MainStyles>
+                    {children}
+                  </MainStyles>
+                  <FooterStyles/>
+                </div>
               </SiteBorderStyles>)
             }
           </ThemeContext.Consumer>)

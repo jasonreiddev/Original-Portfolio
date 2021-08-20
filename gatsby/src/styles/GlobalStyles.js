@@ -69,18 +69,34 @@ html *{
 }
 
 /*Scrollbar*/
-body::-webkit-scrollbar {
+@media only screen and (max-width: 640px) {
+  .mobile-scroll{
+    overflow-Y: auto;
+  }
+}
+
+@media only screen and (min-width: 639px) {
+  .scroll{
+    overflow-Y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.mobile-scroll::-webkit-scrollbar,
+.scroll::-webkit-scrollbar {
     width: 1em;
   }
    
-  body::-webkit-scrollbar-track {
+  .mobile-scroll::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0.35rem rgba(0, 0, 0, 0.3);
   }
    
-  body::-webkit-scrollbar-thumb {
+  .mobile-scroll::-webkit-scrollbar-thumb,
+  .scroll::-webkit-scrollbar-thumb {
     border: 0.1rem solid var(--siteSecondary);
     background-color: var(--siteMain);
     border-radius: 1rem;
-  }`;
+  }
+`;
 
 export default GlobalStyles;
