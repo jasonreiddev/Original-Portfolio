@@ -15,7 +15,7 @@ const iconStyles = {
 
 const ContainerStyles = styled.div`
   padding: 1rem 2rem;
-  width: Calc(100% - 4rem);
+  width: Calc(100% - 3rem);
   max-width: 1000px;
   margin: auto;
 `;
@@ -55,7 +55,7 @@ export default function Header({menuLinks, title}) {
           <nav>
             <ul style={{
               display: 'flex',
-              flex: 1,
+              flexFlow: 'row wrap',
               padding: 0,
               marginLeft: '-1rem',
             }}>
