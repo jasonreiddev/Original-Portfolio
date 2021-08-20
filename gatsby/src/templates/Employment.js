@@ -7,9 +7,9 @@ export const query = graphql`
   query($slug: String!) {
     sanityPosition(slug: { current: { eq: $slug } }) {
         jobTitle
-        details
-        endDate
-        startDate
+        details    
+        endDate(formatString: "MMMM YYYY")
+        startDate(formatString: "MMMM YYYY")
     }
   }
 `;
