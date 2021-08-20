@@ -78,8 +78,9 @@ body::-webkit-scrollbar {
   }
    
   body::-webkit-scrollbar-thumb {
-    background-color: var(--siteSecondary);
-    outline: 1px solid var(--siteBoldSecondary);
+    border: 0.1rem solid var(--siteSecondary);
+    background-color: var(--siteMain);
+    border-radius: 1rem;
   }`;
 
 export default GlobalStyles;
