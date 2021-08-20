@@ -40,7 +40,14 @@ const IndexPage = () => {
           {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
         </p>
         <p>The best place to contact me is via <a href="https://www.linkedin.com/in/jasonreiddev/">LinkedIn</a>.</p>
-        <h3>This site was built using:</h3>
+        <h2>Featured</h2>
+        <ul>
+          <li><a href="/projects/flex/">Flex - Flexi-Time Management</a></li>
+          <li><a href="/projects/bcp/">BCP - Business Continuity Planning</a></li>
+          <li><a href="/blog/deployments-covid/">Working in Deployments Throughout the Covid-19 Pandemic</a></li>
+        </ul>
+
+        <h2>This site was built using:</h2>
         <ul>
           <li>Gatsby</li>
           <li>Sanity</li>
