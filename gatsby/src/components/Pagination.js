@@ -77,7 +77,7 @@ export default function Pagination({
             title="View All"
             to={`${base}`}
           >
-            <span className="word">All</span>
+            All
           </Link>
         </PaginationStyles>
       }
