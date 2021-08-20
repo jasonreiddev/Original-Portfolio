@@ -7,7 +7,6 @@ export default function ProjectsPage({data, pageContext}) {
   const projects = data.projects.nodes;
 
   projects.forEach((project) => {
-    console.log(project.lastWorkedOn);
     project.lastWorkedOn = project.lastWorkedOn ? project.lastWorkedOn : 'Ongoing';
   });
 
