@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 export const query = graphql`
   query($slug: String!) {
     sanityProject(slug: { current: { eq: $slug } }) {
-      lastWorkedOn
+      lastWorkedOn(formatString: "MMMM YYYY")
       projectTitle
       repoUrl
       siteUrl
