@@ -51,6 +51,22 @@ export default{
                 maxLength: 100,
             },
         },
+        {
+            name: 'details',
+            title: 'Details',
+            type: 'text',
+            description: 'Details about the project',
+        },
+        {
+            name: 'excerpt',
+            title: 'Excerpt',
+            type: 'string',
+            description: 'Excerpt to be shown in project listing',
+            options: {
+                source: 'details',
+                maxLength: 100,
+            },
+        },
     ],
     preview: {
         select: {

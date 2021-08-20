@@ -48,7 +48,7 @@ Atom:     ctrl-shift-m
    Content Studio can be found at http://localhost:3333
 
    In the Gatsby folder run the front-end with:
-   '<code>yarn run develop</code>'
+   '<code>yarn run start</code>'
 
    The site will run at http://localhost:8888/ (with netlify-cli)
 
