@@ -82,7 +82,7 @@ Atom:     ctrl-shift-m
 
    Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
 
-   Most content is pre complied when the site is build, exceptions to this rule are:
+   Most content is precomplied when the site is built, exceptions to this rule are:
    
    - Sanity > Site Settings > Intro Text
 
