@@ -7,11 +7,9 @@ import Sun from '../images/svg/icon/Sun.svg';
 import Moon from '../images/svg/icon/Moon.svg';
 import Pallet from '../images/svg/icon/Pallet.svg';
 
-const iconStyles = {
-  padding: '0 0.5rem 0 0',
-  transform: 'translateY(-0.2rem)',
-  height: '1.8rem',
-};
+const IconStyles = styled.img`
+  transform: translateY(-0.3rem);
+`;
 
 const ContainerStyles = styled.div`
   padding: 1rem 2rem;
@@ -29,7 +27,7 @@ Header.defaultProps = {
 
 export default function Header({menuLinks, title}) {
   return (
-    <header style={{background: 'var(--sitePrimaryAccent)'}}>
+    <header style={{background: 'var(--sitePrimaryAccent)', flexGrow: 0}}>
       <ContainerStyles
         style={{
           padding: '1rem 2rem',
@@ -86,10 +84,11 @@ export default function Header({menuLinks, title}) {
                       onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
                       {
                       theme.theme == 'dark' ?
-                      <img src={Moon} style={iconStyles} alt={'Moon'} width="auto" height="auto"/> :
+                      <IconStyles src={Moon} alt={'Moon'} width="auto" height="auto"/> :
                       theme.theme == 'light' ?
-                      <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/> :
-                      <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/>
+                      <IconStyles src={Sun} style={{filter: 'invert(1)'}}
+                        alt={'Sun'} width="auto" height="auto"/> :
+                      <IconStyles src={Pallet} alt={'Paint Pallet'} width="auto" height="auto"/>
                       }
                     </a>
                   )}
