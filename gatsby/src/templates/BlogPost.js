@@ -25,7 +25,7 @@ export const query = graphql`
 export default function BlogPost(props) {
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title}>
-      <Link to="/blog/">Visit the Blog Page</Link>
+      <Link to="/blog/">← Blog Page</Link>
       <div className="content">
         <h1>{props.data.contentfulBlogPost.title}</h1>
         <span className="meta">

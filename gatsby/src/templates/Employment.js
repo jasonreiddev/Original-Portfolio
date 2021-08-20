@@ -17,7 +17,7 @@ export const query = graphql`
 export default function ProjectPage(props) {
   return (
     <Layout title="Employment" subTitle={props.data.sanityPosition.jobTitle}>
-      <Link to="/projects/">Visit the Employment Page</Link>
+      <Link to="/projects/">← Employment Page</Link>
       <div className="content">
         <h1>{props.data.sanityPosition.jobTitle}</h1>
         <span className="meta">

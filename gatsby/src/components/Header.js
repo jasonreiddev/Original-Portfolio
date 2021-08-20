@@ -16,6 +16,7 @@ const ContainerStyles = styled.div`
   width: Calc(100% - 3rem);
   max-width: 1000px;
   margin: auto;
+  font-size: 14pt;
 `;
 
 Header.propTypes = {
