@@ -28,11 +28,14 @@ const IndexPage = () => {
       <Layout title="">
         <h1>{organisation(null, 'Welcome to my portfolio!', defaultHighlightStyles, null)}</h1>
         <p>
-          {!latestData.introText && <span>Loading...</span>}
-          {latestData.introText && !latestData.introText.length &&
+          {!latestData.introText &&
           // Fallback text
-           <span>My name is Jason Reid and I am a software developer from Yorkshire.
-           I started my software development career in January of 2019 as an apprentice at Bradford council.</span>
+           <span>My name is Jason Reid and I am a software developer from Yorkshire.<br/>
+           I started my software development career in January of 2019 as an apprentice at Bradford council.<br/>
+             <br/>
+           Mobile: 07468 12799<br/>
+             <br/>
+           Email: Jasonreidd@gmail.com</span>
           }
           {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
         </p>
