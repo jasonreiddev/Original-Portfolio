@@ -26,7 +26,7 @@ const IndexPage = () => {
   return (
     <>
       <Layout title="">
-        <h1>{organisation(null, 'Welcome to my portfolio!', defaultHighlightStyles, null)}</h1>
+        <h2>{organisation(null, 'Welcome to my portfolio!', defaultHighlightStyles, null)}</h2>
         <p>
           {!latestData.introText &&
           // Fallback text
