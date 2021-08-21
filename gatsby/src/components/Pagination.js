@@ -7,22 +7,24 @@ const PaginationStyles = styled.div`
   align-content: center;
   align-items: center;
   justify-items: center;
-  border: 1px solid var(--grey);
   margin: 2rem 0 0 0;
   border-radius: 5px;
   text-align: center;
   & > * {
+    font-weight: bold;
+    font-size: 16pt;
+    color: var(--sitePrimaryAccent);
     padding: 1rem;
     flex: 1;
-    border-right: 1px solid var(--grey);
     text-decoration: none;
     &[aria-current],
     &.current {
-      color: var(--red);
+      color: var(--siteSecondary);
+      cursor: default;
     }
     &[disabled] {
       pointer-events: none;
-      color: var(--grey);
+      color: var(--siteSecondary);
     }
   }
   @media (max-width: 800px) {
@@ -59,7 +61,7 @@ export default function Pagination({
           </Link>
           {Array.from({length: totalPages}).map((_, i) => (
             <Link
-              className={currentPage === 1 && i === 0 ? 'current' : ''}
+              className={[currentPage === 1 && i === 0 ? 'current' : '', ' hide-small-mobile']}
               to={`${base}/${i + 1}`}
               key={`page${i}`}
             >

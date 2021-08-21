@@ -93,9 +93,10 @@ html *{
 
 .mobile-scroll::-webkit-scrollbar,
 .scroll::-webkit-scrollbar {
-    width: 1em;
+    width: 0.75rem;
   }
    
+  .scroll::-webkit-scrollbar-track,
   .mobile-scroll::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0.35rem rgba(0, 0, 0, 0.3);
   }
@@ -104,8 +105,20 @@ html *{
   .scroll::-webkit-scrollbar-thumb {
     border: 0.1rem solid var(--siteSecondary);
     background-color: var(--siteMain);
-    border-radius: 1rem;
+    border-radius: 0.75rem;
   }
+
+@media only screen and (min-width: 480px) {
+  .show-small-mobile{ 
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .hide-small-mobile{ 
+    display: none;
+  }
+}
 `;
 
 export default GlobalStyles;

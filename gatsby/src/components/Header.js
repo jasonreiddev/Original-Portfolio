@@ -46,7 +46,10 @@ export default function Header({menuLinks, title}) {
             <h1 style={{color: 'var(--siteSecondary)', margin: '0'}}>
               <span>Jason Reid&apos;s</span>
               <br />
-              <span style={{color: 'var(--siteMain)'}}>Development Portfolio</span>
+              <span style={{color: 'var(--siteMain)'}}>
+                <span className="hide-small-mobile">Development Portfolio</span>
+                <span className="show-small-mobile">Dev Portfolio</span>
+              </span>
             </h1>
           </Link>
         </h1>
