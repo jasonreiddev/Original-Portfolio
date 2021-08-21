@@ -25,9 +25,9 @@ export default function ProjectsPage({data, pageContext}) {
               <p className="meta">
                 <span>{project.lastWorkedOn}</span>
               </p>
-              <div className="button">
+              <p className="button">
                 <Link to={`/projects/${project.slug.current}/`}>Read More</Link>
-              </div>
+              </p>
             </li>
           );
         })}

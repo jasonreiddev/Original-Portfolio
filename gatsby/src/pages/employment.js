@@ -24,9 +24,9 @@ export default function EmploymentPage({data, pageContext}) {
             <p className="meta">
               {position.startDate}{position.endDate && <> - {position.endDate}</>}
             </p>
-            <div className="button">
+            <p className="button">
               <Link to={`/projects/${position.slug.current}/`}>Read More</Link>
-            </div>
+            </p>
           </li>
         ))
         }

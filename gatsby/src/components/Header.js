@@ -33,7 +33,7 @@ export default function Header({menuLinks, title}) {
           alignItems: 'center',
         }}
       >
-        <h1 style={{margin: 0, flex: 1, fontSize: '1.5em'}}>
+        <div style={{margin: 0, flex: 1, fontSize: '1.5em'}}>
           <Link
             to="/"
             style={{
@@ -50,7 +50,7 @@ export default function Header({menuLinks, title}) {
               </span>
             </h1>
           </Link>
-        </h1>
+        </div>
         <div>
           <nav>
             <ul style={{

@@ -8,6 +8,17 @@ body{
   p, li {
     letter-spacing: 0.5px; 
   }
+
+  li {
+    padding-bottom: 1em;
+    p {
+      margin: 0;
+    }
+  }
+
+  .post p {
+    margin-top: 0.5rem;
+  }
   
   a {
     text-decoration: underline;

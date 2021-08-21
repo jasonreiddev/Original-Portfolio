@@ -29,9 +29,9 @@ export default function Blog({data, pageContext}) {
               <p className="excerpt">
                 {edge.node.excerpt.childMarkdownRemark.excerpt}
               </p>
-              <div className="button">
+              <p className="button">
                 <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
-              </div>
+              </p>
             </li>
           );
         })}

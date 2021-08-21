@@ -16,7 +16,7 @@ const NotFoundPage = () => {
   return (
     <Layout title="Not Found">
       <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
+      <h2 style={headingStyles}>Page not found</h2>
       <p style={paragraphStyles}>
         Sorry{' '}
         <span role="img" aria-label="Pensive emoji">
