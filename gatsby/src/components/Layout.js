@@ -23,7 +23,6 @@ const ContentStyles = styled.div`
 `;
 
 const MainStyles = styled.main`
-  padding: 1rem 2rem;
   width: Calc(100% - 3rem);
   max-width: 1000px;
   margin: auto;
@@ -33,7 +32,6 @@ const MainStyles = styled.main`
 const FooterStyles = styled.footer`
   height: 1.5rem;
   text-align: center;
-  padding: 1rem 2rem;
   width: Calc(100% - 3rem);
   max-width: 1000px;
   margin: auto;
