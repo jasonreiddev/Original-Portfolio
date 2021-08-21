@@ -8,9 +8,6 @@ body{
   p, li {
     letter-spacing: 0.5px; 
   }
-  li {
-    padding-bottom: 1em;
-  }
   
   a {
     text-decoration: underline;

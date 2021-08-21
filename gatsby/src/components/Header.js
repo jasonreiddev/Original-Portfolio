@@ -12,7 +12,6 @@ const IconStyles = styled.img`
 `;
 
 const ContainerStyles = styled.div`
-  padding: 1rem 2rem;
   width: Calc(100% - 3rem);
   max-width: 1000px;
   margin: auto;
@@ -31,7 +30,6 @@ export default function Header({menuLinks, title}) {
     <header style={{background: 'var(--sitePrimaryAccent)', flexGrow: 0}}>
       <ContainerStyles
         style={{
-          padding: '1rem 2rem',
           alignItems: 'center',
         }}
       >
@@ -43,7 +41,7 @@ export default function Header({menuLinks, title}) {
               textDecoration: 'none',
             }}
           >
-            <h1 style={{color: 'var(--siteSecondary)', margin: '0'}}>
+            <h1 style={{color: 'var(--siteSecondary)'}}>
               <span>Jason Reid&apos;s</span>
               <br />
               <span style={{color: 'var(--siteMain)'}}>
