@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import useLatestData from '../utils/useLatestData';
+import {Link} from 'gatsby';
+import ExternalLink from '../components/ExternalLink';
 
 import Layout from '../components/Layout';
 
@@ -39,12 +41,12 @@ const IndexPage = () => {
           }
           {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
         </p>
-        <p>The best place to contact me is via <a href="https://www.linkedin.com/in/jasonreiddev/">LinkedIn</a>.</p>
+        <p>The best place to contact me is via <ExternalLink to="https://www.linkedin.com/in/jasonreiddev/">LinkedIn</ExternalLink>.</p>
         <h2>Featured</h2>
         <ul>
-          <li><a href="/projects/flex/">Flex - Flexi-Time Management</a></li>
-          <li><a href="/projects/bcp/">BCP - Business Continuity Planning</a></li>
-          <li><a href="/blog/deployments-covid/">Working in Deployments Throughout the Covid-19 Pandemic</a></li>
+          <li><Link to="/projects/flex/">Flex - Flexi-Time Management</Link></li>
+          <li><Link to="/projects/bcp/">BCP - Business Continuity Planning</Link></li>
+          <li><Link to="/blog/deployments-covid/">Working in Deployments Throughout the Covid-19 Pandemic</Link></li>
         </ul>
 
         <h2>This site was built using:</h2>
@@ -56,7 +58,9 @@ const IndexPage = () => {
           <li>Netflify Functions</li>
           <li>NodeJS, GraphQL, Yarn, Babel, ESLint </li>
         </ul>
-        <p>For more information you can view the projects repository on <a href="https://github.com/JasonReidd/Portfolio">Github</a>.</p>
+        <p>For more information you can view the projects repository on&nbsp;
+          <ExternalLink to="https://github.com/JasonReidd/Portfolio">Github</ExternalLink>
+        </p>
       </Layout>
     </>
   );

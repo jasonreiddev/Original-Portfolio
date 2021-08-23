@@ -82,7 +82,7 @@ export default function Header({menuLinks, title}) {
               }}>
                 <ThemeContext.Consumer>
                   {(theme) => (
-                    <a style={{color: 'var(--siteMain)', cursor: 'pointer'}}
+                    <span type="button" style={{color: 'var(--siteMain)', cursor: 'pointer'}}
                       onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
                       {
                       theme.theme == 'dark' ?
@@ -92,7 +92,7 @@ export default function Header({menuLinks, title}) {
                         alt={'Sun'} width="auto" height="auto"/> :
                       <IconStyles src={Pallet} alt={'Paint Pallet'} width="auto" height="auto"/>
                       }
-                    </a>
+                    </span>
                   )}
                 </ThemeContext.Consumer>
               </li>
