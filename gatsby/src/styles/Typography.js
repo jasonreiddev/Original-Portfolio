@@ -21,6 +21,7 @@ body{
   }
   
   a {
+    text-decoration-skip-ink: none;
     text-decoration: underline;
     text-decoration-color: var(--sitePrimaryAccent);
     color: var(--siteBoldSecondary);
