@@ -3,13 +3,11 @@ import {Link} from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ThemeContext from '../context/ThemeContext';
-import Sun from '../images/svg/icon/Sun.svg';
-import Moon from '../images/svg/icon/Moon.svg';
-import Pallet from '../images/svg/icon/Pallet.svg';
+import {HiSun} from 'react-icons/hi';
+import {HiMoon} from 'react-icons/hi';
+import {GoPaintcan} from 'react-icons/go';
 
-const IconStyles = styled.img`
-  transform: translateY(-0.3rem);
-`;
+// import {GoPaintcan} from 'react-icons/go';
 
 const ContainerStyles = styled.div`
   width: Calc(100% - 3rem);
@@ -86,11 +84,10 @@ export default function Header({menuLinks, title}) {
                       onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
                       {
                       theme.theme == 'dark' ?
-                      <IconStyles src={Moon} alt={'Moon'} width="auto" height="auto"/> :
+                      <HiMoon/> :
                       theme.theme == 'light' ?
-                      <IconStyles src={Sun} style={{filter: 'invert(1)'}}
-                        alt={'Sun'} width="auto" height="auto"/> :
-                      <IconStyles src={Pallet} alt={'Paint Pallet'} width="auto" height="auto"/>
+                      <HiSun/> :
+                      <GoPaintcan/>
                       }
                     </span>
                   )}

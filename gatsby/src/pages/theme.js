@@ -1,16 +1,9 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import ThemeContext from '../context/ThemeContext';
-import Sun from '../images/svg/icon/Sun.svg';
-import Moon from '../images/svg/icon/Moon.svg';
-import Pallet from '../images/svg/icon/Pallet.svg';
-
-const iconStyles = {
-  padding: '0 0.5rem 0 0',
-  transform: 'translateY(0.5rem)',
-  height: '1.8rem',
-  color: 'var(--siteMain)',
-};
+import {HiSun} from 'react-icons/hi';
+import {HiMoon} from 'react-icons/hi';
+import {GoPaintcan} from 'react-icons/go';
 
 const ColorBoxContainerStyles = {
   display: 'flex',
@@ -58,21 +51,21 @@ const Images = () => {
                 onClick={theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}>
                 {theme.theme == 'dark' ?
                 <><span>Turn on the lights </span>
-                  <img src={Moon} style={iconStyles} alt={'Moon'} width="auto" height="auto"/></> :
+                  <HiMoon/></> :
                 theme.theme == 'light' ?
                 <><span>Turn off the lights </span>
-                  <img src={Sun} style={iconStyles} alt={'Sun'} width="auto" height="auto"/></>:
+                  <HiSun/></>:
                 <><span>Turn off high contrast mode </span>
-                  <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/></>
+                  <GoPaintcan/></>
                 }
               </button>
               <button style={ThemeSwitchButtonStyles}
                 onClick={theme.useCustom}>
                 {theme.theme == 'custom' ?
                 <span style={{color: 'var(--siteMain)'}}>Using high contrast mode
-                  <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/> </span>:
+                  <GoPaintcan/></span>:
                 <span>Use high contrast mode
-                  <img src={Pallet} style={iconStyles} alt={'Paint Pallet'} width="auto" height="auto"/></span>
+                  <GoPaintcan/></span>
                 }
               </button>
             </>
