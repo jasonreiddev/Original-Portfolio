@@ -19,7 +19,7 @@ export default function ProjectPage(props) {
   return (
     <Layout title="Employment" subTitle={props.data.sanityPosition.jobTitle}>
       <br/>
-      <Link to="/projects/"><AiOutlineLeft/>Employment Page</Link>
+      <Link to="/employment/"><AiOutlineLeft/>Employment Page</Link>
       <div className="content">
         <h2>{props.data.sanityPosition.jobTitle}</h2>
         <span className="meta">
