@@ -36,6 +36,7 @@ const FooterStyles = styled.footer`
   max-width: 1000px;
   margin: auto;
   flex-grow: 0;
+  padding-bottom: 1em;
 `;
 
 export default function Layout({children, title, subTitle}) {
