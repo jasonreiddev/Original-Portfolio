@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
+import {AiOutlineLeft} from 'react-icons/ai';
+import {AiOutlineRight} from 'react-icons/ai';
 
 const PaginationStyles = styled.div`
   display: flex;
@@ -57,7 +59,7 @@ export default function Pagination({
             disabled={!hasPrevPage}
             to={`${base}/${prevPage}`}
           >
-            ← <span className="word">Prev</span>
+            <AiOutlineLeft/><span className="word">Prev</span>
           </Link>
           {Array.from({length: totalPages}).map((_, i) => (
             <Link
@@ -73,7 +75,7 @@ export default function Pagination({
             disabled={!hasNextPage}
             to={`${base}/${nextPage}`}
           >
-            <span className="word">Next</span> →
+            <span className="word">Next</span><AiOutlineRight/>
           </Link>
           <Link
             title="View All"
