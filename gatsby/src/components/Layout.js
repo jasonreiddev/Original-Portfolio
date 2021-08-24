@@ -30,12 +30,7 @@ const MainStyles = styled.main`
 `;
 
 const FooterStyles = styled.footer`
-  height: 1.5rem;
   text-align: center;
-  width: Calc(100% - 3rem);
-  max-width: 1000px;
-  margin: auto;
-  flex-grow: 0;
 `;
 
 export default function Layout({children, title, subTitle}) {
@@ -72,7 +67,7 @@ export default function Layout({children, title, subTitle}) {
                     {children}
                   </MainStyles>
                   <FooterStyles>
-                    &copy; {new Date().getFullYear()} Jason Reid
+                    <p>&copy; {new Date().getFullYear()} Jason Reid</p>
                   </FooterStyles>
                 </ContentStyles>
               </SiteBorderStyles>)

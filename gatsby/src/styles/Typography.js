@@ -52,6 +52,10 @@ body{
     line-height: 1;
   }
 
+  svg{
+    transform: translateY(15%);
+  }
+
   .center {
     text-align: center;
   }

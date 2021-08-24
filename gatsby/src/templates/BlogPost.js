@@ -1,9 +1,10 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
-
-import Layout from '../components/Layout';
 import {GatsbyImage} from 'gatsby-plugin-image';
 import {renderRichText} from 'gatsby-source-contentful/rich-text';
+import {AiOutlineLeft} from 'react-icons/ai';
+
+import Layout from '../components/Layout';
 
 export const query = graphql`
   query($slug: String!) {
@@ -26,7 +27,7 @@ export default function BlogPost(props) {
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title}>
       <br/>
-      <Link to="/blog/">← Blog Page</Link>
+      <Link to="/blog/"><AiOutlineLeft/>Blog Page</Link>
       <div className="content">
         <h2>{props.data.contentfulBlogPost.title}</h2>
         <span className="meta">

@@ -1,5 +1,6 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
+import {AiOutlineLeft} from 'react-icons/ai';
 
 import Layout from '../components/Layout';
 
@@ -19,7 +20,7 @@ export default function ProjectPage(props) {
   return (
     <Layout title="Projects" subTitle={props.data.sanityProject.projectTitle}>
       <br/>
-      <Link to="/projects/">← Project Page</Link>
+      <Link to="/projects/"><AiOutlineLeft/>Project Page</Link>
       <div className="content">
         <h2>{props.data.sanityProject.projectTitle}</h2>
         <span className="meta">

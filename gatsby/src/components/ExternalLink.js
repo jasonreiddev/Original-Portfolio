@@ -7,7 +7,7 @@ export default function ExternalLink({
 }) {
   return (
     <a href={to}>
-      {children} <AiOutlineLink/>
+      <AiOutlineLink/>{children}
     </a>
   );
 }
