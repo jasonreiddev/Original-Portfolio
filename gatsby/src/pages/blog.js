@@ -58,7 +58,7 @@ export const query = graphql`
             title
             id
             slug
-            publishedDate(formatString: "Do MMMM, YYYY")
+            publishedDate(formatString: "YYYY-MM-DD")
             featuredImage {
               fluid(maxWidth: 750) {
                 ...GatsbyContentfulFluid
