@@ -33,9 +33,9 @@ const IndexPage = () => {
           {!latestData.introText &&
           // Fallback text
            <span>My name is Jason Reid and I am a software developer from Yorkshire.<br/>
-           I started my software development career in January of 2019 as an apprentice at Bradford council.<br/>
+           I started my software development career in January of 2019 as an apprentice at Bradford Council.<br/>
              <br/>
-           Mobile: 07468 12799<br/>
+           Mobile: 07464 812 799<br/>
              <br/>
            Email: Jasonreidd@gmail.com</span>
           }
@@ -58,7 +58,7 @@ const IndexPage = () => {
           <li>Netflify Functions</li>
           <li>NodeJS, GraphQL, Yarn, Babel, ESLint </li>
         </ul>
-        <p>For more information you can view the projects repository on&nbsp;
+        <p>For more information, you can view the projects repository on&nbsp;
           <ExternalLink to="https://github.com/JasonReidd/Portfolio">Github</ExternalLink>.
         </p>
       </Layout>
