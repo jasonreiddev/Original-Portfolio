@@ -79,7 +79,6 @@ html *{
 /*Scrollbar*/
 @media only screen and (max-width: 640px) {
   .mobile-scroll{
-    overflow-Y: scroll;
     min-height: 100vh;
   }
 }
