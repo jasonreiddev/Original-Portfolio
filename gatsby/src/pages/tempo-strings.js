@@ -46,6 +46,7 @@ export default function TempoStringsPage({data}) {
           <ButtonContainerStyles>
             <button onClick={() => setSelectedTempoString(tempoStrings.tempoString)
             }>Select All</button>
+            <button onClick={() => copyToClipboard(tempoStrings.tempoString)}>Copy All</button>
           </ButtonContainerStyles>
         </fieldset>
         <fieldset className="selectedOptions">
@@ -57,7 +58,7 @@ export default function TempoStringsPage({data}) {
           />
           <ButtonContainerStyles>
             <button onClick={() => setSelectedTempoString([])}>Clear</button>
-            <button onClick={() => copyToClipboard()}>Copy</button>
+            <button onClick={() => copyToClipboard(selected)}>Copy</button>
           </ButtonContainerStyles>
         </fieldset>
         <br/>
@@ -67,14 +68,12 @@ export default function TempoStringsPage({data}) {
   );
 }
 
-function copyToClipboard() {
+function copyToClipboard(selected) {
   const textarea = document.createElement('textarea');
   textarea.textContent = '';
 
-  const StringsToCopy = document.getElementsByClassName('selected');
-  for (let i = 0; i < StringsToCopy.length; i++) {
-    textarea.textContent += StringsToCopy[i].innerHTML+'. ';
-    console.log(textarea.textContent);
+  for (let i = 0; i < selected.length; i++) {
+    textarea.textContent += selected[i]+'. ';
   }
 
   document.body.appendChild(textarea);

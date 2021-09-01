@@ -32,7 +32,7 @@ export default function useLatestData() {
           setFeaturedProjects(res.data.SiteSettings.featuredProjects);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
   }, []);
   return {
