@@ -8,9 +8,14 @@ export default function SelectedTempoStrings({selected, removeTempoString /* tem
         // const tempoString = tempoStrings.find((tempoString) => tempoString === singleTempoString);
         return (
           <div key={index}
+
             style={{cursor: 'pointer'}}
             onClick={() => removeTempoString(index)}>
-            <p>&times; {tempoString.id}</p>
+            <p>&times; {
+              <span className="selected">
+                {tempoString}
+              </span>
+            }</p>
           </div>
         );
       })}

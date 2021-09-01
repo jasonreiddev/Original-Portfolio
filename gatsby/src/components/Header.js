@@ -7,8 +7,6 @@ import {HiSun} from 'react-icons/hi';
 import {HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 
-// import {GoPaintcan} from 'react-icons/go';
-
 const ContainerStyles = styled.div`
   width: Calc(100% - 3rem);
   max-width: 1000px;

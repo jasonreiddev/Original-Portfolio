@@ -37,7 +37,6 @@ export default function useEmail({values}) {
       setLoading(false); // turn off loading
       setError(text.message);
     } else {
-      // it worked!
       setLoading(false);
       setMessage('Email sent successfully!');
     }
