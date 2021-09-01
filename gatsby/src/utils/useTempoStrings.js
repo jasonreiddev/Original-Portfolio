@@ -15,9 +15,14 @@ export default function useTempoStrings() {
     ]);
   }
 
+  function setSelectedTempoString(setTempoString) {
+    setSelected(setTempoString);
+  }
+
   return {
     selected,
     addTempoString,
     removeTempoString,
+    setSelectedTempoString,
   };
 }
