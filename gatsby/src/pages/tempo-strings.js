@@ -31,9 +31,10 @@ export default function TempoStringsPage({data}) {
 
   return (
     <Layout title="Tempo Strings">
+      <h2>{tempoStrings.title}</h2>
       <div onSubmit={submitOrder}>
         <fieldset disabled={loading} className="options">
-          <legend>{tempoStrings.title}</legend>
+          <legend>Click to Select</legend>
           {tempoStrings.tempoString.map((tempoString, index) => (
             <div key={index}
               style={{cursor: 'pointer'}}
