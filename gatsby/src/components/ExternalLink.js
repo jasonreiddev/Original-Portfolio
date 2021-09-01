@@ -1,13 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import {AiOutlineLink} from 'react-icons/ai';
+
+const ExternalLinkStyles = styled.a`
+  white-space: nowrap;
+`;
 
 export default function ExternalLink({
   to,
   children,
 }) {
   return (
-    <a href={to}>
+    <ExternalLinkStyles href={to}>
       <AiOutlineLink/>{children}
-    </a>
+    </ExternalLinkStyles>
   );
 }
