@@ -16,3 +16,4 @@ sanity/yarn.lock
 sanity/yarn-error.log
 sanity/.eslintcache
 sanity/production
+sanity/dist/

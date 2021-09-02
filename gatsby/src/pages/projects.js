@@ -2,6 +2,7 @@ import React from 'react';
 import {graphql, Link} from 'gatsby';
 import Layout from '../components/Layout';
 import Pagination from '../components/Pagination';
+import ProjectListing from '../components/ProjectListing';
 
 export default function ProjectsPage({data, pageContext}) {
   const projects = data.projects.nodes;
@@ -15,20 +16,11 @@ export default function ProjectsPage({data, pageContext}) {
       <ul className="posts" style={{margin: '0', padding: '0', listStyleType: 'none'}}>
         {projects.map((project) => {
           return (
-            <li className="post" key={project._id}>
+            <ProjectListing className="post" project={project} key={project._id}>
               <h2>
                 <Link to={`/projects/${project.slug.current}/`}>{project.projectTitle}</Link>
               </h2>
-              <div className="excerpt">
-                {project.excerpt}
-              </div>
-              <p className="meta">
-                <span>{project.lastWorkedOn}</span>
-              </p>
-              <p className="button">
-                <Link to={`/projects/${project.slug.current}/`}>Read More</Link>
-              </p>
-            </li>
+            </ProjectListing>
           );
         })}
       </ul>
