@@ -63,7 +63,7 @@ Atom:     ctrl-shift-m
 
    In /Gatsby run '<code>yarn run build</code>'
 
-   In /Sanity run '<code>yarn sanity deploy production</code>'
+   In /Sanity run '<code>yarn sanity deploy</code>'
 
    Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
@@ -82,15 +82,15 @@ Atom:     ctrl-shift-m
 
    Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
 
-   Most content is precomplied when the site is built, exceptions to this rule are:
+   Content is precomplied when the site is built, exceptions to this rule are:
    
    - Sanity > Site Settings > Intro Text
 
    - Sanity > Site Settings > Featured Items
 
-   - (Contentful blog posts are a w.i.p)
-
    - Cloudinary Content
+
+    Publishing Contentful blog posts will rebuild the site
 
 <br/>
 
