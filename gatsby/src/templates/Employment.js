@@ -11,8 +11,11 @@ export const query = graphql`
         details    
         endDate(formatString: "MMMM YYYY")
         startDate(formatString: "MMMM YYYY")
+        organisation {
+          organisation
+        }
+      }
     }
-  }
 `;
 
 export default function ProjectPage(props) {
@@ -22,11 +25,12 @@ export default function ProjectPage(props) {
       <Link to="/employment/"><AiOutlineLeft/>Employment Page</Link>
       <div className="content">
         <h2>{props.data.sanityPosition.jobTitle}</h2>
-        <span className="meta">
+        <div className="organisation"><span>{props.data.sanityPosition.organisation.organisation}</span></div>
+        <p className="meta">
           Start Date:&nbsp;
           {props.data.sanityPosition.startDate}
           {props.data.sanityPosition.endDate && <> End Date: {props.data.sanityPosition.endDate}</>}
-        </span>
+        </p>
         <hr/>
         <p>{props.data.sanityPosition.details}</p>
       </div>
