@@ -12,7 +12,7 @@ SEO.propTypes = {
 };
 SEO.defaultProps = {
   title: 'JR Portfolio',
-  description: 'Jason Reid\'s Development Portfolio.',
+  description: 'Jason Reid\'s Development Portfolio',
   image: null,
   article: false,
 };
