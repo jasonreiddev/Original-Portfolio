@@ -9,6 +9,14 @@ const GlobalStyles = createGlobalStyle`
   --orgBradfordCouncil: #293d82;
   --orgEstioTraining: #e54700;
   --orgNetConstruct: #3bb599;
+
+  // default light mode
+  --siteMain: #EEE6F0;
+  --siteSecondary: #1B1B1D;
+  --siteBoldSecondary: #000000;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #5749a5;
+  --siteTertiaryAccent: #A997DF;
 }
 .theme-dark {
   --siteMain: #1B1B1D;
@@ -17,14 +25,6 @@ const GlobalStyles = createGlobalStyle`
   --sitePrimaryAccent: #8B548C;
   --siteSecondaryAccent: #A997DF;
   --siteTertiaryAccent: #FFD4CA;
-}
-.theme-light{
-  --siteMain: #EEE6F0;
-  --siteSecondary: #1B1B1D;
-  --siteBoldSecondary: #000000;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #5749a5;
-  --siteTertiaryAccent: #A997DF;
 }
 .theme-custom{
   --siteMain: #FFFFFF;

@@ -23,6 +23,7 @@
     "cross-env": "^7.0.3",
     "esm": "^3.2.25",
     "gatsby": "^3.11.1",
+    "gatsby-plugin-catch-links": "^3.13.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-manifest": "^3.9.0",

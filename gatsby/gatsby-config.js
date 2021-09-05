@@ -7,7 +7,7 @@ module.exports = {
     title: 'Home',
     titleTemplate: 'JR Portfolio',
     description:
-      'Jason Reid\'s Development Portfolio.',
+      'Jason Reid\'s Development Portfolio',
     url: 'https://jasonreidd.netlify.app/',
     image: '/images/icon.png',
     twitterUsername: '@JasonReidd',
@@ -61,7 +61,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jason Reid's Development Portfolio.`,
+        name: `Jason Reid's Development Portfolio`,
         short_name: `JR Portfolio`,
         start_url: `/`,
         background_color: `#1B1B1D`,
@@ -92,6 +92,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-catch-links`,
   ],
 };
 
