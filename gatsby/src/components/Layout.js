@@ -78,9 +78,9 @@ export default function Layout({children, title, subTitle}) {
                   <FooterStyles>
                     <p>
                       <span className="media-links">
-                        <a title="LinkedIn" href="https://www.linkedin.com/in/JasonReidDev/"><AiFillLinkedin/></a>
-                        <a title="GitHub" href="https://github.com/JasonReidD"><FaGithub/></a>
-                        <a title="Twitter" href="https://twitter.com/JasonReidD"><AiOutlineTwitter/></a>
+                        <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/"><AiFillLinkedin/></a>
+                        <a title="GitHub" href="https://github.com/jasonreidd"><FaGithub/></a>
+                        <a title="Twitter" href="https://twitter.com/jasonreidd"><AiOutlineTwitter/></a>
                       </span><br/>
                     &copy; {new Date().getFullYear()} Jason Reid
                     </p>

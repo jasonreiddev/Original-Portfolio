@@ -13,14 +13,14 @@ Atom:     ctrl-shift-m
   Portfolio
 </h1>
 <div align="center">
-  <a href="https://github.com/JasonReidd/Portfolio/stargazers">
-    <img src="https://img.shields.io/github/stars/JasonReidd/Portfolio" alt="Stars">
+  <a href="https://github.com/jasonreidd/portfolio/stargazers">
+    <img src="https://img.shields.io/github/stars/jasonreidd/portfolio" alt="Stars">
   </a>
-  <a href="https://github.com/JasonReidd/Portfolio/issues">
-    <img src="https://img.shields.io/github/issues/JasonReidd/Portfolio" alt="Issues">
+  <a href="https://github.com/jasonreidd/portfolio/issues">
+    <img src="https://img.shields.io/github/issues/jasonreidd/portfolio" alt="Issues">
   </a>
-  <a href="https://github.com/JasonReidd/Portfolio/network/members">
-    <img src="https://img.shields.io/github/forks/JasonReidd/Portfolio" alt="Forks">
+  <a href="https://github.com/jasonreidd/portfolio/network/members">
+    <img src="https://img.shields.io/github/forks/jasonreidd/portfolio" alt="Forks">
   </a>
   </div>
 <br>
