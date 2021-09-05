@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: 'JR Portfolio',
     description:
       'Jason Reid\'s Development Portfolio',
-    url: 'https://jasonreidd.netlify.app/',
+    url: 'https://jasonreid.dev',
     image: '/images/icon.png',
     twitterUsername: '@JasonReidd',
     menuLinks: [

@@ -5,7 +5,7 @@ Atom:     ctrl-shift-m
 -->
 
 <p align="center">
-  <a href="https://jasonreidd.netlify.app">
+  <a href="https://jasonreid.dev">
     <img alt="Netlify Site" src="gatsby/src/images/icon.png" width="60" />
   </a>
 </p>
@@ -67,9 +67,9 @@ Atom:     ctrl-shift-m
 
    Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
 
-   - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io/) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
+   - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
 
-   - Live: [Netlify](https://jasonreidd.netlify.app/) - [deploys](https://app.netlify.com/sites/jasonreidd/deploys) require manual publishing
+   - Live: [Netlify](https://jasonreid.dev) - [deploys](https://app.netlify.com/sites/jasonreidd/deploys) require manual publishing
    <hr/>
 
 4. **Configure.**
