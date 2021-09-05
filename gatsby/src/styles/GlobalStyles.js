@@ -25,17 +25,12 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--sitePrimaryAccent);
 }
 
-@keyframes fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
 @keyframes delay-scroll {
     from { overflow-Y: hidden; }
     to   { overflow-Y: scroll; }
 }
 
-.preload{
+body:not([class^="theme"]){
   // prevent flash if cache cleared and user prefers light mode
   // preload is removed once themes are loaded
   .load-animation{
@@ -49,12 +44,6 @@ const GlobalStyles = createGlobalStyle`
   .mobile-scroll,
   .scroll {
     overflow-Y: hidden;
-  }
-}
-
-body:not(.preload){
-  header div{
-    animation: fade-in .5s;
   }
 }
 
