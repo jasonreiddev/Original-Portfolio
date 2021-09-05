@@ -8,6 +8,8 @@ import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import SEO from './SEO';
 import Header from './Header';
+import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
+import {FaGithub} from 'react-icons/fa';
 
 const SiteBorderStyles = styled.div`
   display: flex;
@@ -31,6 +33,12 @@ const MainStyles = styled.main`
 
 const FooterStyles = styled.footer`
   text-align: center;
+  svg {
+    fill: var(--sitePrimaryAccent);
+  }
+  .media-links {
+    font-size: 30px;
+  }
 `;
 
 export default function Layout({children, title, subTitle}) {
@@ -68,7 +76,14 @@ export default function Layout({children, title, subTitle}) {
                     {children}
                   </MainStyles>
                   <FooterStyles>
-                    <p>&copy; {new Date().getFullYear()} Jason Reid</p>
+                    <p>
+                      <span className="media-links">
+                        <a title="LinkedIn" href="https://www.linkedin.com/in/JasonReidDev/"><AiFillLinkedin/></a>
+                        <a title="GitHub" href="https://github.com/JasonReidD"><FaGithub/></a>
+                        <a title="Twitter" href="https://twitter.com/JasonReidD"><AiOutlineTwitter/></a>
+                      </span><br/>
+                    &copy; {new Date().getFullYear()} Jason Reid
+                    </p>
                   </FooterStyles>
                 </ContentStyles>
               </SiteBorderStyles>)
