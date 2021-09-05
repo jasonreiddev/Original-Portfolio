@@ -31,7 +31,7 @@ export default function ProjectPage(props) {
   return (
     <Layout title="Projects" subTitle={props.data.sanityProject.projectTitle}>
       <br/>
-      <Link to="/projects/"><AiOutlineLeft/>Project Page</Link>
+      <Link to="/projects/1"><AiOutlineLeft/>Project Page</Link>
       <div className="content">
         <h2>{props.data.sanityProject.projectTitle}</h2>
         <p className="organisation">

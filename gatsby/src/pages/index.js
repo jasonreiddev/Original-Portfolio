@@ -41,12 +41,12 @@ const IndexPage = () => {
           }
           {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
         </p>
-        <p>The best place to contact me is via <ExternalLink to="https://www.linkedin.com/in/jasonreiddev/">LinkedIn</ExternalLink>.</p>
+        <p>The best place to contact me is via <ExternalLink to="https://www.linkedin.com/in/jasonreiddev">LinkedIn</ExternalLink>.</p>
         <h2>Featured</h2>
         <ul>
-          <li><Link to="/projects/flex/">Flex - Flexi-Time Management</Link></li>
-          <li><Link to="/projects/bcp/">BCP - Business Continuity Planning</Link></li>
-          <li><Link to="/blog/deployments-covid/">Working in Deployments Throughout the Covid-19 Pandemic</Link></li>
+          <li><Link to="/projects/flex">Flex - Flexi-Time Management</Link></li>
+          <li><Link to="/projects/bcp">BCP - Business Continuity Planning</Link></li>
+          <li><Link to="/blog/deployments-covid">Working in Deployments Throughout the Covid-19 Pandemic</Link></li>
         </ul>
 
         <h2>This site was built using:</h2>
