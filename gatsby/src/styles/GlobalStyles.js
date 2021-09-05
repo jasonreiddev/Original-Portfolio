@@ -10,15 +10,7 @@ const GlobalStyles = createGlobalStyle`
   --orgEstioTraining: #e54700;
   --orgNetConstruct: #3bb599;
 
-  // default light mode
-  --siteMain: #EEE6F0;
-  --siteSecondary: #1B1B1D;
-  --siteBoldSecondary: #000000;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #5749a5;
-  --siteTertiaryAccent: #A997DF;
-}
-.theme-dark {
+  // default dark mode
   --siteMain: #1B1B1D;
   --siteSecondary: #EEE6F0;
   --siteBoldSecondary: #FFFFFF;
@@ -26,6 +18,55 @@ const GlobalStyles = createGlobalStyle`
   --siteSecondaryAccent: #A997DF;
   --siteTertiaryAccent: #FFD4CA;
 }
+
+.load-animation{
+    min-height: 0;
+    transition: min-height 0.5s ease-out;
+    background-color: var(--sitePrimaryAccent);
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes delay-scroll {
+    from { overflow-Y: hidden; }
+    to   { overflow-Y: scroll; }
+}
+
+.preload{
+  // prevent flash if cache cleared and user prefers light mode
+  // preload is removed once themes are loaded
+  .load-animation{
+    min-height: 100vh;
+  }
+
+  header div{
+    display: none;
+  }
+
+  .mobile-scroll,
+  .scroll {
+    overflow-Y: hidden;
+  }
+}
+
+body:not(.preload){
+  header div{
+    animation: fade-in .5s;
+  }
+}
+
+.theme-light {
+  --siteMain: #EEE6F0;
+  --siteSecondary: #1B1B1D;
+  --siteBoldSecondary: #000000;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #5749a5;
+  --siteTertiaryAccent: #A997DF;
+}
+
 .theme-custom{
   --siteMain: #FFFFFF;
   --siteSecondary: #000000;
