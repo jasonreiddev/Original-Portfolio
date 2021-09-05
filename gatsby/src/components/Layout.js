@@ -58,10 +58,11 @@ export default function Layout({children, title, subTitle}) {
             {(theme) => (
               <SiteBorderStyles className={'mobile-scroll'}>
                 <Helmet>
-                  <body className={'theme-'+ theme.theme}/>
+                  <body className={'theme-'+theme.theme}/>
                 </Helmet>
                 <SEO title={title} subTitle={subTitle}/>
                 <Header menuLinks={data.site.siteMetadata.menuLinks} title={title} style={{flexGrow: 0}}/>
+                <div className="load-animation"/>
                 <ContentStyles className={'scroll'}>
                   <MainStyles>
                     {children}
