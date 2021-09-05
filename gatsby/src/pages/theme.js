@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import ThemeContext from '../context/ThemeContext';
-import {HiSun} from 'react-icons/hi';
-import {HiMoon} from 'react-icons/hi';
+import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 
 const ColorBoxContainerStyles = {

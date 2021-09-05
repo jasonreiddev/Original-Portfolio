@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
-import {AiOutlineLeft} from 'react-icons/ai';
-import {AiOutlineRight} from 'react-icons/ai';
+import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
 
 const PaginationStyles = styled.div`
   display: flex;

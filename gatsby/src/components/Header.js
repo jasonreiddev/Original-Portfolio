@@ -3,8 +3,7 @@ import {Link} from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ThemeContext from '../context/ThemeContext';
-import {HiSun} from 'react-icons/hi';
-import {HiMoon} from 'react-icons/hi';
+import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 
 const ContainerStyles = styled.div`
