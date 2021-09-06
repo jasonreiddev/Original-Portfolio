@@ -59,7 +59,7 @@ const IndexPage = () => {
           <li>NodeJS, GraphQL, Yarn, Babel, ESLint </li>
         </ul>
         <p>For more information, you can view the projects repository on&nbsp;
-          <ExternalLink to="https://github.com/jasonreidd/portfolio">Github</ExternalLink>.
+          <ExternalLink to="https://github.com/jasonreiddev/portfolio">Github</ExternalLink>.
         </p>
       </Layout>
     </>

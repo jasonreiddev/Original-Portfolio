@@ -13,14 +13,14 @@ Atom:     ctrl-shift-m
   Portfolio
 </h1>
 <div align="center">
-  <a href="https://github.com/jasonreidd/portfolio/stargazers">
-    <img src="https://img.shields.io/github/stars/jasonreidd/portfolio" alt="Stars">
+  <a href="https://github.com/jasonreiddev/portfolio/stargazers">
+    <img src="https://img.shields.io/github/stars/jasonreiddev/portfolio" alt="Stars">
   </a>
-  <a href="https://github.com/jasonreidd/portfolio/issues">
-    <img src="https://img.shields.io/github/issues/jasonreidd/portfolio" alt="Issues">
+  <a href="https://github.com/jasonreiddev/portfolio/issues">
+    <img src="https://img.shields.io/github/issues/jasonreiddev/portfolio" alt="Issues">
   </a>
-  <a href="https://github.com/jasonreidd/portfolio/network/members">
-    <img src="https://img.shields.io/github/forks/jasonreidd/portfolio" alt="Forks">
+  <a href="https://github.com/jasonreiddev/portfolio/network/members">
+    <img src="https://img.shields.io/github/forks/jasonreiddev/portfolio" alt="Forks">
   </a>
   </div>
 <br>
@@ -64,11 +64,11 @@ Atom:     ctrl-shift-m
 
    In /Sanity run '<code>yarn sanity deploy</code>'
 
-   Changes to the [Main branch](https://github.com/jasonreidd/portfolio/tree/main) will automatically be deployed to the following:
+   Changes to the [Main branch](https://github.com/jasonreiddev/portfolio/tree/main) will automatically be deployed to the following:
 
-   - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
+   - Preview: [Gatsby Cloud](https://jasonreiddev.gtsb.io) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
 
-   - Live: [Netlify](https://jasonreid.dev) - [deploys](https://app.netlify.com/sites/jasonreidd/deploys) require manual publishing
+   - Live: [Netlify](https://jasonreid.dev) - [deploys](https://app.netlify.com/sites/jasonreiddev/deploys) require manual publishing
    <hr/>
 
 4. **Configure.**
@@ -94,7 +94,7 @@ Atom:     ctrl-shift-m
 <br/>
 
 <div align="center">
-  <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJasonReidd%2FPortfolio">
-    <img src="https://img.shields.io/twitter/url?label=Share%20via%20Twitter&logoColor=black&url=https%3A%2F%2Fgithub.com%2FJasonReidd%2FPortfolio" alt="Twitter">
+  <a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjasonreiddev%2Fportfolio">
+    <img src="https://img.shields.io/twitter/url?label=Share%20via%20Twitter&logoColor=black&url=https%3A%2F%2Fgithub.com%2Fjasonreiddev%2Fportfolio" alt="Twitter">
   </a>
 </div>
