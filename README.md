@@ -31,7 +31,7 @@ Atom:     ctrl-shift-m
    '<code>.env.production</code>' and '<code>.env.development</code>'
    with the required variables from
    '<code>.env.example</code>' and the [environment variables](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/settings/general#env-vars) values from [Gatsby Cloud](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d).
-   For the development environment SANITY_WATCHMODE can be set to true and other variables can be changed to use test environment. https://ethereal.email/messages can be used to create a temporary SMTP service with the credentialed passed via the MAIL variables.
+   For the development environment SANITY_WATCHMODE can be set to true and other variables can be changed to use test environments. [Ethereal Mail](https://ethereal.email) or another SMTP service can be used to create credentials passed via the MAIL variables.
 
    Install packages with
    '<code>yarn</code>'
@@ -43,11 +43,10 @@ Atom:     ctrl-shift-m
 
    '<code>yarn sanity start</code>'
 
-   '<code>yarn sanity graphql deploy production</code>'
-
    Content Studio can be found at http://localhost:3333
 
    In the Gatsby folder run the front-end with:
+   
    '<code>yarn run start</code>'
 
    The site will run at http://localhost:8888/ (with netlify-cli)
@@ -65,7 +64,7 @@ Atom:     ctrl-shift-m
 
    In /Sanity run '<code>yarn sanity deploy</code>'
 
-   Changes to the [Main branch](https://github.com/JasonReidd/Portfolio/tree/main) will automatically be deployed to the following:
+   Changes to the [Main branch](https://github.com/jasonreidd/portfolio/tree/main) will automatically be deployed to the following:
 
    - Preview: [Gatsby Cloud](https://jasonreidd.gtsb.io) - [deploys](https://www.gatsbyjs.com/dashboard/f823cde4-1e85-4ece-87b4-ad2a6f0a2225/sites/df7b65ef-b4c5-4b57-9bda-58b55c54665d/deploys) published automatically
 
@@ -74,7 +73,7 @@ Atom:     ctrl-shift-m
 
 4. **Configure.**
 
-   Add packages with '<code>yarn add [package name] --save</code>'
+   Add packages with '<code>yarn add [package name] --save</code>' - for Netlify serverless functions ensure that packages are added within the folder for the specific function.
 
    Add media via [Cloudinary](https://cloudinary.com/console/c-5efd2802d1af5a180a41cae9a4a86a/media_library/folders/391c080a206c2cca6c6dd6aaea482748)
 
@@ -82,7 +81,7 @@ Atom:     ctrl-shift-m
 
    Headless CMS via [Sanity](https://www.sanity.io/manage/personal/project/a3mxaqcs)
 
-   Content is precomplied when the site is built, exceptions to this rule are:
+   Content is precompiled when the site is built, exceptions to this rule are:
    
    - Sanity > Site Settings > Intro Text
 
@@ -90,7 +89,7 @@ Atom:     ctrl-shift-m
 
    - Cloudinary Content
 
-    Publishing Contentful blog posts will rebuild the site
+    Publishing/unpublishing Contentful content will trigger a rebuild on Netlify
 
 <br/>
 
