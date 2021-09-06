@@ -79,8 +79,8 @@ export default function Layout({children, title, subTitle}) {
                     <p>
                       <span className="media-links">
                         <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/"><AiFillLinkedin/></a>
-                        <a title="GitHub" href="https://github.com/jasonreidd"><FaGithub/></a>
-                        <a title="Twitter" href="https://twitter.com/jasonreidd"><AiOutlineTwitter/></a>
+                        <a title="GitHub" href="https://github.com/jasonreiddev"><FaGithub/></a>
+                        <a title="Twitter" href="https://twitter.com/jasonreiddev"><AiOutlineTwitter/></a>
                       </span><br/>
                     &copy; {new Date().getFullYear()} Jason Reid
                     </p>

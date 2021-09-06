@@ -10,7 +10,7 @@ module.exports = {
       'Jason Reid\'s Development Portfolio',
     url: 'https://jasonreid.dev',
     image: '/images/icon.png',
-    twitterUsername: '@JasonReidd',
+    twitterUsername: '@JasonReidDev',
     menuLinks: [
       {
         name: '',
