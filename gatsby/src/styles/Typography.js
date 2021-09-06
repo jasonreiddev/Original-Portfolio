@@ -21,6 +21,7 @@ body{
   }
   
   a {
+    font-weight: bold;
     text-decoration-skip-ink: none;
     text-decoration: underline;
     text-decoration-color: var(--sitePrimaryAccent);
@@ -44,14 +45,6 @@ body{
     font-size: 3rem;
   }
 
-  mark, .mark {
-    background: var(--sitePrimaryAccent);
-    padding: 0 2px 2px 2px;
-    margin: 0;
-    display: inline;
-    line-height: 1;
-  }
-
   svg{
     transform: translateY(15%);
   }
@@ -62,10 +55,6 @@ body{
 
   .Checklist li:not(.selected) {
     color: var(--siteNegativeAccent);
-  }
-
-  .tilt {
-    transform: rotate(-2deg);
   }
 }
 `;

@@ -1,15 +1,10 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+
+// Theme
 :root
  {
-  --sitePositiveAccent: #84A98C;
-  --siteNegativeAccent: #B6465F;
-
-  --orgBradfordCouncil: #293d82;
-  --orgEstioTraining: #e54700;
-  --orgNetConstruct: #3bb599;
-
   // default dark mode
   --siteMain: #1B1B1D;
   --siteSecondary: #EEE6F0;
@@ -19,6 +14,27 @@ const GlobalStyles = createGlobalStyle`
   --siteTertiaryAccent: #FFD4CA;
 }
 
+.theme-light {
+  --siteMain: #EEE6F0;
+  --siteSecondary: #1B1B1D;
+  --siteBoldSecondary: #000000;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #5749a5;
+  --siteTertiaryAccent: #A997DF;
+}
+
+.theme-custom{
+  --siteMain: #FFFFFF;
+  --siteSecondary: #000000;
+  --siteBoldSecondary: #000000;
+  --sitePrimaryAccent: #8B548C;
+  --siteSecondaryAccent: #0000ff;
+  --siteTertiaryAccent: #A997DF;
+  --sitePositiveAccent: #00ff00;
+  --siteNegativeAccent: #ff0000;
+};
+
+// Loading
 .load-animation{
     min-height: 0;
     transition: min-height 0.5s ease-out;
@@ -63,26 +79,6 @@ body:not([class^="theme"]){
   }
 }
 
-.theme-light {
-  --siteMain: #EEE6F0;
-  --siteSecondary: #1B1B1D;
-  --siteBoldSecondary: #000000;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #5749a5;
-  --siteTertiaryAccent: #A997DF;
-}
-
-.theme-custom{
-  --siteMain: #FFFFFF;
-  --siteSecondary: #000000;
-  --siteBoldSecondary: #000000;
-  --sitePrimaryAccent: #8B548C;
-  --siteSecondaryAccent: #0000ff;
-  --siteTertiaryAccent: #A997DF;
-  --sitePositiveAccent: #00ff00;
-  --siteNegativeAccent: #ff0000;
-};
-
 html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
@@ -102,11 +98,6 @@ div[role="group"][tabindex] {
 
 p {
   white-space: pre-line;
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
 }
 
 html *{
