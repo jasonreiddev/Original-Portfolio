@@ -69,8 +69,9 @@ export default function Layout({children, title, subTitle}) {
                   <body className={'theme-'+theme.theme}/>
                 </Helmet>
                 <SEO title={title} subTitle={subTitle}/>
-                <Header menuLinks={data.site.siteMetadata.menuLinks} title={title} style={{flexGrow: 0}}/>
                 <div className="load-animation"/>
+                <div className="loader"/>
+                <Header menuLinks={data.site.siteMetadata.menuLinks} title={title} style={{flexGrow: 0}}/>
                 <ContentStyles className={'scroll'}>
                   <MainStyles>
                     {children}

@@ -23,11 +23,23 @@ const GlobalStyles = createGlobalStyle`
     min-height: 0;
     transition: min-height 0.5s ease-out;
     background-color: var(--sitePrimaryAccent);
+    position: absolute;
+    width: 100vw;
+    z-index: 1;
 }
 
 @keyframes delay-scroll {
     from { overflow-Y: hidden; }
     to   { overflow-Y: scroll; }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 body:not([class^="theme"]){
@@ -37,13 +49,17 @@ body:not([class^="theme"]){
     min-height: 100vh;
   }
 
-  header div{
-    display: none;
-  }
-
-  .mobile-scroll,
-  .scroll {
-    overflow-Y: hidden;
+  .loader {
+    border: 9px solid #f3f3f3;
+    border-top: 9px solid var(--siteSecondary);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    bottom: 30px;
   }
 }
 
