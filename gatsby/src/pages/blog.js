@@ -16,9 +16,6 @@ export default function Blog({data, pageContext}) {
               <h2>
                 <Link to={`/blog/${edge.node.slug}/`}>{edge.node.title}</Link>
               </h2>
-              <div className="meta">
-                <span>Posted on {edge.node.publishedDate}</span>
-              </div>
               {edge.node.featuredImage && (
                 <GatsbyImage
                   className="featured"
@@ -26,11 +23,13 @@ export default function Blog({data, pageContext}) {
                   alt={edge.node.title}
                 />
               )}
-              <p className="excerpt">
-                {edge.node.excerpt.childMarkdownRemark.excerpt}
+              <p className="meta">
+                <span>Posted on {edge.node.publishedDate}</span>
               </p>
-              <p className="button">
-                <Link to={`/blog/${edge.node.slug}/`}>Read More</Link>
+              <p>
+                <Link to={`/blog/${edge.node.slug}/`}>
+                  <span className="excerpt">{edge.node.excerpt.childMarkdownRemark.excerpt}</span>...
+                </Link>
               </p>
             </li>
           );

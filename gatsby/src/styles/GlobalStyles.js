@@ -1,15 +1,10 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+
+// Theme
 :root
  {
-  --sitePositiveAccent: #84A98C;
-  --siteNegativeAccent: #B6465F;
-
-  --orgBradfordCouncil: #293d82;
-  --orgEstioTraining: #e54700;
-  --orgNetConstruct: #3bb599;
-
   // default dark mode
   --siteMain: #1B1B1D;
   --siteSecondary: #EEE6F0;
@@ -17,34 +12,6 @@ const GlobalStyles = createGlobalStyle`
   --sitePrimaryAccent: #8B548C;
   --siteSecondaryAccent: #A997DF;
   --siteTertiaryAccent: #FFD4CA;
-}
-
-.load-animation{
-    min-height: 0;
-    transition: min-height 0.5s ease-out;
-    background-color: var(--sitePrimaryAccent);
-}
-
-@keyframes delay-scroll {
-    from { overflow-Y: hidden; }
-    to   { overflow-Y: scroll; }
-}
-
-body:not([class^="theme"]){
-  // prevent flash if cache cleared and user prefers light mode
-  // preload is removed once themes are loaded
-  .load-animation{
-    min-height: 100vh;
-  }
-
-  header div{
-    display: none;
-  }
-
-  .mobile-scroll,
-  .scroll {
-    overflow-Y: hidden;
-  }
 }
 
 .theme-light {
@@ -67,6 +34,51 @@ body:not([class^="theme"]){
   --siteNegativeAccent: #ff0000;
 };
 
+// Loading
+.load-animation{
+    min-height: 0;
+    transition: min-height 0.5s ease-out;
+    background-color: var(--sitePrimaryAccent);
+    position: absolute;
+    width: 100vw;
+    z-index: 1;
+}
+
+@keyframes delay-scroll {
+    from { overflow-Y: hidden; }
+    to   { overflow-Y: scroll; }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body:not([class^="theme"]){
+  // prevent flash if cache cleared and user prefers light mode
+  // preload is removed once themes are loaded
+  .load-animation{
+    min-height: 100vh;
+  }
+
+  .loader {
+    border: 9px solid #f3f3f3;
+    border-top: 9px solid var(--siteSecondary);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
 html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
 }
@@ -86,11 +98,6 @@ div[role="group"][tabindex] {
 
 p {
   white-space: pre-line;
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
 }
 
 html *{

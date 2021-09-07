@@ -7,10 +7,6 @@ import ProjectListing from '../components/ProjectListing';
 export default function ProjectsPage({data, pageContext}) {
   const projects = data.projects.nodes;
 
-  projects.forEach((project) => {
-    project.lastWorkedOn = project.lastWorkedOn ? project.lastWorkedOn : 'Ongoing';
-  });
-
   return (
     <Layout title="Projects">
       <ul className="posts" style={{margin: '0', padding: '0', listStyleType: 'none'}}>
