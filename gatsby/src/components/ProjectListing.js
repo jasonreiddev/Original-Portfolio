@@ -7,7 +7,12 @@ export default function ProjectListing({project, children}) {
       {children}
 
       <p className="meta">
-        <span>{project.lastWorkedOn}</span>
+        <span>
+          <span>
+            {project.lastWorkedOn && 'Project last worked on ' + project.lastWorkedOn}
+            {project.lastWorkedOn == null && 'Project ongoing'}
+          </span>
+        </span>
       </p>
       <p>
         <Link to={`/projects/${project.slug.current}/`}>
