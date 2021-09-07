@@ -18,14 +18,13 @@ export default function EmploymentPage({data, pageContext}) {
             <h2>
               <Link to={`/employment/${position.slug.current}/`}>{position.jobTitle}</Link>
             </h2>
-            <div className="organisation">
-              <span>{position.organisation.organisation}</span>
-            </div>
             <p className="meta">
-              {position.startDate}{position.endDate && <> - {position.endDate}</>}
+              <span>{position.startDate}{position.endDate && <> - {position.endDate}</>}</span>
             </p>
-            <p className="button">
-              <Link to={`/employment/${position.slug.current}/`}>Read More</Link>
+            <p>
+              <Link to={`/employment/${position.slug.current}/`}>
+                <span className="excerpt">Working at {position.organisation.organisation}</span>...
+              </Link>
             </p>
           </li>
         ))
