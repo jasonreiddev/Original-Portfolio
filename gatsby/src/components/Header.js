@@ -40,9 +40,7 @@ export default function Header({menuLinks, title}) {
               <span>Jason Reid&apos;s</span>
               <br />
               <span style={{color: 'var(--siteMain)'}}>
-                <span className="hide-small-mobile">Development Portfolio</span>
-                <span className="show-small-mobile">Dev Portfolio</span>
-              </span>
+                Dev<span className="hide-small-mobile">elopment</span> Portfolio</span>
             </h1>
           </Link>
         </div>
