@@ -20,7 +20,7 @@ const SiteBorderStyles = styled.div`
 `;
 
 const ContentStyles = styled.div`
-   display: flex;
+  display: flex;
   flex-direction: column;
 `;
 
@@ -71,7 +71,7 @@ export default function Layout({children, title, subTitle}) {
                 <SEO title={title} subTitle={subTitle}/>
                 <div className="load-animation"/>
                 <div className="loader"/>
-                <Header menuLinks={data.site.siteMetadata.menuLinks} title={title} style={{flexGrow: 0}}/>
+                <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
                 <ContentStyles className={'scroll'}>
                   <MainStyles>
                     {children}

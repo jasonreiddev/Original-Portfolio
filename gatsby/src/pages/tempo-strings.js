@@ -10,6 +10,10 @@ const ButtonContainerStyles = styled.div`
   justify-content: flex-end;
 `;
 
+const TempoStringStyles = styled.div`
+  cursor: pointer;
+`;
+
 export default function TempoStringsPage({data}) {
   const tempoStrings = data.tempoStrings.edges[0].node;
 
@@ -36,13 +40,12 @@ export default function TempoStringsPage({data}) {
         <fieldset disabled={loading} className="options">
           <legend>Click to Select</legend>
           {tempoStrings.tempoString.map((tempoString, index) => (
-            <div key={index}
-              style={{cursor: 'pointer'}}
+            <TempoStringStyles key={index}
               onClick={() =>
                 addTempoString(tempoString)
               }>
               <p>{tempoString}</p>
-            </div>
+            </TempoStringStyles>
           ))}
           <ButtonContainerStyles>
             <button onClick={() => setSelectedTempoString(tempoStrings.tempoString)

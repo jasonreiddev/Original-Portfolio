@@ -61,7 +61,7 @@ const Images = () => {
               <button style={ThemeSwitchButtonStyles}
                 onClick={theme.useCustom}>
                 {theme.theme == 'custom' ?
-                <span style={{color: 'var(--siteMain)'}}>Using high contrast mode
+                <span className="active">Using high contrast mode
                   <GoPaintcan/></span>:
                 <span>Use high contrast mode
                   <GoPaintcan/></span>

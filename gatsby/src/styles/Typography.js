@@ -29,9 +29,10 @@ body{
     text-decoration-thickness: 0.2em;
   }
 
-  a:disabled{
-      color: var(--sitePrimaryAccent);
-    }
+  a:disabled
+  {
+    color: var(--sitePrimaryAccent);
+  }
 
   h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
@@ -39,10 +40,6 @@ body{
       color: var(--sitePrimaryAccent);
       text-decoration: none;
     }
-  }
-
-  h1 {
-    font-size: 3rem;
   }
 
   svg{

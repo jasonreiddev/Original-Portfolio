@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const ContainerStyles = styled.a`
+  cursor: pointer;
+`;
 
 export default function SelectedTempoStrings({selected, removeTempoString /* tempoStrings,*/}) {
   return (
@@ -7,16 +12,14 @@ export default function SelectedTempoStrings({selected, removeTempoString /* tem
         // The following line would allow us to just pass IDs inside selected and get more data, not currently needed
         // const tempoString = tempoStrings.find((tempoString) => tempoString === singleTempoString);
         return (
-          <div key={index}
-
-            style={{cursor: 'pointer'}}
+          <ContainerStyles key={index}
             onClick={() => removeTempoString(index)}>
             <p>&times; {
               <span className="selected">
                 {tempoString}
               </span>
             }</p>
-          </div>
+          </ContainerStyles>
         );
       })}
     </>
