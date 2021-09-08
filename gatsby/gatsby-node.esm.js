@@ -16,6 +16,7 @@ async function createEmploymentPages({graphql, actions}) {
             slug {
               current
             }
+            _updatedAt
           }
         }
       }
@@ -30,6 +31,7 @@ async function createEmploymentPages({graphql, actions}) {
         skip: i * pageSize,
         currentPage: i + 1,
         pageSize,
+        isCanonical: false,
       },
     });
   });
@@ -39,6 +41,7 @@ async function createEmploymentPages({graphql, actions}) {
       component: resolve(rootPath, './src/templates/Employment.js'),
       context: {
         slug: edge.node.slug.current,
+        updated: edge.node._updatedAt,
       },
     });
   });
@@ -52,6 +55,7 @@ async function createBlogPages({graphql, actions}) {
         edges {
           node {
             slug
+            updatedAt
           }
         }
       }
@@ -66,6 +70,7 @@ async function createBlogPages({graphql, actions}) {
         skip: i * pageSize,
         currentPage: i + 1,
         pageSize,
+        isCanonical: false,
       },
     });
   });
@@ -75,6 +80,7 @@ async function createBlogPages({graphql, actions}) {
       component: resolve(rootPath, './src/templates/BlogPost.js'),
       context: {
         slug: edge.node.slug,
+        updated: edge.node.updatedAt,
       },
     });
   });
@@ -90,6 +96,7 @@ async function createProjectPages({graphql, actions}) {
             slug {
               current
             }
+            _updatedAt
           }
         }
       }
@@ -104,6 +111,7 @@ async function createProjectPages({graphql, actions}) {
         skip: i * pageSize,
         currentPage: i + 1,
         pageSize,
+        isCanonical: false,
       },
     });
   });
@@ -113,6 +121,7 @@ async function createProjectPages({graphql, actions}) {
       component: resolve(rootPath, './src/templates/Project.js'),
       context: {
         slug: edge.node.slug.current,
+        updated: edge.node.updatedAt,
       },
     });
   });
