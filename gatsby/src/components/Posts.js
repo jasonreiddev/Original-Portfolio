@@ -12,7 +12,7 @@ const UlStyles = styled.ul`
   }
 `;
 
-export default function ProjectListing({posts}) {
+export default function Post({posts}) {
   return (
     <UlStyles>
       {posts.map((post) => {
