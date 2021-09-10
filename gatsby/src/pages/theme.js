@@ -3,6 +3,15 @@ import Layout from '../components/Layout';
 import ThemeContext from '../context/ThemeContext';
 import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
+import styled from 'styled-components';
+
+const StyledColorBox = styled.div`
+  font-size: '15px';
+  height: 9rem;
+  width: 9rem;
+  border: 1px solid;
+  margin: 0.5em;
+`;
 
 const ColorBoxContainerStyles = {
   display: 'flex',
@@ -78,18 +87,13 @@ const Images = () => {
 function colorBox(color) {
   return (
     <>
-      <div style={{
-        'font-size': '15px',
-        'height': '9rem',
-        'width': '9rem',
-        'border': '1px solid ',
-        'margin': '0.5em',
+      <StyledColorBox style={{
         'backgroundColor': 'var(--site'+color.replace(/\s/g, '')+')',
       }}>
         <div style={ColorBoxTextContainerStyles} align="center">
-          <span style={{'color': 'var(--siteSecondary'}}>{color}</span>
+          {color}
         </div>
-      </div>
+      </StyledColorBox>
     </>
   );
 }
