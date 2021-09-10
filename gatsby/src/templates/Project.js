@@ -37,7 +37,7 @@ export default function ProjectPage(props) {
         <p className="organisation">
           {!props.data.sanityProject.position.hideOnEmployment ?
            <span>
-             <Link to={`/employment/${props.data.sanityProject.position.slug.current}/`}>
+             <Link to={`/employment/${props.data.sanityProject.position.slug.current}`}>
                {props.data.sanityProject.position.jobTitle}
              </Link>
            &nbsp;-&nbsp;

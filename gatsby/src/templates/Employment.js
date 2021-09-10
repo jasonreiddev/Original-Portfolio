@@ -1,13 +1,51 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
 import {AiOutlineLeft} from 'react-icons/ai';
-import ProjectListing from '../components/ProjectListing';
+import Posts from '../components/Posts';
 
 import Layout from '../components/Layout';
 
+export default function ProjectPage(props) {
+  const employment = props.data.employment;
+  const projects = props.data.projects.edges;
+  projects.forEach((project) => {
+    project.id = project.node._id;
+    project.h2InsteadOfh3 = false;
+    project.title = project.node.projectTitle;
+    project.linkUrl = `/projects/${project.node.slug.current}`;
+    project.meta = project.node.lastWorkedOn ?
+      'Project last worked on ' + project.node.lastWorkedOn : 'Project ongoing';
+    project.node.excerpt.slice(-3) != '...' ?
+      project.node.excerpt = project.node.excerpt +'...' : '';
+  });
+
+  return (
+    <Layout title="Employment" subTitle={employment.jobTitle}>
+      <br/>
+      <Link to="/employment/1"><AiOutlineLeft/>Employment Page</Link>
+      <div className="content">
+        <h2>{employment.jobTitle}</h2>
+        {}
+        <div className="organisation"><span>{employment.organisation.organisation}</span></div>
+        <p className="meta">
+          Start Date:&nbsp;
+          {employment.startDate}
+          {employment.endDate && <> End Date: {employment.endDate}</>}
+        </p>
+        <hr/>
+        <p>{employment.details}</p>
+      </div>
+      <div className="Related">
+        <h2>Related Projects</h2>
+        <Posts posts={projects}/>
+      </div>
+    </Layout>
+  );
+};
+
 export const query = graphql`
   query($slug: String!) {
-    sanityPosition(slug: { current: { eq: $slug } }) {
+    employment: sanityPosition(slug: { current: { eq: $slug } }) {
         jobTitle
         details    
         endDate(formatString: "MMMM YYYY")
@@ -16,55 +54,21 @@ export const query = graphql`
           organisation
         }
       }
-    allSanityProject
+      projects: allSanityProject
       (filter: {position: {slug: {current: {eq: $slug}}}}) {
         edges {
           node {
-              lastWorkedOn(formatString: "MMMM YYYY")
-              projectTitle
-              repoUrl
-              siteUrl
-              excerpt
-              slug{
-                current
-              }
-              _id
+            lastWorkedOn(formatString: "MMMM YYYY")
+            projectTitle
+            repoUrl
+            siteUrl
+            excerpt
+            slug{
+              current
             }
+            _id
+          }
         }
       }
     }
 `;
-
-export default function ProjectPage(props) {
-  return (
-    <Layout title="Employment" subTitle={props.data.sanityPosition.jobTitle}>
-      <br/>
-      <Link to="/employment/1"><AiOutlineLeft/>Employment Page</Link>
-      <div className="content">
-        <h2>{props.data.sanityPosition.jobTitle}</h2>
-        <div className="organisation"><span>{props.data.sanityPosition.organisation.organisation}</span></div>
-        <p className="meta">
-          Start Date:&nbsp;
-          {props.data.sanityPosition.startDate}
-          {props.data.sanityPosition.endDate && <> End Date: {props.data.sanityPosition.endDate}</>}
-        </p>
-        <hr/>
-        <p>{props.data.sanityPosition.details}</p>
-      </div>
-      <div className="Related">
-        <h2>Related Projects</h2>
-        <ul className="posts" style={{margin: '0', padding: '0', listStyleType: 'none'}}>
-          {props.data.allSanityProject.edges.map((project) => {
-            return (
-              <ProjectListing className="post" project={project.node} key={project.node._id}>
-                <h3>
-                  <Link to={`/projects/${project.node.slug.current}/`}>{project.node.projectTitle}</Link>
-                </h3>
-              </ProjectListing>
-            );
-          })}
-        </ul>
-      </div>
-    </Layout>
-  );
-};

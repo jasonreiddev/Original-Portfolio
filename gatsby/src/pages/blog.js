@@ -1,40 +1,24 @@
 import React from 'react';
-import {graphql, Link} from 'gatsby';
-import {GatsbyImage} from 'gatsby-plugin-image';
+import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import Pagination from '../components/Pagination';
+import Posts from '../components/Posts';
 
 export default function Blog({data, pageContext}) {
   const blogPosts = data.blogPosts.edges;
 
+  blogPosts.forEach((blogPost) => {
+    blogPost.id = blogPost.node.id;
+    blogPost.h2InsteadOfh3 = true;
+    blogPost.title = blogPost.node.title;
+    blogPost.linkUrl = `/blog/${blogPost.node.slug}`;
+    blogPost.meta = `Posted on ${blogPost.node.publishedDate}`;
+    blogPost.excerpt = `${blogPost.node.excerpt.childMarkdownRemark.excerpt}...`;
+  });
+
   return (
     <Layout title="Blog">
-      <ul className="posts" style={{margin: '0', padding: '0', listStyleType: 'none'}}>
-        {blogPosts.map((edge) => {
-          return (
-            <li className="post" key={edge.node.id}>
-              <h2>
-                <Link to={`/blog/${edge.node.slug}/`}>{edge.node.title}</Link>
-              </h2>
-              {edge.node.featuredImage && (
-                <GatsbyImage
-                  className="featured"
-                  fluid={edge.node.featuredImage.fluid}
-                  alt={edge.node.title}
-                />
-              )}
-              <p className="meta">
-                <span>Posted on {edge.node.publishedDate}</span>
-              </p>
-              <p>
-                <Link to={`/blog/${edge.node.slug}/`}>
-                  <span className="excerpt">{edge.node.excerpt.childMarkdownRemark.excerpt}</span>...
-                </Link>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
+      <Posts posts={blogPosts}/>
       <Pagination
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.blogPosts.totalCount}
@@ -58,11 +42,6 @@ export const query = graphql`
             id
             slug
             publishedDate(formatString: "YYYY-MM-DD")
-            featuredImage {
-              fluid(maxWidth: 750) {
-                ...GatsbyContentfulFluid
-              }
-            }
             excerpt {
               childMarkdownRemark {
                 excerpt(pruneLength: 150)

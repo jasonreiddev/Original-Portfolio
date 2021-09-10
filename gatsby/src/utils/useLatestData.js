@@ -30,9 +30,6 @@ export default function useLatestData() {
         .then((res) => {
           setIntroText(res.data.SiteSettings.introText);
           setFeaturedProjects(res.data.SiteSettings.featuredProjects);
-        })
-        .catch((err) => {
-          // console.log(err);
         });
   }, []);
   return {
