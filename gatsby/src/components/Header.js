@@ -6,12 +6,45 @@ import ThemeContext from '../context/ThemeContext';
 import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 
+const HeaderStyles = styled.header`
+  background: var(--sitePrimaryAccent);
+  flex-Grow: 0;
+  
+  & .active{
+    color: var(--siteMain);
+  }
+`;
+
 const ContainerStyles = styled.div`
   width: Calc(100% - 3rem);
   max-width: 1000px;
   margin: auto;
   font-size: 14pt;
+  flex: 1;
+  font-size: 1.2em;
 `;
+
+const TitleLinkStyles = styled.div`
+  text-decoration: none;
+`;
+
+const UlStyles = styled.ul`
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin-left: -1rem;
+
+  li {
+    padding: 1rem;
+    list-style-type: none;
+  }
+`;
+
+const ThemeIconStyles = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`;
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -22,46 +55,27 @@ Header.defaultProps = {
 
 export default function Header({menuLinks, title}) {
   return (
-    <header style={{background: 'var(--sitePrimaryAccent)', flexGrow: 0}}>
-      <ContainerStyles
-        style={{
-          alignItems: 'center',
-        }}
-      >
-        <div style={{margin: 0, flex: 1, fontSize: '1.5em'}}>
-          <Link
-            to="/"
-            style={{
-              color: 'var(--siteSecondary)',
-              textDecoration: 'none',
-            }}
-          >
-            <h1 style={{color: 'var(--siteSecondary)'}}>
+    <HeaderStyles>
+      <ContainerStyles>
+        <TitleLinkStyles>
+          <Link to="/">
+            <h1>
               <span>Jason Reid&apos;s</span>
               <br />
-              <span style={{color: 'var(--siteMain)'}}>
+              <span className="active">
                 Dev<span className="hide-small-mobile">elopment</span> Portfolio</span>
             </h1>
           </Link>
-        </div>
+        </TitleLinkStyles>
         <div>
           <nav>
-            <ul style={{
-              display: 'flex',
-              flexFlow: 'row wrap',
-              padding: 0,
-              marginLeft: '-1rem',
-            }}>
+            <UlStyles>
               {menuLinks.map((link) => (
                 <li
                   key={link.name}
-                  style={{
-                    listStyleType: `none`,
-                    padding: `1rem`,
-                  }}
                 >
                   <Link
-                    style={{color: link.name == title ? `var(--siteMain)` : `var(--siteSecondary)`}}
+                    className={link.name == title ?'active' : ''}
                     to={link.link}>
                     {
                       (link.nameOverrideNav ? link.nameOverrideNav: link.name)
@@ -69,13 +83,10 @@ export default function Header({menuLinks, title}) {
                   </Link>
                 </li>
               ))}
-              <li style={{
-                listStyleType: `none`,
-                padding: `1rem`,
-              }}>
+              <li>
                 <ThemeContext.Consumer>
                   {(theme) => (
-                    <span type="button" style={{color: 'var(--siteMain)', cursor: 'pointer'}}
+                    <ThemeIconStyles type="button" className="active"
                       onClick={theme.theme == 'custom' ? theme.goToThemePage : theme.toggleTheme}>
                       {
                       theme.theme == 'dark' ?
@@ -84,14 +95,14 @@ export default function Header({menuLinks, title}) {
                       <HiSun/> :
                       <GoPaintcan/>
                       }
-                    </span>
+                    </ThemeIconStyles>
                   )}
                 </ThemeContext.Consumer>
               </li>
-            </ul>
+            </UlStyles>
           </nav>
         </div>
       </ContainerStyles>
-    </header>
+    </HeaderStyles>
   );
 }
