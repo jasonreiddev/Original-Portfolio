@@ -5,8 +5,10 @@ const GlobalStyles = createGlobalStyle`
 // Theme
 :root
  {
+  --spaceBlack: #1B1B1D;
+  
   // default dark mode
-  --siteMain: #1B1B1D;
+  --siteMain: var(--spaceBlack);
   --siteSecondary: #EEE6F0;
   --siteBoldSecondary: #FFFFFF;
   --sitePrimaryAccent: #8B548C;
@@ -111,6 +113,10 @@ html *{
 
 .scroll {
   flex-grow: 1;
+}
+
+.space {
+  background: var(--spaceBlack);
 }
 
 /*Scrollbar*/
