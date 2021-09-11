@@ -7,7 +7,6 @@ const UlStyles = styled.ul`
   margin: 0;
 
   li {
-    padding: 1rem;
     list-style-type: none;
   }
 `;
