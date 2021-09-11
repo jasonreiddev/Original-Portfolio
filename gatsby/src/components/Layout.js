@@ -10,6 +10,9 @@ import SEO from './SEO';
 import Header from './Header';
 import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
 import {FaGithub} from 'react-icons/fa';
+import {GoCode} from 'react-icons/go';
+import {HiTerminal} from 'react-icons/hi';
+import {IoBrowsers} from 'react-icons/io5';
 
 const SiteBorderStyles = styled.div`
   display: flex;
@@ -17,6 +20,19 @@ const SiteBorderStyles = styled.div`
   overflow-x: hidden;
   max-width: 100VW;
   height: 100vh;
+`;
+
+const SVGStyles = styled.svg`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  svg {
+    fill: var(--siteOffMain);
+    font-size: 25px;
+  }
 `;
 
 const ContentStyles = styled.div`
@@ -69,10 +85,23 @@ export default function Layout({children, title, subTitle}) {
                   <body className={'theme-'+theme.theme}/>
                 </Helmet>
                 <SEO title={title} subTitle={subTitle}/>
-                <div className="load-animation"/>
-                <div className="loader"/>
+                <SVGStyles>
+                  <defs>
+                    <pattern id="background-icons" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                      <GoCode x="0" y="0"/>
+                      <HiTerminal x="35" y="35"/>
+                      <IoBrowsers x="70" y="70"/>
+                    </pattern>
+                  </defs>
+
+                  <rect x="0" y="0" width="100%" height="100%" fill="url(#background-icons)" />
+                </SVGStyles>
+                <div className="load-mask"/>
+                <div className="load-spinner"/>
                 <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
+
                 <ContentStyles className={'scroll'}>
+
                   <MainStyles>
                     {children}
                   </MainStyles>
