@@ -13,8 +13,9 @@ export default function Blog({data, pageContext}) {
     blogPost.title = blogPost.node.title;
     blogPost.linkUrl = `/blog/${blogPost.node.slug}`;
     blogPost.meta = `Posted on ${blogPost.node.publishedDate}`;
-    blogPost.excerpt.slice(-3) != '...' ?
-     blogPost.excerpt = blogPost.node.excerpt.childMarkdownRemark.excerpt +'...' : '';
+    blogPost.node.excerpt.childMarkdownRemark.excerpt.slice(-1) != '…' ?
+     blogPost.excerpt = blogPost.node.excerpt.childMarkdownRemark.excerpt +'...' :
+     blogPost.excerpt =blogPost.node.excerpt.childMarkdownRemark.excerpt;
   });
 
   return (
