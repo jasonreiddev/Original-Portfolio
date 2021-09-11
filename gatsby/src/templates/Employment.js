@@ -16,7 +16,8 @@ export default function ProjectPage(props) {
     project.meta = project.node.lastWorkedOn ?
       'Project last worked on ' + project.node.lastWorkedOn : 'Project ongoing';
     project.node.excerpt.slice(-3) != '...' ?
-      project.node.excerpt = project.node.excerpt +'...' : '';
+      project.excerpt = project.node.excerpt +'...' :
+      project.excerpt = project.node.excerpt;
   });
 
   return (
