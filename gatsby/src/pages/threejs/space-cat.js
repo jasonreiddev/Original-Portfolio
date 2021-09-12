@@ -183,13 +183,15 @@ function StarsBackground() {
 
 export default function ThreeJS() {
   return (
-    <Layout title="Space Cat" >
-      <Canvas className="space">
-        <StarsBackground/>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Cat position={[0, 0, -1]}/>
-      </Canvas>
+    <Layout title="Space Cat">
+      <div className="space">
+        <Canvas >
+          <StarsBackground/>
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+          <Cat position={[0, 0, -1]}/>
+        </Canvas>
+      </div>
     </Layout>
   );
 };

@@ -114,41 +114,98 @@ html *{
   display: none;
 }
 
-.scroll {
+.desktop-scroll {
   flex-grow: 1;
 }
 
 .space {
   background: var(--spaceBlack);
+  height: 720px;
 }
 
-/*Scrollbar*/
-@media only screen and (max-width: 640px) {
+/*Mobile*/
+.mobile-scroll{
+  overflow-Y: scroll;
+}
+
+
+/*Tablet*/
+/*@media only screen and (min-width: 480px) {
   .mobile-scroll{
     overflow-Y: scroll;
     min-height: 100vh;
   }
+}*/
+
+/*Desktop*/
+@media only screen and (min-width: 1080px)  {
+  .mobile-scroll{
+    overflow-Y: hidden;
+    min-height: initial;
+  }
+  .column-small{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .tablet-scroll{
+    overflow-Y: scroll;
+  }
 }
 
-@media only screen and (min-width: 639px) {
-  .scroll{
-    overflow-Y: scroll;
+/*Large Desktop*/
+@media only screen and (min-width: 1440px) {
+  .column-small{
+    flex-direction: row !important;
+    margin: 0;
+    padding-left: 0;
+  }
+  .tablet-scroll{
+    overflow-y: hidden;
+    max-width: unset !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .aside-left{
+    order: 1;
+    width: unset !important;
+  }
+  .desktop-scroll{
     overflow-x: hidden;
+    order: 2;
+    width: 1080px;
+    height: 100%;
+  }
+  .aside-right{
+    order: 3;
+    width: unset !important;
+  }
+  footer{
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    width: unset !important;
+    p {
+      margin: 0;
     }
   }
+}
 
 .mobile-scroll::-webkit-scrollbar,
-.scroll::-webkit-scrollbar {
+.desktop-scroll::-webkit-scrollbar,
+.tablet-scroll::-webkit-scrollbar {
     width: 0.75rem;
   }
    
-  .scroll::-webkit-scrollbar-track,
+  .desktop-scroll::-webkit-scrollbar-track,
+  .tablet-scroll::-webkit-scrollbar-track,
   .mobile-scroll::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0.35rem rgba(0, 0, 0, 0.3);
   }
    
   .mobile-scroll::-webkit-scrollbar-thumb,
-  .scroll::-webkit-scrollbar-thumb {
+  .tablet-scroll::-webkit-scrollbar-thumb,
+  .desktop-scroll::-webkit-scrollbar-thumb {
     border: 0.1rem solid var(--siteSecondary);
     background-color: var(--siteMain);
     border-radius: 0.75rem;
