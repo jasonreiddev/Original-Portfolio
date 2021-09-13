@@ -124,7 +124,7 @@ export default function Layout({children, title, subTitle, content}) {
 
                     <div className="load-mask"/>
                     <div className="load-spinner"/>
-                    <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
+                    <Header menuLinks={seo.menuLinks} title={title}/>
                     <BodyDivStyles className={'column-small tablet-scroll'}>
                       <ContentStyles className={'desktop-scroll'}>
                         <MainStyles>
@@ -143,7 +143,7 @@ export default function Layout({children, title, subTitle, content}) {
                         <p>
                           {typeof window !== 'undefined' &&
                         <a title="Share via Twitter" href={`
-                          https://twitter.com/intent/tweet?text=Wow:&url=${data.site.siteMetadata.url}${location.pathname}`}>
+                          https://twitter.com/intent/tweet?text=Wow:&url=${seo.url}${location.pathname}`}>
                           <FaShare/>
                           <div>Share</div>
                         </a>
