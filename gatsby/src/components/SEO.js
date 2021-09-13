@@ -26,13 +26,13 @@ export default function SEO({title, subTitle, description, image, content}) {
         description = description ? description : seo.description;
         image = seo.url + (image ? image : seo.image);
 
-        const titleTemplate = (title ? title +' | '+ seo.titleTemplate : seo.titleTemplate) +
+        title = (title ? title +' | '+ seo.titleTemplate : seo.titleTemplate) +
          (subTitle ? ' - '+ subTitle : '');
         const pageUrl = seo.url + pathname;
         content = content ? content : 'website';
 
         return (
-          <Helmet title={title} titleTemplate={titleTemplate}>
+          <Helmet title={title}>
             <html lang="en" />
             <meta name="robots" content="index"/>
             <meta name="description" content={description} />
