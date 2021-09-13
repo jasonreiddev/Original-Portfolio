@@ -14,8 +14,8 @@ export default function Blog({data, pageContext}) {
     blogPost.linkUrl = `/blog/${blogPost.node.slug}`;
     blogPost.meta = `Posted on ${blogPost.node.publishedDate}`;
     blogPost.node.excerpt.childMarkdownRemark.excerpt.slice(-1) != '…' ?
-     blogPost.excerpt = blogPost.node.excerpt.childMarkdownRemark.excerpt +'...' :
-     blogPost.excerpt =blogPost.node.excerpt.childMarkdownRemark.excerpt;
+    blogPost.excerpt = blogPost.node.excerpt.childMarkdownRemark.excerpt +'...' :
+    blogPost.excerpt = blogPost.node.excerpt.childMarkdownRemark.excerpt;
   });
 
   return (

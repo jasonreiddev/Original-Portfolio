@@ -80,7 +80,7 @@ const FooterStyles = styled.footer`
   }
 `;
 
-export default function Layout({children, title, subTitle}) {
+export default function Layout({children, title, subTitle, content}) {
   return (
     <>
       <GlobalStyles />
@@ -90,7 +90,7 @@ export default function Layout({children, title, subTitle}) {
           query SiteTitleQuery {
             site {
               siteMetadata {
-                title
+                url
                 menuLinks {
                   name
                   nameOverrideNav
@@ -100,66 +100,74 @@ export default function Layout({children, title, subTitle}) {
             }
           }
         `}
-        render={(data) => (
-          <ThemeContext.Consumer>
-            {(theme) => (
-              <>
-                <SVGStyles>
-                  <defs>
-                    <pattern id="background-icons" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                      <FaCode x="0" y="0"/>
-                      <HiTerminal x="35" y="35"/>
-                      <IoBrowsers x="70" y="70"/>
-                    </pattern>
-                  </defs>
-                  <rect x="0" y="0" width="100%" height="100%" fill="url(#background-icons)" />
-                </SVGStyles>
-                <SiteBorderStyles className={'mobile-scroll'}>
-                  <Helmet>
-                    <body className={'theme-'+theme.theme}/>
-                  </Helmet>
-                  <SEO title={title} subTitle={subTitle}/>
+        render={(data) => {
+          const seo = data.site.siteMetadata;
+          return (
+            <ThemeContext.Consumer>
+              {(theme) => (
+                <>
+                  <SVGStyles>
+                    <defs>
+                      <pattern id="background-icons" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                        <FaCode x="0" y="0"/>
+                        <HiTerminal x="35" y="35"/>
+                        <IoBrowsers x="70" y="70"/>
+                      </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#background-icons)" />
+                  </SVGStyles>
+                  <SiteBorderStyles className={'mobile-scroll'}>
+                    <Helmet>
+                      <body className={'theme-'+theme.theme}/>
+                    </Helmet>
+                    <SEO title={title} subTitle={subTitle} content={content}/>
 
-                  <div className="load-mask"/>
-                  <div className="load-spinner"/>
-                  <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
-                  <BodyDivStyles className={'column-small tablet-scroll'}>
-                    <ContentStyles className={'desktop-scroll'}>
-                      <MainStyles>
-                        {children}
-                      </MainStyles>
-                    </ContentStyles>
-                    <AsideStyles className="aside-left">
-                      <p>
-                        <a title="Like - w.i.p">
-                          <FaHeart/>
-                        </a>
-                        <div>1337</div>
-                      </p>
-                    </AsideStyles>
-                    <AsideStyles className="aside-right">
-                      <p>
-                        <a title="Share - w.i.p">
+                    <div className="load-mask"/>
+                    <div className="load-spinner"/>
+                    <Header menuLinks={data.site.siteMetadata.menuLinks} title={title}/>
+                    <BodyDivStyles className={'column-small tablet-scroll'}>
+                      <ContentStyles className={'desktop-scroll'}>
+                        <MainStyles>
+                          {children}
+                        </MainStyles>
+                      </ContentStyles>
+                      <AsideStyles className="aside-left">
+                        <p>
+                          <a title="Like - w.i.p">
+                            <FaHeart/>
+                          </a>
+                          <div>1337</div>
+                        </p>
+                      </AsideStyles>
+                      <AsideStyles className="aside-right">
+                        <p>
+                          {typeof window !== 'undefined' &&
+                        <a title="Share via Twitter" href={`
+                          https://twitter.com/intent/tweet?text=Wow:&url=${data.site.siteMetadata.url}${location.pathname}`}>
                           <FaShare/>
+                          <div>Share</div>
                         </a>
-                        <div>Share</div>
-                      </p>
-                    </AsideStyles>
-                    <FooterStyles>
-                      <p>
-                        <span className="media-links">
-                          <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/"><AiFillLinkedin/></a>
-                          <a title="GitHub" href="https://github.com/jasonreiddev"><FaGithub/></a>
-                          <a title="Twitter" href="https://twitter.com/jasonreiddev"><AiOutlineTwitter/></a>
-                        </span><br/>
+                          }
+                        </p>
+                      </AsideStyles>
+                      <FooterStyles>
+                        <p>
+                          <span className="media-links">
+                            <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/"><AiFillLinkedin/></a>
+                            <a title="GitHub" href="https://github.com/jasonreiddev"><FaGithub/></a>
+                            <a title="Twitter" href="https://twitter.com/jasonreiddev"><AiOutlineTwitter/></a>
+                          </span><br/>
                     &copy; {new Date().getFullYear()} Jason Reid
-                      </p>
-                    </FooterStyles>
-                  </BodyDivStyles>
-                </SiteBorderStyles>
-              </>)
-            }
-          </ThemeContext.Consumer>)
-        }/>
-    </>);
+                        </p>
+                      </FooterStyles>
+                    </BodyDivStyles>
+                  </SiteBorderStyles>
+                </>)
+              }
+            </ThemeContext.Consumer>
+          );
+        }}
+      />
+    </>
+  );
 };
