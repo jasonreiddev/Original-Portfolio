@@ -31,7 +31,7 @@ export default function BlogPost(props) {
   });
 
   return (
-    <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title}>
+    <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title} content="article">
       <br/>
       <Link to="/blog/1"><AiOutlineLeft/>Blog Page</Link>
       <div className="content">

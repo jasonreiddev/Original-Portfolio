@@ -4,13 +4,12 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Home',
-    titleTemplate: 'JR Portfolio',
-    description:
-      'Jason Reid\'s Development Portfolio',
-    url: 'https://jasonreid.dev',
-    image: '/images/icon.png',
-    twitterUsername: '@JasonReidDev',
+    title: '',
+    titleTemplate: process.env.SITE_TITLE_TEMPLATE,
+    description: process.env.SITE_DESCRIPTION,
+    url: process.env.SITE_URL,
+    image: process.env.SITE_IMAGE,
+    twitterUsername: process.env.SITE_TWITTER_USERNAME,
     menuLinks: [
       {
         name: '',
@@ -93,6 +92,13 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: true,
+      },
+    },
   ],
 };
 

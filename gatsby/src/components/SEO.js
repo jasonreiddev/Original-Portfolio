@@ -1,79 +1,59 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 import {useLocation} from '@reach/router';
-import {useStaticQuery, graphql} from 'gatsby';
+import {graphql, StaticQuery} from 'gatsby';
 
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  article: PropTypes.bool,
-};
-SEO.defaultProps = {
-  title: 'JR Portfolio',
-  description: 'Jason Reid\'s Development Portfolio',
-  image: null,
-  article: false,
-};
-
-export default function SEO({title, subTitle, description, image, article}) {
+export default function SEO({title, subTitle, description, image, content}) {
   const {pathname} = useLocation();
-  const {site} = useStaticQuery(query);
-  const {
-    defaultTitle,
-    titleTemplate,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitterUsername,
-  } = site.siteMetadata;
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
-  };
   return (
-    <Helmet title={seo.title} titleTemplate={
-      (title ? title +' | '+ titleTemplate: titleTemplate) +
-        (subTitle ? ' - '+subTitle : '')
-    }>
-      <html lang="en" />
-      <meta name="robots" content="index"/>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      {seo.url && <meta property="og:url" content={seo.url} />}
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
-      <meta name="twitter:card" content="summary_large_image" />
-      {twitterUsername && (
-        <meta name="twitter:creator" content={twitterUsername} />
-      )}
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
-      )}
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
-    </Helmet>
+    <StaticQuery
+      query={graphql`
+          query SiteMetadataQuery {
+            site {
+              siteMetadata {
+                titleTemplate
+                url
+                description
+                image
+                twitterUsername
+              }
+            }
+          }
+        `}
+      render={(data) => {
+        const seo = data.site.siteMetadata;
+
+        description = description ? description : seo.description;
+        image = seo.url + (image ? image : seo.image);
+
+        const titleTemplate = (title ? title +' | '+ seo.titleTemplate : seo.titleTemplate) +
+         (subTitle ? ' - '+ subTitle : '');
+        const pageUrl = seo.url + pathname;
+        content = content ? content : 'website';
+
+        return (
+          <Helmet title={title} titleTemplate={titleTemplate}>
+            <html lang="en" />
+            <meta name="robots" content="index"/>
+            <meta name="description" content={description} />
+
+            <meta property="og:description" content={description} />
+            <meta property="og:url" content={pageUrl} />
+
+            <meta property="og:type" content={content} />
+            <meta property="og:title" content={title} />
+            <meta property="og:image" content={image} />
+
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:creator" content={seo.twitterUsername} />
+            <meta property="twitter:domain" content={seo.url}/>
+            <meta property="twitter:url" content={pageUrl}/>
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            <meta name="twitter:image" content={image} />
+          </Helmet>
+        );
+      }}
+    />
   );
 };
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`;
