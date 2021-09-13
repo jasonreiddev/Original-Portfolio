@@ -68,6 +68,9 @@ const BodyDivStyles = styled.div`
 
 const FooterStyles = styled.footer`
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: 100%;
   svg {
     fill: var(--sitePrimaryAccent);
