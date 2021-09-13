@@ -9,8 +9,7 @@ import Typography from '../styles/Typography';
 import SEO from './SEO';
 import Header from './Header';
 import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
-import {FaGithub} from 'react-icons/fa';
-import {GoCode} from 'react-icons/go';
+import {FaGithub, FaHeart, FaShare, FaCode} from 'react-icons/fa';
 import {HiTerminal} from 'react-icons/hi';
 import {IoBrowsers} from 'react-icons/io5';
 
@@ -50,6 +49,9 @@ const AsideStyles = styled.aside`
   justify-content: center;
   position: relative;
   width: 50%;
+  p {
+    text-align: center;
+  }
 `;
 
 const BodyDivStyles = styled.div`
@@ -105,7 +107,7 @@ export default function Layout({children, title, subTitle}) {
                 <SVGStyles>
                   <defs>
                     <pattern id="background-icons" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                      <GoCode x="0" y="0"/>
+                      <FaCode x="0" y="0"/>
                       <HiTerminal x="35" y="35"/>
                       <IoBrowsers x="70" y="70"/>
                     </pattern>
@@ -128,10 +130,20 @@ export default function Layout({children, title, subTitle}) {
                       </MainStyles>
                     </ContentStyles>
                     <AsideStyles className="aside-left">
-                      <span>💜</span>
+                      <p>
+                        <a title="Like - w.i.p">
+                          <FaHeart/>
+                        </a>
+                        <div>1337</div>
+                      </p>
                     </AsideStyles>
                     <AsideStyles className="aside-right">
-                      <span>💜</span>
+                      <p>
+                        <a title="Share - w.i.p">
+                          <FaShare/>
+                        </a>
+                        <div>Share</div>
+                      </p>
                     </AsideStyles>
                     <FooterStyles>
                       <p>
