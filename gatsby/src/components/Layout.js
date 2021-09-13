@@ -90,7 +90,9 @@ export default function Layout({children, title, subTitle, content}) {
           query SiteTitleQuery {
             site {
               siteMetadata {
+                titleTemplate
                 url
+                twitterUsername
                 menuLinks {
                   name
                   nameOverrideNav
@@ -102,6 +104,11 @@ export default function Layout({children, title, subTitle, content}) {
         `}
         render={(data) => {
           const seo = data.site.siteMetadata;
+
+          const shareText =
+          `${subTitle ? subTitle :
+          title ? title : seo.titleTemplate} - @${seo.twitterUsername}`;
+
           return (
             <ThemeContext.Consumer>
               {(theme) => (
@@ -143,7 +150,7 @@ export default function Layout({children, title, subTitle, content}) {
                         <p>
                           {typeof window !== 'undefined' &&
                         <a title="Share via Twitter" href={`
-                          https://twitter.com/intent/tweet?text=Wow:&url=${seo.url}${location.pathname}`}>
+                          https://twitter.com/intent/tweet?text=${shareText}:&url=${seo.url}${location.pathname}`}>
                           <FaShare/>
                           <div>Share</div>
                         </a>
