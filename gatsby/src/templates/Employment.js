@@ -22,23 +22,25 @@ export default function ProjectPage(props) {
 
   return (
     <Layout title="Employment" subTitle={employment.jobTitle}>
-      <br/>
-      <Link to="/employment/1"><AiOutlineLeft/>Employment Page</Link>
-      <div className="content">
-        <h2>{employment.jobTitle}</h2>
-        {}
-        <div className="organisation"><span>{employment.organisation.organisation}</span></div>
-        <p className="meta">
+      <div>
+        <br/>
+        <Link to="/employment/1"><AiOutlineLeft/>Employment Page</Link>
+        <div className="content">
+          <h2>{employment.jobTitle}</h2>
+          {}
+          <div className="organisation"><span>{employment.organisation.organisation}</span></div>
+          <p className="meta">
           Start Date:&nbsp;
-          {employment.startDate}
-          {employment.endDate && <> End Date: {employment.endDate}</>}
-        </p>
-        <hr/>
-        <p>{employment.details}</p>
-      </div>
-      <div className="Related">
-        <h2>Related Projects</h2>
-        <Posts posts={projects}/>
+            {employment.startDate}
+            {employment.endDate && <> End Date: {employment.endDate}</>}
+          </p>
+          <hr/>
+          <p>{employment.details}</p>
+        </div>
+        <div className="Related">
+          <h2>Related Projects</h2>
+          <Posts posts={projects}/>
+        </div>
       </div>
     </Layout>
   );

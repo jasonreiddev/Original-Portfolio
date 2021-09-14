@@ -183,6 +183,7 @@ html *{
   }
   .desktop-scroll{
     overflow-x: hidden;
+    overflow-Y: scroll;
     order: 2;
     width: 1080px;
     height: 100%;
