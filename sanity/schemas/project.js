@@ -1,7 +1,7 @@
 import { MdKeyboard as icon } from 'react-icons/md'
 
 export default{
-    name: 'Project',
+    name: 'project',
     title: 'Project',
     type: 'document',
     icon,

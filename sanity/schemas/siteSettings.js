@@ -16,13 +16,20 @@ export default {
       name: 'featuredProjects',
       title: 'Featured Projects',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'Project' }] }],
+      of: [{ type: 'reference', to: [{ type: 'project' }] }],
     },
-    /*TODO: {
-      name: 'featuredBlogPosts',
-      title: 'Hot Slices available in the case',
+    {
+      name: 'featuredPosition',
+      title: 'Featured Projects',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'pizza' }] }],
-    },*/
+      of: [{ type: 'reference', to: [{ type: 'position' }] }],
+    },
+    {
+      name: 'featuredBlogPosts',
+      title: 'Featured Blog Posts',
+      type: 'array',
+      description: 'Slug of url from contentful blogpost',
+      of: [{ type: 'string' }],
+    },
   ],
 };
