@@ -32,15 +32,17 @@ export default function BlogPost(props) {
 
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title} content="article">
-      <br/>
-      <Link to="/blog/1"><AiOutlineLeft/>Blog Page</Link>
-      <div className="content">
-        <h2>{props.data.contentfulBlogPost.title}</h2>
-        <span className="meta">
+      <div>
+        <br/>
+        <Link to="/blog/1"><AiOutlineLeft/>Blog Page</Link>
+        <div className="content">
+          <h2>{props.data.contentfulBlogPost.title}</h2>
+          <span className="meta">
           Posted on {props.data.contentfulBlogPost.publishedDate}
-        </span>
-        <hr/>
-        {body}
+          </span>
+          <hr/>
+          {body}
+        </div>
       </div>
     </Layout>
   );

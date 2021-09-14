@@ -30,12 +30,13 @@ export const query = graphql`
 export default function ProjectPage(props) {
   return (
     <Layout title="Projects" subTitle={props.data.sanityProject.projectTitle}>
-      <br/>
-      <Link to="/projects/1"><AiOutlineLeft/>Project Page</Link>
-      <div className="content">
-        <h2>{props.data.sanityProject.projectTitle}</h2>
-        <p className="organisation">
-          {!props.data.sanityProject.position.hideOnEmployment ?
+      <div>
+        <br/>
+        <Link to="/projects/1"><AiOutlineLeft/>Project Page</Link>
+        <div className="content">
+          <h2>{props.data.sanityProject.projectTitle}</h2>
+          <p className="organisation">
+            {!props.data.sanityProject.position.hideOnEmployment ?
            <span>
              <Link to={`/employment/${props.data.sanityProject.position.slug.current}`}>
                {props.data.sanityProject.position.jobTitle}
@@ -44,22 +45,23 @@ export default function ProjectPage(props) {
              {props.data.sanityProject.position.organisation.organisation}
            </span> :
            props.data.sanityProject.position.organisation.organisation
-          }
-        </p>
-        <span className="meta">
-          {props.data.sanityProject.lastWorkedOn ?
+            }
+          </p>
+          <span className="meta">
+            {props.data.sanityProject.lastWorkedOn ?
           <>Last worked on: {props.data.sanityProject.lastWorkedOn}</> :
           <>Ongoing</>
-          }
-        </span>
-        <hr/>
-        <p>{props.data.sanityProject.details}</p>
-        {props.data.sanityProject.repoUrl &&
+            }
+          </span>
+          <hr/>
+          <p>{props.data.sanityProject.details}</p>
+          {props.data.sanityProject.repoUrl &&
           <p><ExternalLink to={props.data.sanityProject.repoUrl}>View Repository</ExternalLink></p>
-        }
-        {props.data.sanityProject.siteUrl &&
+          }
+          {props.data.sanityProject.siteUrl &&
           <p><ExternalLink to={props.data.sanityProject.siteUrl}>View Site</ExternalLink></p>
-        }
+          }
+        </div>
       </div>
     </Layout>
   );
