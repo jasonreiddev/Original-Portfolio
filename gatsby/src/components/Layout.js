@@ -150,7 +150,7 @@ export default function Layout({children, title, subTitle, content}) {
                           <a title="Like - w.i.p">
                             <FaHeart/>
                           </a>
-                          <div>1337</div>
+                          <span>1337</span>
                         </p>
                       </AsideStyles>
                       <AsideStyles className="aside-right">
