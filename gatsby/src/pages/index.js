@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {graphql} from 'gatsby';
 import useLatestData from '../utils/useLatestData';
 import {Link} from 'gatsby';
 import ExternalLink from '../components/ExternalLink';
@@ -23,8 +24,10 @@ const defaultHighlightStyles = {
   'backgroundImage': 'linear-gradient(to right, transparent  50%, var(--sitePrimaryAccent) 50%)',
 };
 
-const IndexPage = () => {
+export default function HomePage({data}) {
+  const buildTimeData = data.sanitySiteSettings;
   const latestData = useLatestData();
+
   return (
     <>
       <Layout title="">
@@ -32,12 +35,9 @@ const IndexPage = () => {
         <p>
           {!latestData.introText &&
           // Fallback text
-           <span>My name is Jason Reid and I am a software developer from Yorkshire.<br/>
-           I started my software development career in January of 2019 as an apprentice at Bradford Council.<br/>
-             <br/>
-           Mobile: 07464 812 799<br/>
-             <br/>
-           Email: Jasonreidd@gmail.com</span>
+           <span>
+             {buildTimeData.introText}
+           </span>
           }
           {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
         </p>
@@ -58,13 +58,24 @@ const IndexPage = () => {
           <li>Netflify Functions</li>
           <li>NodeJS, GraphQL, Yarn, Babel, ESLint </li>
         </ul>
-        <p>For more information, you can view the projects repository on&nbsp;
+        <p>For more information, you can view the project&apos;s repository on&nbsp;
           <ExternalLink to="https://github.com/jasonreiddev/portfolio">Github</ExternalLink>.
         </p>
       </Layout>
     </>
   );
 };
+
+export const query = graphql`
+  query {
+    sanitySiteSettings {
+      introText
+      featuredProjects {
+        projectTitle
+      }
+    }
+  }
+`;
 
 function organisation(logo, name, styles, date) {
   return (
@@ -95,5 +106,3 @@ function hover(content, style) {
       {content}</span>
   );
 }
-
-export default IndexPage;
