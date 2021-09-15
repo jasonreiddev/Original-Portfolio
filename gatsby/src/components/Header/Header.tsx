@@ -2,9 +2,10 @@ import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ThemeContext from '../context/ThemeContext';
 import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
+
+import ThemeContext from '../../context/ThemeContext';
 
 const HeaderStyles = styled.header`
   background: var(--sitePrimaryAccent);
@@ -45,9 +46,9 @@ const ThemeIconStyles = styled.a`
   cursor: pointer;
 `;
 
-
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  menuLinks: PropTypes.any,
+  title: PropTypes.string,
 };
 Header.defaultProps = {
   siteTitle: ``,

@@ -1,6 +1,9 @@
+// import('../src/components/Header/Header.stories.jsx');
+// import('../src/components/**/*.stories.@(jsx)');
+
 module.exports = {
   // You will want to change this to wherever your Stories will live
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/components/**/*.stories.@(tsx)"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   core: {
     builder: "webpack5",

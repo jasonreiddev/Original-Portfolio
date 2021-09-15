@@ -3,15 +3,16 @@ import {StaticQuery, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
 import styled from 'styled-components';
 import 'normalize.css';
-import ThemeContext from '../context/ThemeContext';
-import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
-import SEO from './SEO';
-import Header from './Header';
 import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
 import {FaGithub, FaHeart, FaShare, FaCode} from 'react-icons/fa';
 import {HiTerminal} from 'react-icons/hi';
 import {IoBrowsers} from 'react-icons/io5';
+
+import ThemeContext from '../context/ThemeContext';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
+import SEO from './SEO';
+import Header from './Header/Header';
 
 const SiteBorderStyles = styled.div`
   display: flex;
