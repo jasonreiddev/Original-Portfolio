@@ -12,7 +12,7 @@ import ThemeContext from '../context/ThemeContext';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import SEO from './SEO';
-import Header from './Header/Header';
+import {Header} from './Header/Header';
 
 const SiteBorderStyles = styled.div`
   display: flex;
@@ -88,7 +88,7 @@ const FooterStyles = styled.footer`
   }
 `;
 
-export default function Layout({children, title, subTitle, content}) {
+export default function Layout({children, title}) {
   return (
     <>
       <GlobalStyles />
@@ -114,8 +114,7 @@ export default function Layout({children, title, subTitle, content}) {
           const seo = data.site.siteMetadata;
 
           const shareText =
-          `${subTitle ? subTitle :
-          title ? title : seo.titleTemplate} - @${seo.twitterUsername}`;
+          `${ title ? title : seo.titleTemplate} - @${seo.twitterUsername}`;
 
           return (
             <ThemeContext.Consumer>
@@ -135,7 +134,7 @@ export default function Layout({children, title, subTitle, content}) {
                     <Helmet>
                       <body className={'theme-'+theme.theme}/>
                     </Helmet>
-                    <SEO title={title} subTitle={subTitle} content={content}/>
+                    <SEO title={title}/>
 
                     <div className="load-mask"/>
                     <div className="load-spinner"/>

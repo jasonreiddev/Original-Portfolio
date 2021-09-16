@@ -5,9 +5,10 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    "@storybook/addon-actions",
   ],
   "core": {
     "builder": "webpack5"
-  }
+  },
 }

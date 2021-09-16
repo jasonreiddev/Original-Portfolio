@@ -6,13 +6,18 @@ const ExternalLinkStyles = styled.a`
   white-space: nowrap;
 `;
 
-export default function ExternalLink({
+interface ExternalLinkProps {
+  to?: string,
+  children?: any,
+};
+
+export const ExternalLink = ({
   to,
   children,
-}) {
+}: ExternalLinkProps) => {
   return (
     <ExternalLinkStyles href={to}>
       <AiOutlineLink/>{children}
     </ExternalLinkStyles>
   );
-}
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import {graphql, Link} from 'gatsby';
 import {renderRichText} from 'gatsby-source-contentful/rich-text';
 import {AiOutlineLeft} from 'react-icons/ai';
-import externalLink from '../components/ExternalLink';
+import externalLink from '../components/ExternalLink/ExternalLink';
 
 import Layout from '../components/Layout';
 
