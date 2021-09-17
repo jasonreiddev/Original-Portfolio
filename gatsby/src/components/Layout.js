@@ -158,8 +158,8 @@ export default function Layout({children, title}) {
                           {typeof window !== 'undefined' &&
                         <a title="Share via Twitter" href={`
                           https://twitter.com/intent/tweet?text=${shareText}:&url=${seo.url}${location.pathname}`}>
-                          <FaShare/>
-                          <div>Share</div>
+                          <FaShare/><br/>
+                          <span>Share</span>
                         </a>
                           }
                         </p>

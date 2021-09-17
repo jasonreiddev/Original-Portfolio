@@ -7,7 +7,7 @@ const ExternalLinkStyles = styled.a`
 `;
 
 interface ExternalLinkProps {
-  to?: string,
+  to?: any,
   children?: any,
 };
 
