@@ -16,3 +16,4 @@ export const Text = ({text}: HeaderProps) => {
     </TextStyles>
   );
 };
+

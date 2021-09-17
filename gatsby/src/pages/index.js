@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {graphql} from 'gatsby';
 import useLatestData from '../utils/useLatestData';
 import {Link} from 'gatsby';
-import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 
-import Layout from '../components/Layout';
+import {ExternalLink} from '../components/ExternalLink/ExternalLink';
+import Layout from '../components/Layout/Layout';
 
 const logoStyles = {
   padding: '0 0.5rem 0 0',

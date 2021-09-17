@@ -8,11 +8,11 @@ import {FaGithub, FaHeart, FaShare, FaCode} from 'react-icons/fa';
 import {HiTerminal} from 'react-icons/hi';
 import {IoBrowsers} from 'react-icons/io5';
 
-import ThemeContext from '../context/ThemeContext';
-import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
-import SEO from './SEO';
-import {Header} from './Header/Header';
+import ThemeContext from '../../context/ThemeContext';
+import GlobalStyles from '../../styles/GlobalStyles';
+import Typography from '../../styles/Typography';
+import SEO from './../SEO/SEO';
+import {Header} from './../Header/Header';
 
 const SiteBorderStyles = styled.div`
   display: flex;
@@ -88,7 +88,12 @@ const FooterStyles = styled.footer`
   }
 `;
 
-export default function Layout({children, title}) {
+interface LayoutProps {
+  children?: any,
+  title?: string,
+}
+
+export const Layout = ({children, title}:LayoutProps) => {
   return (
     <>
       <GlobalStyles />
@@ -135,7 +140,6 @@ export default function Layout({children, title}) {
                       <body className={'theme-'+theme.theme}/>
                     </Helmet>
                     <SEO title={title}/>
-
                     <div className="load-mask"/>
                     <div className="load-spinner"/>
                     <Header menuLinks={seo.menuLinks} title={title}/>

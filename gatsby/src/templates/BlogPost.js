@@ -2,9 +2,9 @@ import React from 'react';
 import {graphql, Link} from 'gatsby';
 import {renderRichText} from 'gatsby-source-contentful/rich-text';
 import {AiOutlineLeft} from 'react-icons/ai';
-import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 
-import Layout from '../components/Layout';
+import {ExternalLink} from '../components/ExternalLink/ExternalLink';
+import Layout from '../components/Layout/Layout';
 
 export const query = graphql`
   query($slug: String!) {
@@ -18,7 +18,7 @@ export const query = graphql`
   }
 `;
 
-export default function BlogPost(props) {
+export const BlogPost = (props) => {
   const body = renderRichText(props.data.contentfulBlogPost.body);
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title} content="article">
@@ -54,4 +54,4 @@ export default function BlogPost(props) {
       </div>
     </Layout>
   );
-}
+};

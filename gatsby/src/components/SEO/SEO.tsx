@@ -3,7 +3,21 @@ import {Helmet} from 'react-helmet';
 import {useLocation} from '@reach/router';
 import {graphql, StaticQuery} from 'gatsby';
 
-export default function SEO({title, subTitle, description, image, content}) {
+interface SEOProps {
+  title?: any,
+  subTitle?: any,
+  description?: any,
+  image?: any,
+  content?: any,
+};
+
+export const SEO = (
+    {title,
+      subTitle,
+      description,
+      image,
+      content,
+    }:SEOProps) => {
   const {pathname} = useLocation();
   return (
     <StaticQuery

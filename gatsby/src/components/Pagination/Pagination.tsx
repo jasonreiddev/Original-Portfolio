@@ -36,13 +36,20 @@ const PaginationStyles = styled.div`
   }
 `;
 
-export default function Pagination({
+type integer = number;
+interface PaginationProps {
+  pageSize?: integer,
+  totalCount?: integer,
+  currentPage?: integer,
+  base?: integer,
+};
+
+export const Pagination = ({
   pageSize,
   totalCount,
   currentPage,
-  skip,
   base,
-}) {
+}: PaginationProps) => {
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
@@ -54,7 +61,7 @@ export default function Pagination({
         <PaginationStyles>
           <Link
             title="Prev Page"
-            disabled={!hasPrevPage}
+            disabled={hasPrevPage}
             to={`${base}/${prevPage}`}
           >
             <AiOutlineLeft/><span className="word">Prev</span>
@@ -85,4 +92,4 @@ export default function Pagination({
       }
     </>
   );
-}
+};

@@ -1,9 +1,9 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
 import {AiOutlineLeft} from 'react-icons/ai';
-import Posts from '../components/Posts';
 
-import Layout from '../components/Layout';
+import Posts from '../components/Posts/Posts';
+import Layout from '../components/Layout/Layout';
 
 export default function ProjectPage(props) {
   const employment = props.data.employment;

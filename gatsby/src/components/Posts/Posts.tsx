@@ -11,7 +11,11 @@ const UlStyles = styled.ul`
   }
 `;
 
-export default function Post({posts}) {
+interface PostsProps {
+  posts?: any,
+}
+
+export const Posts = ({posts}:PostsProps) => {
   return (
     <UlStyles>
       {posts.map((post) => {
@@ -40,4 +44,4 @@ export default function Post({posts}) {
       })}
     </UlStyles>
   );
-}
+};
