@@ -1,10 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import {AiOutlineLink} from 'react-icons/ai';
 
-const ExternalLinkStyles = styled.a`
-  white-space: nowrap;
-`;
+import {ExternalLinkStyles} from './ExternalLink.styles';
 
 interface ExternalLinkProps {
   to?: any,

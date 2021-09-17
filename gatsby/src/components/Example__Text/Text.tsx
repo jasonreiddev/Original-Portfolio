@@ -1,9 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const TextStyles = styled.div`
-  color: green;
-`;
+import {TextStyles} from './Text.styles';
 
 interface HeaderProps {
   text?: string,

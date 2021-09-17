@@ -4,7 +4,7 @@ import {renderRichText} from 'gatsby-source-contentful/rich-text';
 import {AiOutlineLeft} from 'react-icons/ai';
 
 import {ExternalLink} from '../components/ExternalLink/ExternalLink';
-import Layout from '../components/Layout/Layout';
+import {Layout} from '../components/Layout/Layout';
 
 export const query = graphql`
   query($slug: String!) {

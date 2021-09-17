@@ -1,7 +1,6 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
-import styled from 'styled-components';
 import 'normalize.css';
 import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
 import {FaGithub, FaHeart, FaShare, FaCode} from 'react-icons/fa';
@@ -11,82 +10,11 @@ import {IoBrowsers} from 'react-icons/io5';
 import ThemeContext from '../../context/ThemeContext';
 import GlobalStyles from '../../styles/GlobalStyles';
 import Typography from '../../styles/Typography';
-import SEO from './../SEO/SEO';
+import {SEO} from './../SEO/SEO';
 import {Header} from './../Header/Header';
-
-const SiteBorderStyles = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
-
-const SVGStyles = styled.svg`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  transform: unset;
-  svg {
-    fill: var(--siteOffMain);
-    font-size: 25px;
-  }
-`;
-
-const MainStyles = styled.main`
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const ContentStyles = styled.div`
-  max-width: 1080px;
-  flex-grow: 2;
-  width: 100%;
-`;
-
-const AsideStyles = styled.aside`
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 50%;
-  p {
-    text-align: center;
-  }
-`;
-
-const BodyDivStyles = styled.div`
-  width: Calc(100% - 3rem);
-  max-width: 1080px;
-  margin: auto;
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  flex-grow: 1;
-`;
-
-const FooterStyles = styled.footer`
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  svg {
-    fill: var(--sitePrimaryAccent);
-  }
-  .media-links {
-    font-size: 30px;
-  }
-  p {
-    letter-spacing: 0px;
-  }
-`;
+import {
+  AsideStyles, BodyDivStyles, ContentStyles, FooterStyles, MainStyles, SVGStyles, SiteBorderStyles,
+} from './Layout.styles';
 
 interface LayoutProps {
   children?: any,

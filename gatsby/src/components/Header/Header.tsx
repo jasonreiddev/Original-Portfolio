@@ -1,49 +1,10 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'styled-components';
 import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 
 import ThemeContext from '../../context/ThemeContext';
-
-const HeaderStyles = styled.header`
-  background: var(--sitePrimaryAccent);
-  flex-Grow: 0;
-  
-  & .active{
-    color: var(--siteMain);
-  }
-`;
-
-const ContainerStyles = styled.div`
-  width: Calc(100% - 3rem);
-  max-width: 1080px;
-  margin: auto;
-  font-size: 14pt;
-  flex: 1;
-  font-size: 1.2em;
-`;
-
-const TitleLinkStyles = styled.div`
-  text-decoration: none;
-`;
-
-const UlStyles = styled.ul`
-  display: flex;
-  flex-flow: row wrap;
-  padding: 0;
-  margin-left: -1rem;
-
-  li {
-    padding: 1rem;
-    list-style-type: none;
-  }
-`;
-
-const ThemeIconStyles = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-`;
+import {ContainerStyles, HeaderStyles, ThemeIconStyles, TitleLinkStyles, UlStyles} from './Header.styles';
 
 interface HeaderProps {
   menuLinks?: any,

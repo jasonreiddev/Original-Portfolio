@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'gatsby';
 import {AiOutlineLeft} from 'react-icons/ai';
 
-import Layout from '../components/Layout/Layout';
+import {Layout} from '../components/Layout/Layout';
 
 export default function NotFoundPage() {
   return (

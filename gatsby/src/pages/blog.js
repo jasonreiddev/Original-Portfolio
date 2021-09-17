@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 
-import Layout from '../components/Layout/Layout';
+import {Layout} from '../components/Layout/Layout';
 import {Pagination} from '../components/Pagination/Pagination';
 import {Posts} from '../components/Posts/Posts';
 

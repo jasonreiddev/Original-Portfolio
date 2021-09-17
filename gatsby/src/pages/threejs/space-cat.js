@@ -2,7 +2,7 @@ import React, {useRef, useState, useMemo} from 'react';
 import {Canvas, useFrame} from 'react-three-fiber';
 import * as THREE from 'three';
 import {MathUtils} from 'three';
-import Layout from '../../components/Layout/Layout';
+import {Layout} from '../../components/Layout/Layout';
 
 const Cat = (props) => {
   // Set up state for the hovered and active state

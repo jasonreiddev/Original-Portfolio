@@ -1,15 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'styled-components';
 
-const UlStyles = styled.ul`
-  padding: 0;
-  margin: 0;
-
-  li {
-    list-style-type: none;
-  }
-`;
+import {UlStyles} from './Posts.styles';
 
 interface PostsProps {
   posts?: any,

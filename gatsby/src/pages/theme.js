@@ -4,7 +4,7 @@ import {GoPaintcan} from 'react-icons/go';
 import styled from 'styled-components';
 import ThemeContext from '../context/ThemeContext';
 
-import Layout from '../components/Layout/Layout';
+import {Layout} from '../components/Layout/Layout';
 
 const StyledColorBox = styled.div`
   font-size: '15px';
