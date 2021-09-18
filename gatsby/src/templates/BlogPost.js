@@ -18,7 +18,7 @@ export const query = graphql`
   }
 `;
 
-export const BlogPost = (props) => {
+export default function BlogPost(props) {
   const body = renderRichText(props.data.contentfulBlogPost.body);
   return (
     <Layout title="Blog" subTitle={props.data.contentfulBlogPost.title} content="article">

@@ -2,7 +2,7 @@ import React from 'react';
 import {graphql, Link} from 'gatsby';
 import {AiOutlineLeft} from 'react-icons/ai';
 
-import ExternalLink from '../components/ExternalLink/ExternalLink';
+import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 import {Layout} from '../components/Layout/Layout';
 
 export const query = graphql`
