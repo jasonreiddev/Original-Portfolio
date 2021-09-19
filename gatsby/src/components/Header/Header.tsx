@@ -1,59 +1,17 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import ThemeContext from '../context/ThemeContext';
 import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 
-const HeaderStyles = styled.header`
-  background: var(--sitePrimaryAccent);
-  flex-Grow: 0;
-  
-  & .active{
-    color: var(--siteMain);
-  }
-`;
+import ThemeContext from '../../context/ThemeContext';
+import {ContainerStyles, HeaderStyles, ThemeIconStyles, TitleLinkStyles, UlStyles} from './Header.styles';
 
-const ContainerStyles = styled.div`
-  width: Calc(100% - 3rem);
-  max-width: 1080px;
-  margin: auto;
-  font-size: 14pt;
-  flex: 1;
-  font-size: 1.2em;
-`;
+interface HeaderProps {
+  menuLinks?: any,
+  title?: string,
+}
 
-const TitleLinkStyles = styled.div`
-  text-decoration: none;
-`;
-
-const UlStyles = styled.ul`
-  display: flex;
-  flex-flow: row wrap;
-  padding: 0;
-  margin-left: -1rem;
-
-  li {
-    padding: 1rem;
-    list-style-type: none;
-  }
-`;
-
-const ThemeIconStyles = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-`;
-
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-Header.defaultProps = {
-  siteTitle: ``,
-};
-
-export default function Header({menuLinks, title}) {
+export const Header = ({menuLinks, title}: HeaderProps) => {
   return (
     <HeaderStyles>
       <ContainerStyles>
@@ -105,4 +63,4 @@ export default function Header({menuLinks, title}) {
       </ContainerStyles>
     </HeaderStyles>
   );
-}
+};

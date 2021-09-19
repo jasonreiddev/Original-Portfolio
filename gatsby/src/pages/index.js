@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {graphql} from 'gatsby';
 import useLatestData from '../utils/useLatestData';
 import {Link} from 'gatsby';
-import ExternalLink from '../components/ExternalLink';
 
-import Layout from '../components/Layout';
+import {ExternalLink} from '../components/ExternalLink/ExternalLink';
+import {Layout} from '../components/Layout/Layout';
 
 const logoStyles = {
   padding: '0 0.5rem 0 0',
@@ -39,7 +39,7 @@ export default function HomePage({data}) {
              {buildTimeData.introText}
            </span>
           }
-          {latestData.introText && latestData.introText.length && <span>{latestData.introText}</span>}
+          {latestData.introText && <span>{latestData.introText}</span>}
         </p>
         <p>The best place to contact me is via <ExternalLink to="https://www.linkedin.com/in/jasonreiddev">LinkedIn</ExternalLink>.</p>
         <h2>Featured</h2>

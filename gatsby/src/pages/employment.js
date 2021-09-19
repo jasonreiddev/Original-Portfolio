@@ -1,8 +1,9 @@
 import React from 'react';
 import {graphql} from 'gatsby';
-import Layout from '../components/Layout';
-import Pagination from '../components/Pagination';
-import Posts from '../components/Posts';
+
+import {Layout} from '../components/Layout/Layout';
+import {Pagination} from '../components/Pagination/Pagination';
+import {Posts} from '../components/Posts/Posts';
 
 export default function EmploymentPage({data, pageContext}) {
   const positions = data.positions.nodes;

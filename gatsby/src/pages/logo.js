@@ -1,19 +1,19 @@
 import React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
-import Layout from '../components/Layout';
+
+import {Layout} from '../components/Layout/Layout';
 
 const Images = () => {
   const data = useStaticQuery(graphql`
-        query CloudinaryImages {
-            allCloudinaryMedia {
-              edges {
-                node {
-                  secure_url
-                }
-              }
-            }
-          }
-          `,
+  query CloudinaryImages {
+    allCloudinaryMedia {
+      edges {
+        node {
+          secure_url
+        }
+      }
+    }
+  }`,
   );
   const clImages = data.allCloudinaryMedia.edges;
 

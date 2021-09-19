@@ -1,17 +1,13 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import styled from 'styled-components';
 
-const UlStyles = styled.ul`
-  padding: 0;
-  margin: 0;
+import {UlStyles} from './Posts.styles';
 
-  li {
-    list-style-type: none;
-  }
-`;
+interface PostsProps {
+  posts?: any,
+}
 
-export default function Post({posts}) {
+export const Posts = ({posts}:PostsProps) => {
   return (
     <UlStyles>
       {posts.map((post) => {
@@ -40,4 +36,4 @@ export default function Post({posts}) {
       })}
     </UlStyles>
   );
-}
+};

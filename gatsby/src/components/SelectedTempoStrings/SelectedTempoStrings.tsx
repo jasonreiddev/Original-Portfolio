@@ -5,7 +5,16 @@ const ContainerStyles = styled.a`
   cursor: pointer;
 `;
 
-export default function SelectedTempoStrings({selected, removeTempoString /* tempoStrings,*/}) {
+interface SelectedTempoStringsProps{
+  selected?: any;
+  removeTempoString?: any;
+}
+
+export const SelectedTempoStrings = (
+    {selected,
+      removeTempoString,
+      /* tempoStrings,*/
+    }:SelectedTempoStringsProps ) => {
   return (
     <>
       {selected && selected.map((tempoString, index) => {
@@ -24,4 +33,4 @@ export default function SelectedTempoStrings({selected, removeTempoString /* tem
       })}
     </>
   );
-}
+};

@@ -1,9 +1,10 @@
 import React from 'react';
 import {graphql} from 'gatsby';
-import Layout from '../components/Layout';
-import useTempoStrings from '../utils/useTempoStrings';
-import SelectedTempoStrings from '../components/SelectedTempoStrings';
 import styled from 'styled-components';
+import useTempoStrings from '../utils/useTempoStrings';
+
+import {SelectedTempoStrings} from '../components/SelectedTempoStrings/SelectedTempoStrings';
+import {Layout} from '../components/Layout/Layout';
 
 const ButtonContainerStyles = styled.div`
   display:flex;
