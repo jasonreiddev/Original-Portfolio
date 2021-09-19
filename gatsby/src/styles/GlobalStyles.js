@@ -155,7 +155,6 @@ html *{
 /* Temp untill used */
 .aside-left{
   display: none !important;
-  opacity: 0 !important;
 }
 /* TODO: remove ^^^ */
 

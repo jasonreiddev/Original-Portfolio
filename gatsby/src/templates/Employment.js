@@ -4,6 +4,7 @@ import {AiOutlineLeft} from 'react-icons/ai';
 
 import {Posts} from '../components/Posts/Posts';
 import {Layout} from '../components/Layout/Layout';
+import {HoverColor} from '../components/HoverColor/HoverColor';
 
 export default function EmpoymentPage(props) {
   const employment = props.data.employment;
@@ -26,8 +27,9 @@ export default function EmpoymentPage(props) {
         <br/>
         <Link to="/employment/1"><AiOutlineLeft/>Employment Page</Link>
         <div className="content">
-          <h2>{employment.jobTitle}</h2>
-          {}
+          <HoverColor><h2>
+            {employment.jobTitle}
+          </h2></HoverColor>
           <div className="organisation"><span>{employment.organisation.organisation}</span></div>
           <p className="meta">
           Start Date:&nbsp;
@@ -38,7 +40,9 @@ export default function EmpoymentPage(props) {
           <p>{employment.details}</p>
         </div>
         <div className="Related">
-          <h2>Related Projects</h2>
+          <HoverColor><h2>
+            Related Projects
+          </h2></HoverColor>
           <Posts posts={projects}/>
         </div>
       </div>

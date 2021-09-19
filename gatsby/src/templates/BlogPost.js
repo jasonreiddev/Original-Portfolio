@@ -5,6 +5,7 @@ import {AiOutlineLeft} from 'react-icons/ai';
 
 import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 import {Layout} from '../components/Layout/Layout';
+import {HoverColor} from '../components/HoverColor/HoverColor';
 
 export const query = graphql`
   query($slug: String!) {
@@ -26,7 +27,9 @@ export default function BlogPost(props) {
         <br/>
         <Link to="/blog/1"><AiOutlineLeft/>Blog Page</Link>
         <div className="content">
-          <h2>{props.data.contentfulBlogPost.title}</h2>
+          <HoverColor><h2>
+            {props.data.contentfulBlogPost.title}
+          </h2></HoverColor>
           <span className="meta">
           Posted on {props.data.contentfulBlogPost.publishedDate}
           </span>

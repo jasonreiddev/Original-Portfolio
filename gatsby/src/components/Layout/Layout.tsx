@@ -3,7 +3,7 @@ import {StaticQuery, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
 import 'normalize.css';
 import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
-import {FaGithub, FaHeart, FaShare, FaCode} from 'react-icons/fa';
+import {FaGithub, /* FaHeart,*/ FaShare, FaCode} from 'react-icons/fa';
 import {HiTerminal} from 'react-icons/hi';
 import {IoBrowsers} from 'react-icons/io5';
 
@@ -15,6 +15,7 @@ import {Header} from './../Header/Header';
 import {
   AsideStyles, BodyDivStyles, ContentStyles, FooterStyles, MainStyles, SVGStyles, SiteBorderStyles,
 } from './Layout.styles';
+import {SmallText} from '../SmallText/SmallText';
 
 interface LayoutProps {
   children?: any,
@@ -78,12 +79,12 @@ export const Layout = ({children, title}:LayoutProps) => {
                         </MainStyles>
                       </ContentStyles>
                       <AsideStyles className="aside-left">
-                        <p>
+                        {/* <p>
                           <a title="Like - w.i.p">
                             <FaHeart/>
                           </a>
                           <span>1337</span>
-                        </p>
+                        </p>*/}
                       </AsideStyles>
                       <AsideStyles className="aside-right">
                         <p>
@@ -102,8 +103,9 @@ export const Layout = ({children, title}:LayoutProps) => {
                             <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/"><AiFillLinkedin/></a>
                             <a title="GitHub" href="https://github.com/jasonreiddev"><FaGithub/></a>
                             <a title="Twitter" href="https://twitter.com/jasonreiddev"><AiOutlineTwitter/></a>
-                          </span><br/>
-                    &copy; {new Date().getFullYear()} Jason Reid
+                          </span>
+                          <br/>
+                          <SmallText text={`© ${new Date().getFullYear()} Jason Reid`}/>
                         </p>
                       </FooterStyles>
                     </BodyDivStyles>

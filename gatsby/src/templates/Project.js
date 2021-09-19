@@ -4,6 +4,7 @@ import {AiOutlineLeft} from 'react-icons/ai';
 
 import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 import {Layout} from '../components/Layout/Layout';
+import {HoverColor} from '../components/HoverColor/HoverColor';
 
 export const query = graphql`
   query($slug: String!) {
@@ -34,7 +35,9 @@ export default function ProjectPage(props) {
         <br/>
         <Link to="/projects/1"><AiOutlineLeft/>Project Page</Link>
         <div className="content">
-          <h2>{props.data.sanityProject.projectTitle}</h2>
+          <HoverColor><h2>
+            {props.data.sanityProject.projectTitle}
+          </h2></HoverColor>
           <p className="organisation">
             {!props.data.sanityProject.position.hideOnEmployment ?
            <span>
