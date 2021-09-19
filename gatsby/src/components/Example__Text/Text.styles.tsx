@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TextStyles = styled.div`
+export const TextStyles = styled.span`
   color: green;
 `;
 

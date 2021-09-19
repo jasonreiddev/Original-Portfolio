@@ -67,7 +67,6 @@ export default function TempoStringsPage({data}) {
             <button onClick={() => copyToClipboard(selected)}>Copy</button>
           </ButtonContainerStyles>
         </fieldset>
-        <br/>
         <SmallText text={tempoStrings.credit}/>
       </div>
     </Layout>

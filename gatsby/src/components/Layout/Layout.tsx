@@ -103,8 +103,9 @@ export const Layout = ({children, title}:LayoutProps) => {
                             <a title="LinkedIn" href="https://www.linkedin.com/in/jasonreiddev/"><AiFillLinkedin/></a>
                             <a title="GitHub" href="https://github.com/jasonreiddev"><FaGithub/></a>
                             <a title="Twitter" href="https://twitter.com/jasonreiddev"><AiOutlineTwitter/></a>
-                          </span><br/>
-                          <SmallText text="&copy; {new Date().getFullYear()} Jason Reid"/>
+                          </span>
+                          <br/>
+                          <SmallText text={`© ${new Date().getFullYear()} Jason Reid`}/>
                         </p>
                       </FooterStyles>
                     </BodyDivStyles>
