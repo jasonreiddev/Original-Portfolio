@@ -6,6 +6,7 @@ import useTempoStrings from '../utils/useTempoStrings';
 import {SelectedTempoStrings} from '../components/SelectedTempoStrings/SelectedTempoStrings';
 import {Layout} from '../components/Layout/Layout';
 import {SmallText} from '../components/SmallText/SmallText';
+import {HoverColor} from '../components/HoverColor/HoverColor';
 
 const ButtonContainerStyles = styled.div`
   display:flex;
@@ -37,7 +38,9 @@ export default function TempoStringsPage({data}) {
 
   return (
     <Layout title="Tempo Strings">
-      <h2>{tempoStrings.title}</h2>
+      <HoverColor><h2>
+        {tempoStrings.title}
+      </h2></HoverColor>
       <div onSubmit={submitOrder}>
         <fieldset disabled={loading} className="options">
           <legend>Click to Select</legend>

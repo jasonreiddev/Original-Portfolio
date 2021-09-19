@@ -3,6 +3,7 @@ import {Link} from 'gatsby';
 import {AiOutlineLeft} from 'react-icons/ai';
 
 import {Layout} from '../components/Layout/Layout';
+import {HoverColor} from '../components/HoverColor/HoverColor';
 
 export default function NotFoundPage() {
   return (
@@ -11,7 +12,9 @@ export default function NotFoundPage() {
         <br/>
         <Link to="/"><AiOutlineLeft/>Home</Link>
         <title>Not found</title>
-        <h2>Page not found</h2>
+        <HoverColor><h2>
+          Page not found
+        </h2></HoverColor>
         <p>
           Sorry,
           we couldn’t find what you were looking for.
