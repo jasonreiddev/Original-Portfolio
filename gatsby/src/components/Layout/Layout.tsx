@@ -78,12 +78,12 @@ export const Layout = ({children, title}:LayoutProps) => {
                         </MainStyles>
                       </ContentStyles>
                       <AsideStyles className="aside-left">
-                        <p>
+                        {/* <p>
                           <a title="Like - w.i.p">
                             <FaHeart/>
                           </a>
                           <span>1337</span>
-                        </p>
+                        </p>*/}
                       </AsideStyles>
                       <AsideStyles className="aside-right">
                         <p>

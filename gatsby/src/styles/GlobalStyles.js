@@ -152,13 +152,6 @@ html *{
   }
 }
 
-/* Temp untill used */
-.aside-left{
-  display: none !important;
-  opacity: 0 !important;
-}
-/* TODO: remove ^^^ */
-
 /*Large Desktop*/
 @media only screen and (min-width: 1440px) {
   .column-small{
@@ -174,10 +167,6 @@ html *{
     width: 100% !important;
   }
   .aside-left{
-    /* Temp untill used */
-    display: unset !important;
-    /* TODO: remove ^^^ */
-
     order: 1;
     width: unset !important;
   }
