@@ -29,7 +29,7 @@ export const Pagination = ({
         <PaginationStyles>
           <Link
             title="Prev Page"
-            disabled={hasPrevPage}
+            disabled={!hasPrevPage}
             to={`${base}/${prevPage}`}
           >
             <AiOutlineLeft/><span className="word">Prev</span>
