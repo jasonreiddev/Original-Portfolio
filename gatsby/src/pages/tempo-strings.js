@@ -5,6 +5,7 @@ import useTempoStrings from '../utils/useTempoStrings';
 
 import {SelectedTempoStrings} from '../components/SelectedTempoStrings/SelectedTempoStrings';
 import {Layout} from '../components/Layout/Layout';
+import {SmallText} from '../components/SmallText/SmallText';
 
 const ButtonContainerStyles = styled.div`
   display:flex;
@@ -67,7 +68,7 @@ export default function TempoStringsPage({data}) {
           </ButtonContainerStyles>
         </fieldset>
         <br/>
-        <sub>{tempoStrings.credit}</sub>
+        <SmallText text={tempoStrings.credit}/>
       </div>
     </Layout>
   );
