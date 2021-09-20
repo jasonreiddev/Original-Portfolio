@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HoverColorStyles = styled.span`
   .highlight{
-    display: block;
+    display: inline-block;
     width: fit-content;
     transition: background-position 1s, color 0.5s;
     background-size: 200% 100%;
