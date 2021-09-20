@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof HoverColor> = (args) => <HoverColor {...ar
 
 export const Hello = Template.bind({});
 Hello.args = {
-  children: 'Hello',
+  children: <h2>Hello</h2>,
   icon: null,
   iconAlt: null,
   date: null,
@@ -21,7 +21,7 @@ Hello.args = {
 
 export const World = Template.bind({});
 World.args = {
-  children: 'World - Logo & Date',
+  children: <h2>World - Logo & Date</h2>,
   icon: BiWorld,
   iconAlt: 'Logo',
   date: '12/01/2000',

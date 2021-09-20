@@ -4,6 +4,7 @@ import useEmail from '../utils/useEmail';
 
 import {Layout} from '../components/Layout/Layout';
 import {FormField} from '../components/FormField/FormField';
+import {Button} from '../components/Button/Button';
 
 export default function EmailPage() {
   const {values, updateValue} = useForm({
@@ -50,12 +51,8 @@ export default function EmailPage() {
         </fieldset>
         <fieldset disabled={loading}>
           <div aria-live="polite" aria-atomic="true">{error ? <p>Error: {error}</p> : ''}</div>
-          <button type="submit" disabled={loading}>
-            <span aria-live="assertive" aria-atomic="true">
-              {loading ? 'Sending Email...' : ''}
-            </span>
-            {loading ? '' : 'Send Email'}
-          </button>
+          <Button primary={true} type="submit" disabled={loading} label={loading ? 'Sending Email...' : 'Send Email'}>
+          </Button>
         </fieldset>
       </form>
     </Layout>

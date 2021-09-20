@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {InputStyles, LabelStyles} from './FormField.styles';
+
 interface FormFieldProps {
   name?: string,
   displayName?: string,
@@ -10,15 +12,15 @@ interface FormFieldProps {
 
 export const FormField = ({name, displayName, type, value, updateValue}: FormFieldProps) => {
   return (
-    <label htmlFor={name}>
-      {displayName}
-      <input
+    <LabelStyles htmlFor={name}>
+      {displayName}&nbsp;
+      <InputStyles
         type={type}
         name={name}
         id={name}
         value={value}
         onChange={updateValue}
       />
-    </label>
+    </LabelStyles>
   );
 };

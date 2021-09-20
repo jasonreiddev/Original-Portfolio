@@ -1,6 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import {ContainerStyles} from './SelectedTempoStrings.styles';
+const ContainerStyles = styled.a`
+  cursor: pointer;
+`;
 
 interface SelectedTempoStringsProps{
   selected?: any;
