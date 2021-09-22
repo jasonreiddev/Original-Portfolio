@@ -24,6 +24,7 @@ export const MainStyles = styled.main`
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const ContentStyles = styled.div`
