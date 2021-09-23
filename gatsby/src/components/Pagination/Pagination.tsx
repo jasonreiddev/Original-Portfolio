@@ -4,12 +4,11 @@ import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
 
 import {PaginationStyles} from './Pagination.styles';
 
-type integer = number;
 interface PaginationProps {
-  pageSize?: integer,
-  totalCount?: integer,
-  currentPage?: integer,
-  base?: integer,
+  pageSize?: number,
+  totalCount?: number,
+  currentPage?: any,
+  base?: string,
 };
 
 export const Pagination = ({

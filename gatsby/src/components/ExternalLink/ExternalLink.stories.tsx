@@ -12,13 +12,13 @@ const Template: ComponentStory<typeof ExternalLink> = (args) => <ExternalLink {.
 
 export const Self = Template.bind({});
 Self.args = {
-  to: '/http://localhost:6006/?path=/story/externallink--hello',
+  to: 'http://localhost:6006/?path=/story/externallink--self',
   children: 'This Story',
 };
 
 export const Story = Template.bind({});
 Story.args = {
-  to: '/http://localhost:6006/?path=/story/example-introduction--page',
+  to: 'http://localhost:6006/?path=/story/example-introduction--page',
   children: 'Welcome to Storybook',
 };
 

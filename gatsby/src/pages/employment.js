@@ -2,8 +2,7 @@ import React from 'react';
 import {graphql} from 'gatsby';
 
 import {Layout} from '../components/Layout/Layout';
-import {Pagination} from '../components/Pagination/Pagination';
-import {Posts} from '../components/Posts/Posts';
+import {PaginatedPosts} from '../components/PaginatedPosts/PaginatedPosts';
 
 export default function EmploymentPage({data, pageContext}) {
   const positions = data.positions.nodes;
@@ -19,8 +18,7 @@ export default function EmploymentPage({data, pageContext}) {
 
   return (
     <Layout title="Employment">
-      <Posts posts={positions}/>
-      <Pagination
+      <PaginatedPosts posts={positions}
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.positions.totalCount}
         currentPage={pageContext.currentPage || 'All'}

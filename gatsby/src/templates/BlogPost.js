@@ -30,13 +30,13 @@ export default function BlogPost(props) {
           <HoverColor><h2>
             {props.data.contentfulBlogPost.title}
           </h2></HoverColor>
-          <span className="meta">
+          <p className="meta">
           Posted on {props.data.contentfulBlogPost.publishedDate}
-          </span>
+          </p>
           <hr/>
           {body.map((reactElement, index) => {
             return (
-              <reactElement.type key={`p${index}`}>
+              <reactElement.type key={`bodyElement${index}`}>
                 {
                   reactElement.props.children.map((child) => {
                     if (child.type == 'a' && child.props.href.slice(0, 4) == 'http') {

@@ -3,6 +3,7 @@ import {HiSun, HiMoon} from 'react-icons/hi';
 import {GoPaintcan} from 'react-icons/go';
 import styled from 'styled-components';
 import ThemeContext from '../context/ThemeContext';
+import {Button} from '../components/Button/Button';
 
 import {Layout} from '../components/Layout/Layout';
 
@@ -56,7 +57,7 @@ const Images = () => {
         <ThemeContext.Consumer>
           {(theme) => (
             <>
-              <button style={ThemeSwitchButtonStyles}
+              <Button style={ThemeSwitchButtonStyles}
                 onClick={theme.theme == 'custom' ? theme.resetTheme : theme.toggleTheme}>
                 {theme.theme == 'dark' ?
                 <><span>Turn on the lights </span>
@@ -67,8 +68,8 @@ const Images = () => {
                 <><span>Turn off high contrast mode </span>
                   <GoPaintcan/></>
                 }
-              </button>
-              <button style={ThemeSwitchButtonStyles}
+              </Button>
+              <Button style={ThemeSwitchButtonStyles}
                 onClick={theme.useCustom}>
                 {theme.theme == 'custom' ?
                 <span className="active">Using high contrast mode
@@ -76,7 +77,7 @@ const Images = () => {
                 <span>Use high contrast mode
                   <GoPaintcan/></span>
                 }
-              </button>
+              </Button>
             </>
           )}
         </ThemeContext.Consumer>

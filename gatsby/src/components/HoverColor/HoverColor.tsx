@@ -12,9 +12,9 @@ export const HoverColor = ({children, icon, iconAlt, date}: HoverColorProps) => 
   const Icon = icon ? icon : null;
   return (
     <HoverColorStyles>
-      {Icon && <Icon alt={iconAlt}/>}&nbsp;
+      {Icon && <><Icon alt={iconAlt}/>&nbsp;</>}
       <span className="highlight">{children}</span>
-      {date && <span> - {date}</span>}
+      {date && <span>&nbsp;- {date}</span>}
     </HoverColorStyles>
   );
 };

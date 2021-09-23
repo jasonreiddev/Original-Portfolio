@@ -22,7 +22,7 @@ export const SVGStyles = styled.svg`
 
 export const MainStyles = styled.main`
   display: flex;
-  min-height: 100%;
+  height: 100%;
   flex-direction: column;
 `;
 
@@ -33,12 +33,15 @@ export const ContentStyles = styled.div`
 `;
 
 export const AsideStyles = styled.aside`
-  flex-grow: 1;
+  flex-grow: 0;
+  @media only screen and (min-width: 1440px)  {
+    flex-grow: 1;
+  }
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 50%;
+  width: 100%;
   p {
     text-align: center;
   }
@@ -54,6 +57,7 @@ export const BodyDivStyles = styled.div`
   padding-left: 1rem;
   padding-right: 1rem;
   flex-grow: 1;
+  flex-direction: column;
 `;
 
 export const FooterStyles = styled.footer`

@@ -52,6 +52,8 @@ Atom:     ctrl-shift-m
    The site will run at http://localhost:8888/ (with netlify-cli)
 
    View the GraphiQL at http://localhost:8000/__graphql
+
+   To be able to access from your Network: '<code>yarn gatsby develop -H 0.0.0.0</code>'
    <hr/>
 
 3. **Deploy.**

@@ -2,8 +2,7 @@ import React from 'react';
 import {graphql} from 'gatsby';
 
 import {Layout} from '../components/Layout/Layout';
-import {Pagination} from '../components/Pagination/Pagination';
-import {Posts} from '../components/Posts/Posts';
+import {PaginatedPosts} from '../components/PaginatedPosts/PaginatedPosts';
 
 export default function Blog({data, pageContext}) {
   const blogPosts = data.blogPosts.edges;
@@ -21,8 +20,7 @@ export default function Blog({data, pageContext}) {
 
   return (
     <Layout title="Blog">
-      <Posts posts={blogPosts}/>
-      <Pagination
+      <PaginatedPosts posts={blogPosts}
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.blogPosts.totalCount}
         currentPage={pageContext.currentPage || 'All'}

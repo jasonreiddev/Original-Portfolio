@@ -7,6 +7,7 @@ import {SelectedTempoStrings} from '../components/SelectedTempoStrings/SelectedT
 import {Layout} from '../components/Layout/Layout';
 import {SmallText} from '../components/SmallText/SmallText';
 import {HoverColor} from '../components/HoverColor/HoverColor';
+import {Button} from '../components/Button/Button';
 
 const ButtonContainerStyles = styled.div`
   display:flex;
@@ -53,9 +54,9 @@ export default function TempoStringsPage({data}) {
             </TempoStringStyles>
           ))}
           <ButtonContainerStyles>
-            <button onClick={() => setSelectedTempoString(tempoStrings.tempoString)
-            }>Select All</button>
-            <button onClick={() => copyToClipboard(tempoStrings.tempoString)}>Copy All</button>
+            <Button onClick={() => setSelectedTempoString(tempoStrings.tempoString)
+            }>Select All</Button>
+            <Button onClick={() => copyToClipboard(tempoStrings.tempoString)}>Copy All</Button>
           </ButtonContainerStyles>
         </fieldset>
         <fieldset className="selectedOptions">
@@ -66,8 +67,8 @@ export default function TempoStringsPage({data}) {
             /* tempoStrings={tempoStrings}*/
           />
           <ButtonContainerStyles>
-            <button onClick={() => setSelectedTempoString([])}>Clear</button>
-            <button onClick={() => copyToClipboard(selected)}>Copy</button>
+            <Button onClick={() => setSelectedTempoString([])}>Clear</Button>
+            <Button primary={true} onClick={() => copyToClipboard(selected)}>Copy</Button>
           </ButtonContainerStyles>
         </fieldset>
         <SmallText text={tempoStrings.credit}/>
