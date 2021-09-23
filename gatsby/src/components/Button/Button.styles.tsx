@@ -8,6 +8,7 @@ export const ButtonStyles = styled.button`
   cursor: pointer;
   display: inline-block;
   line-height: 1;
+  margin: 0 .5rem;
   &.primary {
     color: white;
     background-color: var(--sitePrimaryAccent);

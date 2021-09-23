@@ -6,7 +6,7 @@ interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
-  label: string;
+  children?: any;
   onClick?: () => void;
 }
 
@@ -14,7 +14,7 @@ export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
-  label,
+  children,
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'primary' : 'secondary';
@@ -25,7 +25,7 @@ export const Button = ({
       style={{backgroundColor}}
       {...props}
     >
-      {label}
+      {children}
     </ButtonStyles>
   );
 };
