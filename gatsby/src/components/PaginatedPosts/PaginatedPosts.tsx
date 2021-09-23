@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {MainStyles} from './PaginatedPosts.styles';
+import {ContainerStyles} from './PaginatedPosts.styles';
 import {Pagination} from '../Pagination/Pagination';
 import {Posts} from '../Posts/Posts';
 
@@ -14,7 +14,7 @@ interface PaginatedPostsProps {
 
 export const PaginatedPosts = ({posts, pageSize, totalCount, currentPage, base}:PaginatedPostsProps) => {
   return (
-    <MainStyles>
+    <ContainerStyles>
       <Posts posts={posts}/>
       <Pagination
         pageSize={pageSize}
@@ -22,7 +22,7 @@ export const PaginatedPosts = ({posts, pageSize, totalCount, currentPage, base}:
         currentPage={currentPage || 'All'}
         base={base}
       />
-    </MainStyles>
+    </ContainerStyles>
   )
   ;
 };

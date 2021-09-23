@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const MainStyles = styled.div`
+export const ContainerStyles = styled.div`
+  height: 100%;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
   justify-content: space-between;
 `;
