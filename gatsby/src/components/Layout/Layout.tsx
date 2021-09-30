@@ -3,7 +3,7 @@ import {StaticQuery, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
 import 'normalize.css';
 import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
-import {FaGithub, /* FaHeart,*/ FaShare, FaCode} from 'react-icons/fa';
+import {FaGithub, FaCode} from 'react-icons/fa';
 import {HiTerminal} from 'react-icons/hi';
 import {IoBrowsers} from 'react-icons/io5';
 
@@ -12,6 +12,9 @@ import GlobalStyles from '../../styles/GlobalStyles';
 import Typography from '../../styles/Typography';
 import {SEO} from './../SEO/SEO';
 import {Header} from './../Header/Header';
+import {Share} from '../Share/Share';
+import {Like} from '../Like/Like';
+
 import {
   AsideStyles, BodyDivStyles, ContentStyles, FooterStyles, MainStyles, SVGStyles, SiteBorderStyles,
 } from './Layout.styles';
@@ -79,23 +82,11 @@ export const Layout = ({children, title}:LayoutProps) => {
                         </MainStyles>
                       </ContentStyles>
                       <AsideStyles className="aside-left">
-                        {/* <p>
-                          <a title="Like - w.i.p">
-                            <FaHeart/>
-                          </a>
-                          <span>1337</span>
-                        </p>*/}
+                        <Like likes={0} liked={false} updateData={null} />
                       </AsideStyles>
                       <AsideStyles className="aside-right">
-                        <p>
-                          {typeof window !== 'undefined' &&
-                        <a title="Share via Twitter" href={`
-                          https://twitter.com/intent/tweet?text=${shareText}:&url=${seo.url}${location.pathname}`}>
-                          <FaShare/><br/>
-                          <span>Share</span>
-                        </a>
-                          }
-                        </p>
+                        <Share text="Share" shareText={shareText} shareUrl=
+                          {`${seo.url}${typeof window !== 'undefined' ? location.pathname : ''}`}/>
                       </AsideStyles>
                       <FooterStyles>
                         <p>

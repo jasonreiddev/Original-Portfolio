@@ -139,24 +139,7 @@ html *{
 
 /*Desktop*/
 @media only screen and (min-width: 1080px)  {
-  .mobile-scroll{
-    overflow-Y: hidden;
-    min-height: initial;
-  }
-  .column-small{
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .tablet-scroll{
-    overflow-Y: scroll;
-  }
 }
-
-/* Temp untill used */
-.aside-left{
-  display: none !important;
-}
-/* TODO: remove ^^^ */
 
 /*Large Desktop*/
 @media only screen and (min-width: 1440px) {
@@ -172,11 +155,11 @@ html *{
     margin: 0 !important;
     width: 100% !important;
   }
+  .mobile-scroll{
+    overflow-Y: hidden;
+    min-height: initial;
+  }
   .aside-left{
-    /* Temp untill used */
-    display: unset !important;
-    /* TODO: remove ^^^ */
-
     order: 1;
     width: unset !important;
   }

@@ -33,18 +33,16 @@ export const ContentStyles = styled.div`
 `;
 
 export const AsideStyles = styled.aside`
+  width: 50%;
   flex-grow: 0;
   @media only screen and (min-width: 1440px)  {
     flex-grow: 1;
+    width: 100%;
   }
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 100%;
-  p {
-    text-align: center;
-  }
 `;
 
 export const BodyDivStyles = styled.div`
@@ -57,7 +55,7 @@ export const BodyDivStyles = styled.div`
   padding-left: 1rem;
   padding-right: 1rem;
   flex-grow: 1;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 export const FooterStyles = styled.footer`
