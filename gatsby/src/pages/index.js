@@ -42,12 +42,11 @@ export default function HomePage({data}) {
         </h2></HoverColor>
 
         <ul>
-          <li>Gatsby</li>
-          <li>Sanity</li>
-          <li>Contentful</li>
-          <li>Cloudinary</li>
+          <li>GatsbyJS</li>
           <li>Netflify Functions</li>
-          <li>NodeJS, GraphQL, Yarn, Babel, ESLint </li>
+          <li>StorybookJS</li>
+          <li>Yarn</li>
+          <li>Content via Cloudinary, Contentful and Sanity using GraphQL</li>
         </ul>
         <p>For more information, you can view the project&apos;s repository on&nbsp;
           <ExternalLink to="https://github.com/jasonreiddev/portfolio">Github</ExternalLink>.
