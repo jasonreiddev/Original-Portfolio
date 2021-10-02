@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
 import 'normalize.css';
@@ -6,6 +6,8 @@ import {AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai';
 import {FaGithub, FaCode} from 'react-icons/fa';
 import {HiTerminal} from 'react-icons/hi';
 import {IoBrowsers} from 'react-icons/io5';
+import firebase from '../../utils/useFirebase';
+import {doc, getDoc} from 'firebase/firestore';
 
 import ThemeContext from '../../context/ThemeContext';
 import GlobalStyles from '../../styles/GlobalStyles';
@@ -26,6 +28,34 @@ interface LayoutProps {
 }
 
 export const Layout = ({children, title}:LayoutProps) => {
+  const [totalLikes, setLikes] = useState(0);
+  const [loadedLikes, setloadedLikes] = useState(false);
+  async function getLikes() {
+    const db = firebase.firestore();
+
+    db.collection('items')
+        .add({
+          name: 'Heineken',
+          type: 'beer',
+          qty: 5,
+          description:
+      'Pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken International',
+        })
+        .then((ref) => {
+          console.log('Added document with ID: ', ref.id);
+        });
+
+    const docRef = doc(db, 'likes', 'UIbEyb5aW6PpnFDBofVI');
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      setLikes(docSnap.data().value);
+      setloadedLikes(true);
+    } else {
+      console.log('Document not found!');
+    }
+  }
+
+  getLikes();
   return (
     <>
       <GlobalStyles />
@@ -82,7 +112,7 @@ export const Layout = ({children, title}:LayoutProps) => {
                         </MainStyles>
                       </ContentStyles>
                       <AsideStyles className="aside-left">
-                        <Like likes={0} liked={false} updateData={null} />
+                        {loadedLikes && <Like likes={totalLikes} liked={false} updateData={null} />}
                       </AsideStyles>
                       <AsideStyles className="aside-right">
                         <Share text="Share" shareText={shareText} shareUrl=

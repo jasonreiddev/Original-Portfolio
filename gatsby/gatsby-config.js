@@ -58,6 +58,20 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: 'AIzaSyCMisUz5HVjU3IpufE5xFntovsR-1CKDl0',
+          authDomain: 'jasonreid-dev.firebaseapp.com',
+          databaseURL: 'https://jasonreid-dev-default-rtdb.europe-west1.firebasedatabase.app',
+          projectId: 'jasonreid-dev',
+          storageBucket: 'jasonreid-dev.appspot.com',
+          messagingSenderId: '399791915013',
+          appId: '1:399791915013:web:1a14fc0ddb7675833c1c6c',
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Jason Reid's Development Portfolio`,
