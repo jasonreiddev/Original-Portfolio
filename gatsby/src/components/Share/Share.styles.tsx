@@ -11,4 +11,8 @@ export const ShareStyles = styled.p`
         height: 25px;
         transform: translateY(0%);
     }
+    div {
+        margin: 0;
+        height: 20px;
+    }
 `;

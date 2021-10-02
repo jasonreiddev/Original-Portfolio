@@ -34,7 +34,7 @@ export const Like = ({likes, liked, updateData}: LikeProps) => {
         {hasLiked && <FaHeart onClick={OnClick}/>}
         {!hasLiked && <FaRegHeart onClick={OnClick}/>}
         <br/>
-        <span>{typeof totalLikes !== 'undefined' ? totalLikes : '...'}</span>
+        <div>{typeof totalLikes !== 'undefined' ? totalLikes : ''}</div>
       </LikeInnerStyles>
     </LikeStyles>
   );

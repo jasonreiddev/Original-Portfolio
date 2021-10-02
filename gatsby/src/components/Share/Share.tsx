@@ -15,7 +15,7 @@ export const Share = ({text, shareText, shareUrl}: ShareProps) => {
           https://twitter.com/intent/tweet?text=${shareText}:&url=${shareUrl}`
       }>
         <FaShare/><br/>
-        <span>{text}</span>
+        <div>{text}</div>
       </a>
     </ShareStyles>
   );

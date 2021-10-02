@@ -13,4 +13,8 @@ export const LikeInnerStyles = styled.span`
         transform: translateY(0%);
         cursor: pointer;     
     }
+    div {
+        margin: 0;
+        height: 20px;
+    }
 `;
