@@ -25,7 +25,7 @@ export const Like = ({likes, liked, updateData}: LikeProps) => {
       updateData(updateAmount);
     } else {
       console.info(`No update data function in Like component, would be updated by ${updateAmount}`);
-      console.info(`Likes: ${totalLikes}, liked: ${totalLikes}`);
+      console.info(`Likes: ${totalLikes}, liked: ${hasLiked}`);
     }
   }
   return (
@@ -34,7 +34,7 @@ export const Like = ({likes, liked, updateData}: LikeProps) => {
         {hasLiked && <FaHeart onClick={OnClick}/>}
         {!hasLiked && <FaRegHeart onClick={OnClick}/>}
         <br/>
-        <span>{totalLikes}</span>
+        <span>{typeof totalLikes !== 'undefined' ? totalLikes : '...'}</span>
       </LikeInnerStyles>
     </LikeStyles>
   );

@@ -30,29 +30,23 @@ interface LayoutProps {
 export const Layout = ({children, title}:LayoutProps) => {
   const [totalLikes, setLikes] = useState(0);
   const [loadedLikes, setloadedLikes] = useState(false);
+  const db = firebase.firestore();
+  const docRef = doc(db, 'likes', 'UIbEyb5aW6PpnFDBofVI');
+
   async function getLikes() {
-    const db = firebase.firestore();
-
-    db.collection('items')
-        .add({
-          name: 'Heineken',
-          type: 'beer',
-          qty: 5,
-          description:
-      'Pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken International',
-        })
-        .then((ref) => {
-          console.log('Added document with ID: ', ref.id);
-        });
-
-    const docRef = doc(db, 'likes', 'UIbEyb5aW6PpnFDBofVI');
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       setLikes(docSnap.data().value);
       setloadedLikes(true);
     } else {
-      console.log('Document not found!');
+      console.error('Could not fetch Likes.');
     }
+  }
+
+  function updateLikes(value) {
+    getLikes();
+    const update = totalLikes + value;
+    db.collection('likes').doc('UIbEyb5aW6PpnFDBofVI').update({value: update});
   }
 
   getLikes();
@@ -112,7 +106,8 @@ export const Layout = ({children, title}:LayoutProps) => {
                         </MainStyles>
                       </ContentStyles>
                       <AsideStyles className="aside-left">
-                        {loadedLikes && <Like likes={totalLikes} liked={false} updateData={null} />}
+                        {!loadedLikes && <Like/>}
+                        {loadedLikes && <Like likes={totalLikes} liked={false} updateData={updateLikes} />}
                       </AsideStyles>
                       <AsideStyles className="aside-right">
                         <Share text="Share" shareText={shareText} shareUrl=
