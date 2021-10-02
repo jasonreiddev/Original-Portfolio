@@ -31,7 +31,7 @@ export const Layout = ({children, title}:LayoutProps) => {
   const [totalLikes, setLikes] = useState(0);
   const [loadedLikes, setloadedLikes] = useState(false);
   const db = firebase.firestore();
-  const docRef = doc(db, 'likes', 'UIbEyb5aW6PpnFDBofVI');
+  const docRef = doc(db, 'likes', process.env.FIREBASE_LIKE_DOC_ID);
 
   async function getLikes() {
     const docSnap = await getDoc(docRef);
@@ -46,7 +46,7 @@ export const Layout = ({children, title}:LayoutProps) => {
   function updateLikes(value) {
     getLikes();
     const update = totalLikes + value;
-    db.collection('likes').doc('UIbEyb5aW6PpnFDBofVI').update({value: update});
+    db.collection('likes').doc(process.env.FIREBASE_LIKE_DOC_ID).update({value: update});
   }
 
   getLikes();
