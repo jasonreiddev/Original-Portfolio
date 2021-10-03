@@ -1,6 +1,5 @@
 import {resolve} from 'path';
-import pkgDir from 'pkg-dir';
-const rootPath = pkgDir.sync(process.cwd());
+const rootPath = '';
 
 const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
 
