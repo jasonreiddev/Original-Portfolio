@@ -1,6 +1,6 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
-import {AiOutlineLeft} from 'react-icons/ai';
+import {AiOutlineLeft} from '@react-icons/all-files/ai/AiOutlineLeft';
 
 import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 import {Layout} from '../components/Layout/Layout';

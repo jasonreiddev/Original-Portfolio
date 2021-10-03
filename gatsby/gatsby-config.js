@@ -5,6 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: '',
+    firebaseLikeDocId: process.env.FIREBASE_LIKE_DOC_ID,
     titleTemplate: process.env.SITE_TITLE_TEMPLATE,
     description: process.env.SITE_DESCRIPTION,
     url: process.env.SITE_URL,

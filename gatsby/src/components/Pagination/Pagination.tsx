@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
+import {AiOutlineLeft} from '@react-icons/all-files/ai/AiOutlineLeft';
+import {AiOutlineRight} from '@react-icons/all-files/ai/AiOutlineRight';
 
 import {PaginationStyles} from './Pagination.styles';
 

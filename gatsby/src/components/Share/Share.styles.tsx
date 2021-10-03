@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ShareStyles = styled.p`
+export const ShareStyles = styled.div`
     text-Align: center;
     width: 50px;
     a {

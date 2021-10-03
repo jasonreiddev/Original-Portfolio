@@ -1,6 +1,6 @@
 import React from 'react';
 import {ShareStyles} from './Share.styles';
-import {FaShare} from 'react-icons/fa';
+import {FaShare} from '@react-icons/all-files/fa/FaShare';
 
 interface ShareProps {
   text?: string,

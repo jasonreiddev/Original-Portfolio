@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {AiOutlineLeft} from 'react-icons/ai';
+import {AiOutlineLeft} from '@react-icons/all-files/ai/AiOutlineLeft';
 
 import {Layout} from '../components/Layout/Layout';
 import {HoverColor} from '../components/HoverColor/HoverColor';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LikeStyles = styled.p`
+export const LikeStyles = styled.div`
     text-Align: center;
     user-select: none;
     width: 50px;

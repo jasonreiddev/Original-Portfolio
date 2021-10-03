@@ -35,6 +35,7 @@ export default function HomePage({data}) {
           <li><Link to="/projects/flex">Flex - Flexi-Time Management</Link></li>
           <li><Link to="/projects/bcp">BCP - Business Continuity Planning</Link></li>
           <li><Link to="/blog/deployments-covid">Working in Deployments Throughout the Covid-19 Pandemic</Link></li>
+          <li><Link to="/employment/junior-support-developer">Net Construct Support Developer</Link></li>
         </ul>
 
         <HoverColor><h2>
@@ -47,10 +48,14 @@ export default function HomePage({data}) {
           <li>StorybookJS</li>
           <li>Yarn</li>
           <li>Content via Cloudinary, Contentful and Sanity using GraphQL</li>
+          <li>Database via Firebase Cloud Firestore</li>
         </ul>
         <p>For more information, you can view the project&apos;s repository on&nbsp;
           <ExternalLink to="https://github.com/jasonreiddev/portfolio">Github</ExternalLink>.
         </p>
+        <HoverColor><h3>
+          Thank you for visiting!
+        </h3></HoverColor>
       </Layout>
     </>
   );
