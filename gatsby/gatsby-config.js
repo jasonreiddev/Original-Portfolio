@@ -105,8 +105,6 @@ module.exports = {
     'gatsby-plugin-styled-components',
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
