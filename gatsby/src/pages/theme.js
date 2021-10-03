@@ -1,6 +1,7 @@
 import React from 'react';
-import {HiSun, HiMoon} from 'react-icons/hi';
-import {GoPaintcan} from 'react-icons/go';
+import {HiSun} from '@react-icons/all-files/hi/HiSun';
+import {HiMoon} from '@react-icons/all-files/hi/HiMoon';
+import {GoPaintcan} from '@react-icons/all-files/go/GoPaintcan';
 import styled from 'styled-components';
 import ThemeContext from '../context/ThemeContext';
 import {Button} from '../components/Button/Button';

@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
 import {renderRichText} from 'gatsby-source-contentful/rich-text';
-import {AiOutlineLeft} from 'react-icons/ai';
+import {AiOutlineLeft} from '@react-icons/all-files/ai/AiOutlineLeft';
 
 import {ExternalLink} from '../components/ExternalLink/ExternalLink';
 import {Layout} from '../components/Layout/Layout';

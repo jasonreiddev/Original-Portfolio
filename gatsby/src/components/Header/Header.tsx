@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import {HiSun, HiMoon} from 'react-icons/hi';
-import {GoPaintcan} from 'react-icons/go';
+import {HiSun} from '@react-icons/all-files/hi/HiSun';
+import {HiMoon} from '@react-icons/all-files/hi/HiMoon';
+import {GoPaintcan} from '@react-icons/all-files/go/GoPaintcan';
 
 import ThemeContext from '../../context/ThemeContext';
 import {ContainerStyles, HeaderStyles, ThemeIconStyles, TitleLinkStyles, UlStyles} from './Header.styles';

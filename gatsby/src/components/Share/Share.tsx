@@ -1,6 +1,6 @@
 import React from 'react';
 import {ShareStyles} from './Share.styles';
-import {FaShare} from 'react-icons/fa';
+import {FaShare} from '@react-icons/all-files/fa/FaShare';
 
 interface ShareProps {
   text?: string,
@@ -15,7 +15,7 @@ export const Share = ({text, shareText, shareUrl}: ShareProps) => {
           https://twitter.com/intent/tweet?text=${shareText}:&url=${shareUrl}`
       }>
         <FaShare/><br/>
-        <span>{text}</span>
+        <div>{text}</div>
       </a>
     </ShareStyles>
   );

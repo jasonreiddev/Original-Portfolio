@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {LikeStyles, LikeInnerStyles} from './Like.styles';
-import {FaHeart, FaRegHeart} from 'react-icons/fa';
+import {FaHeart} from '@react-icons/all-files/fa/FaHeart';
+import {FaRegHeart} from '@react-icons/all-files/fa/FaRegHeart';
 
 interface LikeProps {
   likes?: number,
@@ -24,17 +25,16 @@ export const Like = ({likes, liked, updateData}: LikeProps) => {
     if (updateData) {
       updateData(updateAmount);
     } else {
-      console.info(`No update data function in Like component, would be updated by ${updateAmount}`);
-      console.info(`Likes: ${totalLikes}, liked: ${totalLikes}`);
+      console.info(`No update data function in Like component, DB value would be updated by ${updateAmount}`);
     }
   }
   return (
     <LikeStyles>
-      <LikeInnerStyles title="W.I.P - Like">
+      <LikeInnerStyles title="Leave a Like!">
         {hasLiked && <FaHeart onClick={OnClick}/>}
         {!hasLiked && <FaRegHeart onClick={OnClick}/>}
         <br/>
-        <span>{totalLikes}</span>
+        <div>{typeof totalLikes !== 'undefined' ? totalLikes : ''}</div>
       </LikeInnerStyles>
     </LikeStyles>
   );

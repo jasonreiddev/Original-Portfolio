@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
-import {BiWorld} from 'react-icons/bi';
+import {BiWorld} from '@react-icons/all-files/bi/BiWorld';
 
 import {HoverColor} from './HoverColor';
 
