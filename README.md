@@ -77,7 +77,7 @@ Atom:     ctrl-shift-m
 
    In /Gatsby run '<code>yarn run build</code>'
 
-   In /Sanity run '<code>yarn sanity deploy</code>'
+   In /Sanity run '<code>yarn sanity deploy build</code>'
 
    Changes to the [Main branch](https://github.com/jasonreiddev/portfolio/tree/main) will automatically be deployed to the following:
 
