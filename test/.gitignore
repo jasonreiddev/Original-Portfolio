@@ -1,0 +1,16 @@
+node_modules/
+public
+src
+static
+.cache/
+public
+.env.development
+.env.production
+gatsby-browser.js
+gatsby-config.js
+gatsby-node.js
+gatsby-node.esm.js
+yarn-error.log
+yarn.lock
+.eslintcache
+storybook-static
