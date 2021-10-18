@@ -4,7 +4,7 @@
   "description": "Jason Reid's Development Portfolio Sanity CMS.",
   "author": "Jason Reid",
   "private": true,
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "keywords": [
     "sanity"
   ],
@@ -32,7 +32,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
-    "sanity": "^2.14.0"
+    "sanity": "^2.14.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.29.0",

@@ -4,7 +4,7 @@
   "description": "Jason Reid's Development Portfolio Netlify Function Email.",
   "author": "Jason Reid",
   "private": true,
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "main": "sendEmail.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

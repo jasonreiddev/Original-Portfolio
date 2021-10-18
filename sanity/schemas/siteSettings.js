@@ -31,5 +31,11 @@ export default {
       description: 'Slug of url from contentful blogpost',
       of: [{ type: 'string' }],
     },
+    {
+      name: 'siteImage',
+      title: 'Site Image',
+      type: 'image',
+      description: 'Site image to be used when shared on social media',
+    },
   ],
 };
