@@ -169,6 +169,8 @@ html *{
     order: 2;
     width: 1080px;
     height: 100%;
+    padding: 1em;
+    box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.3);
   }
   .aside-right{
     order: 3;
