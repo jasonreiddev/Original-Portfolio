@@ -1,3 +1,4 @@
 .storybook/*
 tasks/*
 core/*
+**/*.js
