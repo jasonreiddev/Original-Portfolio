@@ -1,6 +1,8 @@
 LOCALNOTES
+node_modules/
 yarn-error
 yarn.lock
+yarn-error.log
 
 gatsby/node_modules/
 gatsby/.cache/
@@ -17,3 +19,6 @@ sanity/yarn-error.log
 sanity/.eslintcache
 sanity/production
 sanity/dist/
+
+vue/node_modules/
+
