@@ -13,16 +13,16 @@ export default {
       description: 'Text displayed on the homepage, including Mobile and Email',
     },
     {
+      name: 'featuredPosition',
+      title: 'Featured Position',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'position' }] }],
+    },
+    {
       name: 'featuredProjects',
       title: 'Featured Projects',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'project' }] }],
-    },
-    {
-      name: 'featuredPosition',
-      title: 'Featured Projects',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'position' }] }],
     },
     {
       name: 'featuredBlogPosts',
@@ -38,4 +38,9 @@ export default {
       description: 'Site image to be used when shared on social media',
     },
   ],
+  preview: {
+    prepare: fields => ({
+      title: `Site Settings`
+    })
+  }
 };
